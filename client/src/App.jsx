@@ -1,26 +1,36 @@
-import { useState } from 'react'
-import {Routes, Route, Link, NavLink} from "react-router-dom"
-import StillPlanning from './components /StillPlanning'
-import RoadTrips from './components /RoadTrips'
-import InteractiveMap from './components /InteractiveMap'
-import './App.css'
+import React from 'react';
+import { Routes, Route, Link, NavLink } from 'react-router-dom'; 
 
-function App() {
+import './App.css';
+/* import WhereToComponent from './components/WhereToComponent'; */
+import MapComponent from './components/MapComponent';
+import Contact from './pages/Contact';
+import Planned from './pages/Planned';
+import { Map } from 'leaflet';
+
+
+ function App() {  
 
   return (
-      <div>
-        <h1>Relax and roaδ it</h1>
-        <NavLink to="/" activeStyle="active">StillPlanning</NavLink>
-        <br/>
-        <NavLink to="/trips" activeStyle="active">RoadTrips</NavLink>
+    <div>
 
+      <h1>Still planning!</h1>
+       {/* <WhereToComponent/> */}
+       <MapComponent/>
+       <Map/>
+       
+       <NavLink to="/contact">Contact</NavLink>
+       <br/>
+       <NavLink to="/planned">Almost Ready</NavLink>
+       
        <Routes>
-        <Route path = "/" element= {<StillPlanning />} />
-        <Route path = "/trips" element= {<RoadTrips />} />
-        <Route path = "/map" element= {<InteractiveMap />} />
+         <Route path="/" index />
+         <Route path="contact" element={<Contact/>}/>
+         <Route path="planned" element={<Planned/>}/>
        </Routes>
-      </div>
-  )
-}
 
-export default App
+    </div>
+  )
+  }
+
+export default App  
