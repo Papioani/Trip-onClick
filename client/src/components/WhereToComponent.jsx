@@ -1,23 +1,24 @@
 import React from "react"
+import ManiImagesComponent from "./ManiImagesComponent";
+
 
 
 export default function WhereToComponent() {
 
-  let imageList = [{"id": 1, "name": "Mani1", "image": "./images/Mani1.png"},
-                   {"id": 2, "name": "Mani2", "image": "./images/Mani2.png"},]
+const [trip, setTrip] = useState(false)
 
-  const ManiImages = imageList.map((image) => (
-  <div key={image.id}>  {/* When you are using Array.map() in React you must pass the key prop */}
-  <img src={image.image} />
- </div> 
-  ))
-
-
+const handleClick = () => {
+  setTrip(!trip);
+};
+   
     return (
       <div>Where to... 
-        <ul className="imagesMani">
-        {ManiImages} 
-    </ul>
+       
+       <button type="button" onClick={handleClick}>Μαni</button>
+       <button type="button" onClick={handleClick}>Northern Spain</button>
+       
+       {trip && <div>{ManiImagesComponent}</div>}
+       
       
       </div>
     )
