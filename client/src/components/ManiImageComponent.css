@@ -4,5 +4,10 @@
     padding: 10px;
     /* display: inline-block; */
   }
+
+  .slider {
+    height:50px; 
+    width:50px; 
+  }
   /* use the ImageBox component in your main component or wherever 
   you want to display the image boxes. */

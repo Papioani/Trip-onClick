@@ -6,7 +6,7 @@ import Mani4Image from "./images/Mani4.png";
 import Mani5Image from "./images/Mani5.png";
 import Mani6Image from "./images/Mani6.png";
 import ImageSlider from './ImageSlider';
-import "./ManiImageComponent.css";
+import "./ManiImageComponent.css";    /* this is how it is imported this  */
 
 export default function ManiImagesComponent() {
 let imageList =[
@@ -48,7 +48,7 @@ let imageList =[
 
   return (
     <div> 
-        <ImageSlider images={imageList.map((image) => image.src)} />
+        <ImageSlider className="slider" images={imageList.map((image) => image.src)} />
        {/*  {imageList.map((image) => (  //used {} to embed JavaScript  
         <div key={image.id} className="image-box">
           <img src={image.src} alt={image.name} />

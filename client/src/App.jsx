@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route, Link, NavLink } from 'react-router-dom'; 
 
 import './App.css';
-/* import WhereToComponent from './components/WhereToComponent'; */
 import MapComponent from './components/MapComponent';
 import Contact from './pages/Contact';
 import Planned from './pages/Planned';
@@ -14,7 +13,7 @@ import Map from './components/Map';
   return (
     <div>
 
-      <h1>Still planning!</h1>
+      <h1>Stop/Still/Easy planning!</h1>
        <WhereToComponent /> 
        <MapComponent/>
        <Map/>
