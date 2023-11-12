@@ -3,23 +3,24 @@
 --
 
 SET foreign_key_checks = 0;
-DROP TABLE if exists students;
+DROP TABLE if exists ManiVisits;
 SET foreign_key_checks = 1;
-
+ 
 --
 -- Create Tables
 --
 
-CREATE TABLE students(
+CREATE DATABASE ManiVisits(
     id INT NOT NULL AUTO_INCREMENT,
-    firstname VARCHAR(40) not null,
-    lastname VARCHAR(40) not null,
+    name VARCHAR(200) not null,
+    link VARCHAR(200) not null,
     PRIMARY KEY (id)
     );
 
 --
--- Add Students   Change everything , put the ones for my project 
+-- 
 --
 
-INSERT INTO students (firstname, lastname)
-VALUES ('Ali', 'Yung'), ('Maria', 'Johnson');
+INSERT INTO ManiVisits (name, link)
+VALUES ('Gerolimenas', "https://www.cosmote.gr/hub/");
+       
