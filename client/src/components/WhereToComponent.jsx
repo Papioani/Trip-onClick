@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react";
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { useMapEvents } from 'react-leaflet/hooks'
 import ManiImagesComponent from "./ManiImagesComponent";
 import SpainImagesComponent from "./SpainImagesComponent";
 import ManiPage from "../pages/ManiPage";
