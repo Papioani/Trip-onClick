@@ -4,7 +4,7 @@ import './App.css';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Planned from './pages/Planned';
-import WhereToComponent from './components/WhereToComponent';
+
 
 
  function App() {  
@@ -18,7 +18,7 @@ import WhereToComponent from './components/WhereToComponent';
 
        
       
-        <NavLink to="/Home"> Where to..</NavLink> 
+        <NavLink to="/"> Where to..</NavLink> 
         <br/>
         <NavLink to="/contact">Contact</NavLink>
         <br/>
@@ -27,7 +27,7 @@ import WhereToComponent from './components/WhereToComponent';
         
          <Routes>
           <Route path="/" index element={<Home/>}/>
-          <Route path="/Home" element={<WhereToComponent/>}/>
+          <Route path="/Home" element={<Home/>}/> 
           <Route path="contact" element={<Contact/>}/>
           <Route path="planned" element={<Planned/>}/> 
          {/*  <Route path="/where-to" element={<WhereToComponent/>}/> */}
