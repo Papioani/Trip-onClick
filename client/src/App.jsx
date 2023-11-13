@@ -6,11 +6,13 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Planned from './pages/Planned';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import hotelsjson from "./data/hotels.json"
 
 
 
  function App() {  
 
+  console.log(hotelsjson)
   return (
      <div> 
  
@@ -40,11 +42,22 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   />
-  <Marker position={[51.505, -0.09]}>
-    <Popup>
+
+  {hotelsjson.map(htls => (
+    <Marker 
+    key = {htls.id}
+    position={[htls.latitude, htls.longitude]}>
+      
+    {/* <Popup>
       A pretty CSS3 popup. <br /> Easily customizable.
-    </Popup>
+    </Popup> */}
+
   </Marker>
+  ))}
+  
+
+
+
 </MapContainer>
 
     </div> 
