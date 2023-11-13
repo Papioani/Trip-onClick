@@ -2,13 +2,9 @@ var express = require('express');
 var router = express.Router();
 const db = require("../model/helper") 
 
-//   /api/ 
-router.get("/", (req,res) => {
-  res.send("The list of Mani places");
-});
 
-// /api/places
-router.get("/places", (req,res) => {
+// /api/places   16 of app.js
+router.get("/", (req,res) => {  /* / means: /api/places/  !!!!!!!!    */
 db("SELECT * FROM places")
 .then(results => {
     res.send(results.data);
@@ -19,7 +15,7 @@ db("SELECT * FROM places")
 
 // /api/places/:id
 
-router.get("/books/:id", async (req, res) =>{
+router.get("/:id", async (req, res) =>{  /* the /api/places/ is within the /  !!!!!!!!!!!!! */
   let placeId= req.params.id;
   try{
 
@@ -36,7 +32,7 @@ router.get("/books/:id", async (req, res) =>{
 });
 
 // /api/places/
-router.post("/places", async(req, res) => {
+router.post("/", async(req, res) => {
   // we assume we have all the required data inside req.body
   let {name, link} = req.body;
 

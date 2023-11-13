@@ -8,7 +8,7 @@ export default function ManiPage() {
   useEffect(() => {getPlaces()}, []);
 
   const getPlaces = () => {
-    fetch("/placesApi/places")
+    fetch("/api/places/")  /* in frontend I need the ENTIRE ROUTE  */
     .then(response => response.json())
     .then(places => {
       setPlaces(places);

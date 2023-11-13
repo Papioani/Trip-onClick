@@ -12,7 +12,13 @@ import hotelsjson from "./data/hotels.json"
 
  function App() {  
 
-  console.log(hotelsjson)
+ /*  let EuropeHotels= htls.continent_name.filter ((continent) => 
+  continent === "Europe");
+  console.log(EuropeHotels) */
+
+  
+
+
   return (
      <div> 
  
@@ -22,7 +28,7 @@ import hotelsjson from "./data/hotels.json"
 
        
       
-        <NavLink to="/Home"> Where to..</NavLink> 
+        <NavLink to="/"> Where to..</NavLink> 
         <br/>
         <NavLink to="/contact">Contact</NavLink>
         <br/>
@@ -30,8 +36,7 @@ import hotelsjson from "./data/hotels.json"
      
         
          <Routes>
-          <Route path="/" index element={<Home/>}/>
-          <Route path="/Home" element={<Home/>}/> 
+          <Route path="*" index element={<Home/>}/>
           <Route path="contact" element={<Contact/>}/>
           <Route path="planned" element={<Planned/>}/> 
          {/*  <Route path="/where-to" element={<WhereToComponent/>}/> */}
