@@ -2,9 +2,11 @@ var express = require('express');
 var router = express.Router();
 const db = require("../model/helper") 
 
+/* backend API endpoint for fetching data from the MySQL database */
 
-// /api/places   16 of app.js
-router.get("/", (req,res) => {  /* / means: /api/places/  !!!!!!!!    */
+
+// /api/places      queries the MySQL database to select all records from the places table.
+router.get("/", (req,res) => {  /* / means: /api/  !!!!!!!!   see app.js line 16 */
 db("SELECT * FROM places")
 .then(results => {
     res.send(results.data);
@@ -15,7 +17,7 @@ db("SELECT * FROM places")
 
 // /api/places/:id
 
-router.get("/:id", async (req, res) =>{  /* the /api/places/ is within the /  !!!!!!!!!!!!! */
+router.get("/:id", async (req, res) =>{  /* the /api/places/ is the /  !!!!!!!!!!!!! */
   let placeId= req.params.id;
   try{
 
@@ -52,7 +54,7 @@ router.post("/", async(req, res) => {
 });
 
 
-router.put("/places/:id", async (req, res) => {  /* for the put it expects the id(see App.jsx) */
+router.put("/:id", async (req, res) => {  /* for the put it expects the id(see App.jsx) */
   // get place id from params
   let placeId = req.params.id;
 
@@ -69,7 +71,7 @@ router.put("/places/:id", async (req, res) => {  /* for the put it expects the i
         let result = await db("SELECT * FROM places");
         res.status(201).send(result.data);
     }
-    else{/
+    else{
         res.status(404).send({error: 'place not found!'});
     }
 
@@ -80,9 +82,9 @@ router.put("/places/:id", async (req, res) => {  /* for the put it expects the i
 
 });
 
-router.delete("/places/:id", async(req, res) => {
+router.delete("/:id", async(req, res) => {
 
-  let bookId = req.params.id;
+  let placeId = req.params.id;
 
   try{
     let result = await db(`SELECT * FROM places WHERE id = ${placeId}`);

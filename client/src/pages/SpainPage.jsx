@@ -1,8 +1,13 @@
 import React from 'react'
-import SpainComponent from '../components/SpainComponent'
+import SpainImagesComponent from '../components/SpainImagesComponent'
+import MapComponent from '../components/MapComponent'
 
 export default function SpainPage() {
   return (
-    <div><SpainComponent/></div>
+    <div>I am Spain
+      <SpainImagesComponent/>
+      <MapComponent/> 
+    
+    </div>
   )
 }

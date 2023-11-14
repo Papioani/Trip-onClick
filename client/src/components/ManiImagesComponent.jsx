@@ -5,7 +5,9 @@ import Mani3Image from "./images/Mani3.png";
 import Mani4Image from "./images/Mani4.png";
 import Mani5Image from "./images/Mani5.png";
 import Mani6Image from "./images/Mani6.png";
+import { Link, Routes, Route } from 'react-router-dom';
 import ImageSlider from './ImageSlider';
+import ManiPage from "../pages/ManiPage"
 import "./ManiImageComponent.css";    /* this is how it is imported the css */
 
 export default function ManiImagesComponent() {
@@ -45,15 +47,23 @@ let imageList =[
         
     ]
 
+    /* const [component, setComponent] = useState(false) */
+
+    /* const handleClickImage = () => {
+        setComponent(!component);
+      } */
 
   return (
     <div className="slider"> 
-        <ImageSlider images={imageList.map((image) => image.src)} />
-       {/*  {imageList.map((image) => (  //used {} to embed JavaScript  
-        <div key={image.id} className="image-box">
-          <img src={image.src} alt={image.name} />
-        </div>
-      ))}  */}</div>
+    <Link to="/mani">
+     <ImageSlider images={imageList.map((image) => image.src)} /> 
+     </Link>
+      
+       <Routes>
+          <Route path= "/mani/*" element={<ManiPage/>}/>
+       </Routes>
+
+       </div>
   )
 }
 
