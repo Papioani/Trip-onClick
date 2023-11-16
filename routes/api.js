@@ -2,11 +2,12 @@ var express = require('express');
 var router = express.Router();
 const db = require("../model/helper") 
 
-/* backend API endpoint for fetching data from the MySQL database */
+/* backend API endpoint for fetching data from the MySQL database 
+receiving the code from the fetchFrontend.jsx*/
 
 
 // /api/places      queries the MySQL database to select all records from the places table.
-router.get("/", (req,res) => {  /* / means: /api/  !!!!!!!!   see app.js line 16 */
+router.get("/", (req,res) => {  /* / means: /api !!!!!!!!   see app.js line 16 */
 db("SELECT * FROM places")
 .then(results => {
     res.send(results.data);
@@ -17,7 +18,7 @@ db("SELECT * FROM places")
 
 // /api/places/:id
 
-router.get("/:id", async (req, res) =>{  /* the /api/places/ is the /  !!!!!!!!!!!!! */
+router.get("/:id", async (req, res) =>{  /* the /api/places is the /  !!!!!!!!!!!!! */
   let placeId= req.params.id;
   try{
 
@@ -54,6 +55,7 @@ router.post("/", async(req, res) => {
 });
 
 
+// /api/places/:id
 router.put("/:id", async (req, res) => {  /* for the put it expects the id(see App.jsx) */
   // get place id from params
   let placeId = req.params.id;

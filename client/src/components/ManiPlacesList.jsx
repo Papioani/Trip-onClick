@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import './ManiPlacesList.css'
 
 export default function ManiPlacesList(props) {
@@ -15,4 +15,4 @@ export default function ManiPlacesList(props) {
       </ul>
     </div>
   )
-}
+} */

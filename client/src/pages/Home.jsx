@@ -6,8 +6,8 @@ import { useMapEvents } from 'react-leaflet/hooks'
 export default function Home() {
   return (
     <div>
-      this is the Home page!!!!!
-     {/*  <WhereToComponent/> */}
+      
+      <WhereToComponent/>
          
     </div>
   )
