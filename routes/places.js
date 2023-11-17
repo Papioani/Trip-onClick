@@ -10,6 +10,7 @@ receiving the code from the fetchFrontend.jsx*/
 router.get("/", (req,res) => {  /* / means: /api !!!!!!!!   see app.js line 16 */
 db("SELECT * FROM places")
 .then(results => {
+  console.log(results.data)
     res.send(results.data);
 })
 .catch(err => res.status(500).send(err))

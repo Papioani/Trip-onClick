@@ -14,9 +14,11 @@ const ImageSlider = ({ images }) => {
   }, [images]);
 
   return (
-    <div className="image-box">
-      <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} />
-    </div>
+    
+    <figure class="figure">
+      <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} class="figure-img img-fluid rounded"  />
+      </figure>
+    
   );
 };
 

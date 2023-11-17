@@ -10,7 +10,9 @@ export default function SpainImagesComponent() {
       return (
         <div> 
           <Link to="/spain">
-            <img src={NorthernSpain} /></Link>
+          
+            <img src={NorthernSpain}  class="figure-img img-fluid rounded" /></Link>
+            
            {/*  {imageList.map((image) => (  //used {} to embed JavaScript  
             <div key={image.id} className="image-box">
               <img src={image.src} alt={image.name} />

@@ -54,9 +54,11 @@ let imageList =[
       } */
 
   return (
+    
     <div className="slider"> 
+    
     <Link to="/mani">
-     <ImageSlider images={imageList.map((image) => image.src)} /> 
+     <ImageSlider images={imageList.map((image) => image.src)}  /> 
      </Link>
       
        <Routes>
@@ -64,6 +66,7 @@ let imageList =[
        </Routes>
 
        </div>
+     
   )
 }
 

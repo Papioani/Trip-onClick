@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 /* import { useMapEvents } from 'react-leaflet/hooks'
 import { useEffect, useState } from "react"; */
@@ -7,7 +7,7 @@ import hotelsjson from "../data/hotels.json"
 
 export default function MapComponent() {
     
-  /* let [places, setPlaces] = useState(null);
+  /* let [, setPlaces] = useState(null);
 
   useEffect(() => {getPlaces()}, []);
 
@@ -22,30 +22,33 @@ export default function MapComponent() {
   })
 }; */
 
+const filteredHotels = hotelsjson.Hotels.filter(htls => htls.continent_name === "Europe")
+console.log(filteredHotels)
 return (
-  <div> 
+  <figure class="figure">
 
 
-<MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
+<MapContainer center={[39.074207, 21.824312]} zoom={5} scrollWheelZoom={true}>
   <TileLayer
     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   />
 
-  {hotelsjson.map(htls => (
+  {filteredHotels.map(htls => (
     <Marker 
     key = {htls.hotel_id}
     position={[htls.latitude, htls.longitude]}>
-      
-    {/* <Popup>
-      A pretty CSS3 popup. <br /> Easily customizable.
-    </Popup> */}
-
+    <Popup position={[htls.latitude, htls.longitude]}> 
+   <div>
+     <h2>{"Name : "+ htls.hotel_name} </h2>
+   </div>
+   </Popup>
   </Marker>
   ))}
 
 </MapContainer>
-</div>
+
+</figure>
 );
 };
 

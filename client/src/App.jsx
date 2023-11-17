@@ -28,7 +28,7 @@ import SpainPage from './pages/SpainPage';
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+      <ul class="nav nav-underline">
         <li class="nav-item">
           <a class="nav-link" href="/Home">Home</a>
         </li>
