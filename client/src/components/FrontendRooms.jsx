@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SpainMapComponent from "./SpainMapComponent"
+import ManiPlacesList from "./ManiPlacesList"
 
 function FrontendRooms() {
   const [hotels, setHotels] = useState([]);
@@ -9,19 +10,24 @@ Fetching data directly inside a function component without hooks can give errors
     const options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': '314a76c0f8mshba931602e18bfcfp1f7807jsn79a0981b285a',
-		'X-RapidAPI-Host': 'booking-com.p.rapidapi.com'
+          'X-RapidAPI-Key': '693a320c7amshf8a3f0479327cbap12dca4jsn254f4f98016a',
+		'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
         }
       };
-    fetch("https://booking-com.p.rapidapi.com/v1/hotels/data?hotel_id=1648672&locale=en-gb", options)  /* with the fetch I don´t need to create a function and store the fetching in a const  */
+    fetch("https://hotels4.p.rapidapi.com/locations/v3/search?q=USA&locale=en_US&langid=1033&siteid=300000001", options)  /* with the fetch I don´t need to create a function and store the fetching in a const  */
       .then((res) => res.json())
       .then((data) => {
-        
+        const HotelsData= data.sr.map((htls) => ({
+          latitude: data.sr.coordinates.lat, 
+          longitude: data.sr.coordinates.long, 
+          index: data.sr.index, 
+          regionalName: data.sr.regionNames.displayName
+        }))
        // data.suggestions property is an array, I should loop through the array and extract the names from each entities key.
        /* for (let i=0; i < data.length; i++){
         let filteredData = data.map() => data.suggestions[i].entities[i].name === "corfu"
         fetch(filteredData.map() => data.suggestions[i].entities[i].name === "corfu") */
-        setHotels([{ latitude: data.location.latitude, longitude: data.location.longitude, id: data.hotel_id, city: data.city }]);
+        setHotels(HotelsData)
        /*  data.map(filterDataByName)
         function filterDataByName(){
             for (let i=0; i < data.length; i++){
@@ -41,13 +47,14 @@ Fetching data directly inside a function component without hooks can give errors
     <div>
      
       {/* <h2>FrontendRooms Component: hotels.latitude</h2> */}
-      <p>Latitude: {hotels.length > 0 ? hotels[0].latitude : 'Loading...'}</p>
-      <p>Longitude: {hotels.length > 0 ? hotels[0].longitude : 'Loading...'}</p>
+     {/*  <p>Latitude: {hotels.length > 0 ? hotels[0].latitude : 'Loading...'}</p>
+      <p>Longitude: {hotels.length > 0 ? hotels[0].longitude : 'Loading...'}</p> */}
 
       {/* Render SpainMapComponent and pass 'hotels' as a prop */}
-     {/*   <SpainMapComponent hotels={hotels}/>  */}  
+      {/* <SpainMapComponent hotels={hotels}/>  */}  
 
-      
+      hello  I am the FrontEndRooms component 
+      <ManiPlacesList hotels={hotels}/>
     </div>
   );
 }

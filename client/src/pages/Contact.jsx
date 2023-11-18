@@ -1,5 +1,6 @@
 import React from "react"
 import SpainMapComponent from "../components/SpainMapComponent";
+import MapComponent from "../components/MapComponent"
 
 
 export default function Contact() {
@@ -28,7 +29,8 @@ export default function Contact() {
             <br/>
               <button>Send</button>
           </form>
-       <SpainMapComponent/> 
+       <SpainMapComponent/>  
+        {/* <MapComponent/>  */}
         </div>
 
 

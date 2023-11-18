@@ -1,10 +1,14 @@
-/* import React from 'react';
-import './ManiPlacesList.css'
+import React from 'react';
+
 
 export default function ManiPlacesList(props) {
   return (
-    <div className='ManiPlacesList'>
-      <ul>
+   <div>
+    hi 
+    console.log(props.hotels)
+
+</div>
+      /* <ul>
         {
           props.students.map(s => (
             <li key={s.id}>
@@ -12,7 +16,7 @@ export default function ManiPlacesList(props) {
           ))
 
         }
-      </ul>
-    </div>
+      </ul> */
+    
   )
-} */
+} 
