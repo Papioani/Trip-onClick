@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SpainMapComponent from "./SpainMapComponent"
 import ManiPlacesList from './ManiPlacesList';
-import RefreshingSleep from './RefreshingSleep';
+
 
 
 function FrontendRooms() {
@@ -63,7 +63,7 @@ Fetching data directly inside a function component without hooks can give errors
 
       hello  I am the FrontEndRooms component 
       <ManiPlacesList hotels={hotels}/> 
-      <RefreshingSleep hotels={hotels}/> 
+     
     </div>
   );
 }
