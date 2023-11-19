@@ -18,7 +18,7 @@ import SpainPage from './pages/SpainPage';
      <div> 
      <div class="container text-left"></div>
       <header className = "header"> 
-        <h1>Trιp On Click .... Mαke a roαd trip without plαnning!</h1>
+        <h1>Trιp OnClick .... Mαke a roαd trip without plαnning!</h1>
       </header>  
 
       <nav class="navbar navbar-expand-lg bg-body-tertiary">

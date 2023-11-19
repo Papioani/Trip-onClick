@@ -1,34 +1,31 @@
 import React from "react"
 import RoadTrip from "../components/images/RoadTrip.png";   /* import the image from the folder */
-/* import './Planned.css' */
+import '../components/Planned.css' 
 
-export default function Planned() {
+export default function Planned({favourites}) {
+  console.log(favourites)
+  
     return (
-      <div className="bg-image" 
-           style={{backgroundImage: `url(${RoadTrip})`,
-           height: "100vh",
-           backgroundRepeat: "no-repeat",
-           backgroundSize: "cover",
-           position: "relative",
-           }}>
+      <div className="bg-image"
+           style={{backgroundImage: `url(${RoadTrip})`}}> 
              
-        <span
-          style={{
-          backgroundColor: 'green',
-          color: 'white', 
-          fontSize: '1em',
-          padding: '5px 10px',  
-          position: 'absolute',
-          top: '20px',
-          left: '190px',
-        }}>
-        Welcome to your own Roαd trip ... so far  
+        <span className="text-span">
+        Your onClick roαd trip ... so far  
         </span>
         
+       
+
+       {/*  Favourites: {favourites}  */} {/* error when you're trying to directly render an object as 
+        a React child component, it IS NOT allowed in React */}
+       <ul>
+         {Array.isArray(favourites) && favourites.map((favourite,index) => (
+          <li key={index}>
+          Name: {favourite.regionalName}
+          </li>
+         ))}
+       </ul>
       </div>
     )
   }
 
-  // props.places.map(s => (
-   // <li key={s.id}>
-  // should take props from the ManiPage 
+  

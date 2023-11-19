@@ -61,7 +61,7 @@ Fetching data directly inside a function component without hooks can give errors
       {/* Render SpainMapComponent and pass 'hotels' as a prop */}
      {/*  <SpainMapComponent hotels={hotels}/>  */}   
 
-      hello  I am the FrontEndRooms component 
+      
       <ManiPlacesList hotels={hotels}/> 
      
     </div>

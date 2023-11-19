@@ -1,0 +1,29 @@
+.text-span {
+    background-color: green;
+    color: white;
+    font-size: 1em;
+    padding: 5px 10px;
+    position: absolute;
+    top: 20px;
+    left: 190px;
+  }
+
+  .bg-image::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    opacity: 0.7; 
+  }
+
+  .bg-image {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: 1.15;
+  }

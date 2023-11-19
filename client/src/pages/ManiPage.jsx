@@ -1,6 +1,7 @@
 import React from 'react' 
 import ManiImagesComponent from '../components/ManiImagesComponent'
 import MapComponent from '../components/MapComponent';
+import ManiPlacesList from '../components/ManiPlacesList';
 import FrontendRooms from "../components/FrontendRooms";
 import { useState, useEffect } from 'react';
 /* import './ManiPage.css' */
@@ -43,16 +44,23 @@ export default function ManiPage() {
 };  /* this is the frontend that sends to the api.js to fetch info from the database */ 
 
   return (
-    <div class="row">
-    <div class="col">
-    <div>I am Mani
-       <ManiImagesComponent/>
-       <MapComponent/>  
-       <FrontendRooms/>  
-       
+    
+    <div>
+       Welcome to Mani
+     <div class="container" >
+         <ManiImagesComponent/>
+        </div>
+      
 
-     </div>
-     </div>
+    <div class="container" >
+         <MapComponent/> 
+        </div>
+        
+    <div class="container" >
+        <ManiPlacesList/> 
+        </div>
+  
+       
     </div>
   )
 }
