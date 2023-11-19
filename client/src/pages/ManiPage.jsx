@@ -48,7 +48,7 @@ export default function ManiPage() {
     <div>I am Mani
        <ManiImagesComponent/>
        <MapComponent/>  
-       <FrontendRooms/> 
+       <FrontendRooms/>  
        
 
      </div>

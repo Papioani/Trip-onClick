@@ -32,7 +32,12 @@ return (
   <TileLayer
     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  />
+  /> 
+  
+  {/* <Tilelayer
+    attribution= "Stamen Watercolor"
+    url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png"
+    /> */}
 
   {filteredHotels.map(htls => (
     <Marker 

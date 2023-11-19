@@ -1,6 +1,7 @@
 import React from "react"
 import SpainMapComponent from "../components/SpainMapComponent";
-import MapComponent from "../components/MapComponent"
+import RefreshingSleep from "../components/RefreshingSleep";
+
 
 
 export default function Contact() {
@@ -29,8 +30,10 @@ export default function Contact() {
             <br/>
               <button>Send</button>
           </form>
-       <SpainMapComponent/>  
-        {/* <MapComponent/>  */}
+        {/* <SpainMapComponent/>   */}
+        <RefreshingSleep/>
+       
+       
         </div>
 
 

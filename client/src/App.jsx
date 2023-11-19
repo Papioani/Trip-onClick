@@ -16,7 +16,7 @@ import SpainPage from './pages/SpainPage';
 
   return (
      <div> 
- 
+     <div class="container text-left"></div>
       <header className = "header"> 
         <h1>Mαke a roαd trip without plαnning!</h1>
       </header>  

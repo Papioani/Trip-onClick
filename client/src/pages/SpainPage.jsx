@@ -11,7 +11,7 @@ export default function SpainPage() {
     <div>I am Spain
     <div class="vstack gap-3">
       <SpainImagesComponent/>
-      <FrontendRooms/>
+       <FrontendRooms/> 
       <MapComponent/> 
     </div>
     </div>
