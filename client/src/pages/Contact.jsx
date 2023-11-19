@@ -1,5 +1,6 @@
 import React from "react"
 import SpainMapComponent from "../components/SpainMapComponent";
+import ManiPlacesOnScreen from "../components/ManiPlacesOnScreen";
 
 
 
@@ -31,6 +32,7 @@ export default function Contact() {
               <button>Send</button>
           </form>
         {/* <SpainMapComponent/>   */}
+        <ManiPlacesOnScreen/>
        
        
        

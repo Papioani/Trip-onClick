@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import ManiPlacesOnScreen from './ManiPlacesOnScreen';
 
 
 /* !!!!! If hotels is updated from the parent component and passed down to ManiPlacesList, 
@@ -36,17 +37,17 @@ console.log(randomHotel); */
   return (
     <div>
     
-    <h2>I am the MANI PLACES LIST </h2>
+    {/* <h2>I am the MANI PLACES LIST </h2>
     <h2>List of Hotels</h2>
       <ul>
         {hotels.map((hotel, index) => (
-          <li key={index}>
-            {/* Display hotel information */}
-            {/* For instance, you might render the hotel name */}
+          <li key={index}> */}
+            {/* Display hotel information   For instance, you might render the hotel name   */}
             
-          </li>
+            
+          {/* </li>
         ))}
-      </ul>
+      </ul> */}
       {/* !!!!!!!!!!!!!!!!!const randomHotel = getRandomHotel(hotels);
         console.log(randomHotel);  In React, you CANNOT directly execute JavaScript statements 
         or DEFINE VARIABLES WITHIN the JSX block of a functional component. !!!!!!!!!!!!!!!!!!
@@ -56,7 +57,7 @@ console.log(randomHotel); */
 
   {randomHotel ? ( 
         <div> 
-           <p>Randomly selected hotel:</p>
+           <p> Here´s a refreshing sleep for you:</p>
           <p>Latitude: {randomHotel.latitude} Longitude: {randomHotel.longitude} Name: {randomHotel. regionalName}</p> 
           {/* Include other properties you want to display */}
          </div>
@@ -68,6 +69,9 @@ console.log(randomHotel); */
 
        {/* USE randomHotel value in your JSX */}
        {/* <p>Randomly selected hotel: {randomHotel}</p>  */}
+
+       {/* to display the hotel information in another ManiPlacesOnScreen, I pass down the randomHotel state and handleClick function as props */}
+       <ManiPlacesOnScreen randomHotel={randomHotel} handleClick={handleClick}/>
       </div>
   )
 } 

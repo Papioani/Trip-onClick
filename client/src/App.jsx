@@ -18,7 +18,7 @@ import SpainPage from './pages/SpainPage';
      <div> 
      <div class="container text-left"></div>
       <header className = "header"> 
-        <h1>Mαke a roαd trip without plαnning!</h1>
+        <h1>Trιp On Click .... Mαke a roαd trip without plαnning!</h1>
       </header>  
 
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -37,12 +37,15 @@ import SpainPage from './pages/SpainPage';
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="/planned" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Trip
+            Trips
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/mani/*">Mani</a></li>
             <li><a class="dropdown-item" href="/spain/*">Spain</a></li>
           </ul>
+        </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/planned">My trip</a>
         </li>
       </ul>
     </div>
