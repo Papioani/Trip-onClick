@@ -1,0 +1,50 @@
+.header-white-part {
+    color: white;
+}
+
+ .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.column {
+    background-color: rgb(32, 129, 98);
+    float: left;
+    width: 50%;
+  }
+
+  .column2 {
+    background-color: white;
+    
+    padding: 20px;
+    width: 50%;
+  }
+
+  .column3 {
+    background-color: rgb(32, 129, 98);
+    float: right;
+    padding: 20px;
+    width: 25%;
+  } 
+
+/*   .column {
+    float: left;
+    padding: 10px;
+    height: 300px; 
+  }
+  
+  .left, .right {
+    width: 25%;
+  }
+  
+  .middle {
+    width: 50%;
+  }
+  
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  } */

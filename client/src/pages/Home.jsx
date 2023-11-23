@@ -1,13 +1,16 @@
 import React from 'react'
-import WhereToComponent from '../components/WhereToComponent';
-import MapComponent from '../components/MapComponent';
-import { useMapEvents } from 'react-leaflet/hooks'
+import VideoPlayerComponent from "../components/VideoPlayerComponent"
+
 
 export default function Home() {
   return (
     <div>
-      
-      <WhereToComponent/> 
+      <div class="container text-left"></div>
+       <header className = "header"> 
+        <h1>Trιp OnClick .... Mαke a roαd trιp without plαnning!</h1>
+       </header>  
+      <VideoPlayerComponent/>
+     
          
     </div>
   )

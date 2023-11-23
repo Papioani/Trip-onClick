@@ -7,7 +7,8 @@ export default function Planned({favourites}) {
   
     return (
       <div className="bg-image"
-           style={{backgroundImage: `url(${RoadTrip})`}}> 
+           style={{backgroundImage: `url(${RoadTrip})`,
+           backgroundSize: 'cover',  opacity: 0.6,}}> 
              
         <span className="text-span">
         Your onClick roαd trip ... so far  

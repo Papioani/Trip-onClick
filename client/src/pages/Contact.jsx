@@ -32,7 +32,7 @@ export default function Contact() {
               <button>Send</button>
           </form>
         {/* <SpainMapComponent/>   */}
-        <ManiPlacesOnScreen/>
+       {/*  <ManiPlacesOnScreen/> */}
        
        
        

@@ -4,3 +4,7 @@
     min-height: 50px;
     font-size: 2rem;
 }
+
+.align-items {
+    align-items: flex-end;
+}

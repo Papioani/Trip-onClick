@@ -6,6 +6,13 @@ import FrontendRooms from "../components/FrontendRooms";
 import { useState, useEffect } from 'react';
 /* import './ManiPage.css' */
 
+
+/* <Link> is specifically designed for client-side navigation within a React Router-managed application. It utilizes React Router's routing system to handle navigation without full page reloads.
+<a> tag, when used in a React application without React Router, behaves as a standard HTML anchor tag and causes full page refreshes or navigates to a different URL */
+
+
+/* <a href="https://www.example.com" target="_blank" title="Visit Example">Visit Example</a>  
+I should use this to show info of each hotel  */
 export default function ManiPage() {
 
   

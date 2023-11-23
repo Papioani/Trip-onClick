@@ -7,6 +7,7 @@ import Planned from './pages/Planned';
 import WhereToComponent from './components/WhereToComponent';
 import ManiPage from './pages/ManiPage';
 import SpainPage from './pages/SpainPage'; 
+import NorwayPage from './pages/NorwayPage';
 
 
 
@@ -16,37 +17,44 @@ import SpainPage from './pages/SpainPage';
 
   return (
      <div> 
-     <div class="container text-left"></div>
-      <header className = "header"> 
-        <h1>Trιp OnClick .... Mαke a roαd trip without plαnning!</h1>
-      </header>  
+      
 
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" ></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="nav nav-underline">
-        <li class="nav-item">
-          <a class="nav-link" href="/Home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/planned" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Trips
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/mani/*">Mani</a></li>
-            <li><a class="dropdown-item" href="/spain/*">Spain</a></li>
-          </ul>
-        </li>
+      <a class="navbar-brand" ></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="nav nav-underline">
             <li class="nav-item">
-            <a class="nav-link" href="/planned">My trip</a>
-        </li>
+              <a class="nav-link" href="/Home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/where-to">Where to...</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/planned" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   Road trιps
+              </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="/mani/*">Mani</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/spain/*">Spain</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/norway/">Norway</a>
+            </li>
+          </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/planned">My trips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
       </ul>
     </div>
   </div>
@@ -57,16 +65,18 @@ import SpainPage from './pages/SpainPage';
         <br/>
         <NavLink to="/contact">Contact</NavLink>
         <br/>
-        <NavLink to="/planned">Trip</NavLink>  */}
+        <NavLink to="/planned">Trip</NavLink>  this isn´t bootstrap */}
      
         
          <Routes>
           <Route path="/*" element={<WhereToComponent/>}/> 
           <Route path="/Home/*" element={<Home/>}/>
+          <Route path="/where-to/*" element={<WhereToComponent/>}/>
           <Route path="contact" element={<Contact/>}/>
           <Route path="planned" element={<Planned/>}/> 
           <Route path="/mani/*" element={<ManiPage/>}/>
           <Route path="/spain/*" element={<SpainPage/>}/>
+          <Route path="/norway/" element={<NorwayPage/>}/>
        
          </Routes>
         
