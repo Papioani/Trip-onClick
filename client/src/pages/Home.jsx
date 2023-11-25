@@ -10,7 +10,7 @@ export default function Home() {
         <h1>Trιp OnClick .... Mαke a roαd trιp without plαnning!</h1>
        </header>  
       <VideoPlayerComponent/>
-     
+
          
     </div>
   )

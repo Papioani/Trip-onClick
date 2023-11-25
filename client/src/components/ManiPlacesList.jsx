@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import Planned from '../pages/Planned';
 
 
+
 /* !!!!! If hotels is updated from the parent component and passed down to ManiPlacesList, 
 you don't need to maintain its state internally within the component.!!!!!! */
 export default function ManiPlacesList({hotels}) {
@@ -22,6 +23,7 @@ const [nextId, setNextId] =useState(1)
 /* !!!!!!! useEffect is for data fetching, subscribing to events, or performing other side effects after component render.
  since I´m calculating randomHotel immediately when the component renders, there's no asynchronous operation 
  or side effect that requires the use of useEffect. !!!!!!!!!!*/
+
 /* useEffect(() => {
   
 }, []) */
@@ -65,6 +67,7 @@ console.log(randomHotel); */
       ) : (
         <p>No hotel selected</p>
       )}  */}
+      
 
 {/* only keeping the random selection function here */}
 function handleLike () {

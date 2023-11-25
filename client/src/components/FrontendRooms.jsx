@@ -46,6 +46,7 @@ Fetching data directly inside a function component without hooks can give errors
        /* } 
         setNames();
       } */
+
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
@@ -54,6 +55,7 @@ Fetching data directly inside a function component without hooks can give errors
   return (
     <div>
      <div>{console.log(hotels)}</div>
+     
       {/* <h2>FrontendRooms Component: hotels.latitude</h2> */}
       {/*  <p>Latitude: {hotels.length > 0 ? hotels.latitude : 'Loading...'}</p>
       <p>Longitude: {hotels.length > 0 ? hotels.longitude : 'Loading...'}</p>  */}

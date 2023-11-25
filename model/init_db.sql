@@ -3,7 +3,8 @@
 --
 
 SET foreign_key_checks = 0;
-DROP TABLE if exists ManiVisits;
+DROP TABLE if exists places;
+DROP TABLE if exists tests;
 SET foreign_key_checks = 1;
  
 --
@@ -17,6 +18,10 @@ CREATE TABLE places(
     PRIMARY KEY (id)
     );
 
+
+
+CREATE TABLE test(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY);
 --
 -- 
 --
