@@ -72,4 +72,27 @@ List of elements not used or to be ignored: _
 
 - Screenshot 2023 in images folder: not used yet
 - ManiPlacesOnscreen is not used
-- FetchApiBackend is not used 
+- FetchApiBackend is not used
+
+
+
+
+
+(((for Ioanna use: The error message suggests that you should first pull the changes from the remote repository to integrate them into your local repository before pushing your changes. Here are the steps you can follow:
+
+Pull Changes from the Remote Repository:
+bash
+Copy code
+git pull origin main
+Replace origin with the name of your remote (if it's different) and main with the branch you're working on (it could be main, master, or another branch name).
+
+Resolve any Conflicts (if there are any):
+When you pull changes, Git might detect conflicts if changes in the remote repository conflict with your local changes. You'll need to resolve these conflicts manually. Git will mark the conflicting sections in the affected files. Open these files, resolve the conflicts, and then stage the changes.
+
+Commit the Merged Changes:
+After resolving conflicts, add the resolved files and commit the changes:
+
+bash
+Copy code
+git add .
+git commit -m "Merged remote changes")))
