@@ -1,9 +1,32 @@
-# MVP-Project-
+# Trip onClick
 
-# Full Stack To Do App
+# About
+
+A full-stack app that streamlines trip planning into a simple click-and-go experience. The planning process is simplified by providing preset general routes as cards and enabling users to craft their own routes using simple click buttons. Each click randomly generates choices, eliminating the need for manual typing. Two more buttons allow users to choose between deleting the random choice or adding it to the final trip plan.
+
+A user-friendly 'myTrips' page with links allows users to complete the booking process.
+
+Frameworks used:
+
+> **React** for the user interface;
+
+> **Express** and **Node** for the server side;
+
+> **MySQL** for the database.
 
 In this repository, you will find a full stack app using React, Node/Express, Leaflet, React Leaflet, React Router, Framer Motion,React Player, Bootstrap, MySQL.
 
+React: for creating interactive and dynamic frontend components;
+Leaflet: for integrating maps and geographical features;
+React Leaflet: for incorporating maps into React components;
+React Router: for handling navigation and rendering different components based on the URL;
+Framer Motion: for smooth and visually appealing animations;
+React Player: for embedding and playing media files;
+Bootstrap: for styling and layout of the frontend components.
+Figma: for for designing interfaces for websites;
+
+an app that makes trip planning a click-and-go experience
+· Simplified the planning process by providing preset general routes as cards, enabling users to craft their own routes using simple click buttons on randomly generated choices, eliminating the need for manual typing.
 
 ## Setup
 
@@ -19,7 +42,6 @@ To install React Pleyer run `npm install react-player`
 
 To install Bootstrap run `npm install bootstrap`
 
-
 ([ probably no need to: Run `npm install` in the project folder to install dependencies related to Express (the server).
 
 `cd client` and run `npm install` install dependencies related to React (the client).)]
@@ -31,15 +53,15 @@ Create `.env` file in project directory and add
 ```
  DB_HOST=localhost
  DB_USER=root
- DB_NAME=ManiPlaces   
- DB_PASS=your password 
+ DB_NAME=ManiPlaces
+ DB_PASS=your password
 ```
 
-Run `mysql -u root` to the terminal  
+Run `mysql -u root` to the terminal
 
-([ No need to do this , probably:  Run `npm run migrate` in your **TERMINAL**, in the **project** folder (not your MySQL CLI! Open a new terminal window for this). This will create a table called 'items' in your database.
+([ No need to do this , probably: Run `npm run migrate` in your **TERMINAL**, in the **project** folder (not your MySQL CLI! Open a new terminal window for this). This will create a table called 'items' in your database.
 
-<!-- NPM RUN MIGRATE executes all the comments in the file INIT_DB.SQL!!!!!!!!!!!!!!!!!!!!!!!!!! --> ]) 
+<!-- NPM RUN MIGRATE executes all the comments in the file INIT_DB.SQL!!!!!!!!!!!!!!!!!!!!!!!!!! --> ])
 
 ### Run Your Development Servers
 
@@ -62,21 +84,18 @@ No requirements. Do whatever you want
 - [React Documentation](https://react.dev/)
 
 ## Notes
-_There are a few files and commented out lines that are useless. Ignore them. 
+
+_There are a few files and commented out lines that are useless. Ignore them.
 List of elements not used or to be ignored: _
-- places.js  since my mysql was not working. However, you can use it, if you want, since the tables of the database are populated with data!!
+
+- places.js since my mysql was not working. However, you can use it, if you want, since the tables of the database are populated with data!!
 - OldSleepFrontend is useless
 
 - I might have not imported `import 'bootstrap/dist/css/bootstrap.min.css';`now that I think about it. Probably I should have in app.js (?). And that is probably why the relevant code doesn´t work.
-  
 
 - Screenshot 2023 in images folder: not used yet
 - ManiPlacesOnscreen is not used
 - FetchApiBackend is not used
-
-
-
-
 
 (((for Ioanna use: The error message suggests that you should first pull the changes from the remote repository to integrate them into your local repository before pushing your changes. Here are the steps you can follow:
 
