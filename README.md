@@ -42,10 +42,6 @@ To install React Pleyer run `npm install react-player`
 
 To install Bootstrap run `npm install bootstrap`
 
-([ probably no need to: Run `npm install` in the project folder to install dependencies related to Express (the server).
-
-`cd client` and run `npm install` install dependencies related to React (the client).)]
-
 ### Database Prep
 
 Create `.env` file in project directory and add
@@ -57,11 +53,9 @@ Create `.env` file in project directory and add
  DB_PASS=your password
 ```
 
-Run `mysql -u root` to the terminal
+Run `npm run migrate` in your **TERMINAL**, in the **project** folder to create a table called 'items' in your database.
 
-([ No need to do this , probably: Run `npm run migrate` in your **TERMINAL**, in the **project** folder (not your MySQL CLI! Open a new terminal window for this). This will create a table called 'items' in your database.
-
-<!-- NPM RUN MIGRATE executes all the comments in the file INIT_DB.SQL!!!!!!!!!!!!!!!!!!!!!!!!!! --> ])
+<!-- NPM RUN MIGRATE executes all the comments in the file INIT_DB.SQL!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 ### Run Your Development Servers
 

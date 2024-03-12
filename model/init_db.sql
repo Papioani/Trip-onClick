@@ -1,24 +1,17 @@
---
--- Drop Tables
---
 
-SET foreign_key_checks = 0;
-DROP TABLE if exists places;
-DROP TABLE if exists tests;
-SET foreign_key_checks = 1;
- 
---
--- Create Tables
---
+
+
+DROP TABLE IF EXISTS places;
 
 CREATE TABLE places(
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(200) not null,
-    link VARCHAR(200) not null,
+    link VARCHAR(500) not null,
     PRIMARY KEY (id)
     );
 
 
+DROP TABLE if exists test;
 
 CREATE TABLE test(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY);
