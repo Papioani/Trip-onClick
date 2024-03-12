@@ -17,23 +17,22 @@ Frameworks used:
 In this repository, you will find a full stack app using React, Node/Express, Leaflet, React Leaflet, React Router, Framer Motion,React Player, Bootstrap, MySQL.
 
 React: for creating interactive and dynamic frontend components;
-Leaflet: for integrating maps and geographical features;
+
 React Leaflet: for incorporating maps into React components;
-React Router: for handling navigation and rendering different components based on the URL;
+
 Framer Motion: for smooth and visually appealing animations;
 React Player: for embedding and playing media files;
 Bootstrap: for styling and layout of the frontend components.
 Figma: for for designing interfaces for websites;
 
-an app that makes trip planning a click-and-go experience
-· Simplified the planning process by providing preset general routes as cards, enabling users to craft their own routes using simple click buttons on randomly generated choices, eliminating the need for manual typing.
-
 ## Setup
 
 ### Dependencies
 
+Leaflet: for integrating maps and geographical features;
 To install Leaflet and React Leaflet run `npm install leaflet react-leaflet`
 
+React Router: for handling navigation and rendering different components based on the URL;
 To install React Router run `npm install react-router-dom`
 
 To install Framer Motion run `npm install framer-motion`
