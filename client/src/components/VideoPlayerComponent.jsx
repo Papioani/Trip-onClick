@@ -25,7 +25,7 @@ function PlayerComponent() {
         height="auto"
       />
       <button type="button" id="enter-button ">
-        Your best road trιp is only clicks awaΥ
+        Your best road trιp only clicks awaΥ
       </button>
     </div>
   );
