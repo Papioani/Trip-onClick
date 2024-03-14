@@ -17,12 +17,12 @@ export default function TripsComponent() {
 
   useEffect(() => {
     /* By using useEffect, the state update for selectedImage based on trip will only trigger when trip changes, preventing an infinite loop caused by continuous state updates. */
-    if (trip === "Mani") {
-      setSelectedImage("Mani");
+    if (trip === "Norway") {
+      setSelectedImage("Norway");
     } else if (trip === "Spain") {
       setSelectedImage("Spain");
-    } else if (trip === "Norway") {
-      setSelectedImage("Norway");
+    } else if (trip === "Mani") {
+      setSelectedImage("Mani");
     }
   }, [trip]);
 
@@ -38,7 +38,8 @@ export default function TripsComponent() {
 
   return (
     <>
-      {/* Fragments are useful when you need to group multiple JSX elements without adding an extra container */}
+      {/* Fragments are useful when you need to group multiple JSX elements without adding an extra container,
+      wraps multiple JSX elements without adding an extra DOM node */}
       <div class="container text-center">
         <header className="specialHeader">
           <h2>Choose your road trip </h2>
