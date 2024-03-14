@@ -4,7 +4,7 @@ import "./App.css";
 import TripOnClick from "./pages/TripOnClick";
 import Contact from "./pages/Contact";
 import MyTrips from "./pages/MyTrips";
-import WhereToComponent from "./components/WhereToComponent";
+import TripsComponent from "./components/TripsComponent";
 import ManiPage from "./pages/ManiPage";
 import SpainPage from "./pages/SpainPage";
 import NorwayPage from "./pages/NorwayPage";
@@ -32,7 +32,7 @@ function App() {
             <ul class="nav nav-underline">
               <li class="nav-item">
                 <a class="nav-link" href="/where-to">
-                  Where to...
+                  Trips
                 </a>
               </li>
               <li class="nav-item dropdown">
@@ -81,7 +81,7 @@ function App() {
       <Routes>
         <Route path="/" element={<TripOnClick />} />
         <Route path="/TripOnClick/" element={<TripOnClick />} />
-        <Route path="/Where-to/" element={<WhereToComponent />} />
+        <Route path="/Where-to/" element={<TripsComponent />} />
         <Route path="Contact" element={<Contact />} />
         <Route path="MyTrips" element={<MyTrips />} />
         <Route path="/Mani/" element={<ManiPage />} />
