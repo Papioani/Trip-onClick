@@ -86,11 +86,15 @@ export default function TripsComponent() {
         <Link to={getImageLink()}>
           <img
             src={
-              selectedImage === "Spain"
-                ? Spain
-                : selectedImage === "Mani"
-                ? Mani4Image
-                : Norway
+              selectedImage === null ? (
+                <MapComponent />
+              ) : selectedImage === "Spain" ? (
+                Spain
+              ) : selectedImage === "Mani" ? (
+                Mani4Image
+              ) : (
+                Norway
+              )
             }
             className="figure-img img-fluid rounded"
             alt={selectedImage}
