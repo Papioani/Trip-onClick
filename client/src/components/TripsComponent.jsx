@@ -17,7 +17,9 @@ export default function TripsComponent() {
 
   useEffect(() => {
     /* By using useEffect, the state update for selectedImage based on trip will only trigger when trip changes, preventing an infinite loop caused by continuous state updates. */
-    if (trip === "Norway") {
+    if (trip === null) {
+      setSelectedImage(<MapComponent />);
+    } else if (trip === "Norway") {
       setSelectedImage("Norway");
     } else if (trip === "Spain") {
       setSelectedImage("Spain");
