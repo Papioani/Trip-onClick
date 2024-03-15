@@ -8,11 +8,24 @@
     clear: both;
   }
 
-.column {
+  .header {
+    background-color: lightblue;
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+  }
+
+  
+ .column { background-color: lightblue;
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+ }
+/* .column {
     background-color: rgb(32, 129, 98);
     float: left;
     width: 50%;
-  }
+  } */
 
   .column2 {
     background-color: white;
@@ -22,10 +35,14 @@
   }
 
   .column3 {
-    background-color: rgb(32, 129, 98);
+    background-color: lightblue;
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+   /*  background-color: rgb(32, 129, 98);
     float: right;
     padding: 20px;
-    width: 25%;
+    width: 25%; */
   } 
 
 /*   .column {

@@ -27,7 +27,9 @@ export default function TripsComponent() {
   }, [trip]);
 
   const getImageLink = () => {
-    if (selectedImage === "Spain") {
+    if (!selectedImage) {
+      return { MapComponent };
+    } else if (selectedImage === "Spain") {
       return "/spain";
     } else if (selectedImage === "Mani") {
       return "/mani";
@@ -66,11 +68,7 @@ export default function TripsComponent() {
               Spαin
             </button>
           </motion.div>
-          <motion.div
-            className="col-xs-3"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 1.1 }}
-          >
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
             <button
               class="btn btn-outline-success btn-lg"
               type="button"
@@ -79,25 +77,21 @@ export default function TripsComponent() {
               Norway
             </button>
           </motion.div>
-        </div>{" "}
+        </div>
         {/*  </div>{" "} */}
-        {/* <Link to={getImageLink()}>
+        <Link to={getImageLink()}>
           <img
             src={
-              selectedImage === "Spain" ? (
-                Spain
-              ) : selectedImage === "Mani" ? (
-                Mani4Image
-              ) : selectedImage === "Norway" ? (
-                Norway
-              ) : (
-                <MapComponent /> 
-              )
+              selectedImage === "Spain"
+                ? Spain
+                : selectedImage === "Mani"
+                ? Mani4Image
+                : Norway
             }
             className="figure-img img-fluid rounded"
             alt={selectedImage}
           />
-        </Link> */}
+        </Link>
       </div>
     </>
   );
