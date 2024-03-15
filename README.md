@@ -64,10 +64,6 @@ Run `npm run migrate` in your **TERMINAL**, in the **project** folder to create 
 - You can test your client app in `http://localhost:5173`
 - You can test your API in `http://localhost:4000/api`
 
-## Basic Requirements
-
-No requirements. Do whatever you want
-
 ## Resources
 
 - [MySQL Cheat Sheet](http://www.mysqltutorial.org/mysql-cheat-sheet.aspx)
