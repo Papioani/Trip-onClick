@@ -11,8 +11,11 @@ export default function TripsComponent() {
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
+  const [active, setActive] = useState(null);
+
   const handleClick = (location) => {
     setTrip(location);
+    setActive(true);
   };
 
   useEffect(() => {

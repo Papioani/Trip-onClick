@@ -14,7 +14,12 @@ Frameworks used:
 
 > **MySQL** for the database.
 
-In this repository, you will find a full stack app using React, Node/Express, Leaflet, React Leaflet, React Router, Framer Motion,React Player, Bootstrap, MySQL.
+# Client side
+
+In this repository, you will find a full stack app using React, Node/Express, Leaflet, React Leaflet, React ** Router, Framer Motion,React Player, Bootstrap, MySQL.
+**React Router** for the client side routing.
+**Material UI** as the React component library.
+**Vite\*\* as a local development server for providing better performance for the web application;
 
 React: for creating interactive and dynamic frontend components;
 
@@ -24,6 +29,12 @@ Framer Motion: for smooth and visually appealing animations;
 React Player: for embedding and playing media files;
 Bootstrap: for styling and layout of the frontend components.
 Figma: for for designing interfaces for websites;
+
+### DB Design
+
+_3 Tables with Many-to-Many Relationship among them_
+
+<!-- ![Fromageria DB Design](/database_visualization.png) -->
 
 ## Setup
 
