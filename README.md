@@ -1,10 +1,10 @@
 # Trip onClick
 
-# About
-
 A full-stack app that streamlines trip planning into a simple click-and-go experience. The planning process is simplified by providing preset general routes as cards and enabling users to craft their own routes using simple click buttons. Each click randomly generates choices, eliminating the need for manual typing. Two more buttons allow users to choose between deleting the random choice or adding it to the final trip plan.
 
 A user-friendly 'myTrips' page with links allows users to complete the booking process.
+
+# About the project
 
 Frameworks used:
 
@@ -14,12 +14,15 @@ Frameworks used:
 
 > **MySQL** for the database.
 
+The purpose of the webpage that makes trip planning a click-and-go experience. It displays a **20 products portfolio** and offers a shopping cart and checkout process to the customers. The project also aims to provide the Fromageria with a well organized and centralized database.
+
 # Client side
 
-In this repository, you will find a full stack app using React, Node/Express, Leaflet, React Leaflet, React ** Router, Framer Motion,React Player, Bootstrap, MySQL.
+In this repository, you will find a full stack app using React, Node/Express, Leaflet, React Leaflet, React Router, Framer Motion,React Player, Bootstrap, MySQL.
+
 **React Router** for the client side routing.
 **Material UI** as the React component library.
-**Vite\*\* as a local development server for providing better performance for the web application;
+**Vite** as a local development server for providing better performance for the web application;
 
 React: for creating interactive and dynamic frontend components;
 

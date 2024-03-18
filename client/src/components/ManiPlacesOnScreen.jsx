@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Planned from "../pages/MyTrips";
+import MyTrips from "../pages/MyTrips";
 
 export default function ManiPlacesOnScreen({ randomHotel }) {
   console.log(randomHotel);
@@ -45,7 +45,7 @@ export default function ManiPlacesOnScreen({ randomHotel }) {
         <p>No hotel selected</p>
       )}
 
-      <Planned favourites={favourites} />
+      <MyTrips favourites={favourites} />
     </div>
   );
 }
