@@ -97,7 +97,6 @@ List of elements not used or to be ignored: _
 - I might have not imported `import 'bootstrap/dist/css/bootstrap.min.css';`now that I think about it. Probably I should have in app.js (?). And that is probably why the relevant code doesn´t work.
 
 - Screenshot 2023 in images folder: not used yet
-- ManiPlacesOnscreen is not used
 - FetchApiBackend is not used
 
 (((for Ioanna use: The error message suggests that you should first pull the changes from the remote repository to integrate them into your local repository before pushing your changes. Here are the steps you can follow:

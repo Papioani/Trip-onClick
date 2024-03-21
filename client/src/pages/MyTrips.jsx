@@ -2,7 +2,7 @@ import React from "react";
 import RoadTrip from "../components/images/RoadTrip.png"; /* import the image from the folder */
 import "../components/MyTrips.css";
 
-export default function Planned({ favourites }) {
+export default function MyTrips({ favourites }) {
   console.log(favourites);
 
   return (
@@ -17,10 +17,7 @@ export default function Planned({ favourites }) {
         opacity: 0.6,
       }}
     >
-      <span className="text-span">Your onClick roαd trip ... so far</span>
-      {/*  Favourites: {favourites}  */}{" "}
-      {/* error when you're trying to directly render an object as 
-        a React child component, it IS NOT allowed in React */}
+      <span className="text-span">Your roαd trip ... so far</span>{" "}
       <ul>
         {Array.isArray(favourites) &&
           favourites.map((favourite, index) => (

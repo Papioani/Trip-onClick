@@ -49,7 +49,6 @@ export default function ManiPlacesList({ hotels }) {
               Latitude: {randomHotel.latitude} Longitude:{" "}
               {randomHotel.longitude} Name: {randomHotel.regionalName}
             </p>
-            {/* Include other properties you want to display */}
             <button onClick={handleLike}>like</button>
             <button onClick={handleNah}>nah</button>
           </div>

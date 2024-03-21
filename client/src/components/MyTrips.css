@@ -1,14 +1,15 @@
 .text-span {
-    background-color: green;
-    color: white;
-    font-size: 1em;
+    background-color: lightblue;
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
     padding: 5px 10px;
     position: absolute;
     top: 20px;
     left: 190px;
   }
 
-  .bg-image::before {
+   .bg-image::before {
     content: '';
     display: block;
     position: absolute;
@@ -18,7 +19,7 @@
     bottom: 0;
     background-size: cover;
     opacity: 0.7; 
-  }
+  } 
 
   .bg-image {
     height: 100vh;
