@@ -11,12 +11,6 @@ export default function SpainImagesComponent() {
         <img src={Spain} class="figure-img img-fluid rounded" />
       </Link>
 
-      {/*  {imageList.map((image) => (  //used {} to embed JavaScript  
-            <div key={image.id} className="image-box">
-              <img src={image.src} alt={image.name} />
-            </div>
-          ))}  */}
-
       <Routes>
         <Route path="/spain" element={<SpainPage />} />
       </Routes>

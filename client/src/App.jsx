@@ -12,13 +12,13 @@ import NorwayPage from "./pages/NorwayPage";
 function App() {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/TripOnClick">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/TripOnClick">
             Trιp onClick
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavDropdown"
@@ -26,18 +26,18 @@ function App() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="nav nav-underline">
-              <li class="nav-item">
-                <a class="nav-link" href="/where-to">
+          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul className="nav nav-underline">
+              <li className="nav-item">
+                <a className="nav-link" href="/where-to">
                   Trips
                 </a>
               </li>
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle"
                   href="/myTrips"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -45,31 +45,31 @@ function App() {
                 >
                   Road trιps
                 </a>
-                <ul class="dropdown-menu">
+                <ul className="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="/Mani/">
+                    <a className="dropdown-item" href="/Mani/">
                       Mani
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/Spain/">
+                    <a className="dropdown-item" href="/Spain/">
                       Spain
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/Norway/">
+                    <a className="dropdown-item" href="/Norway/">
                       Norway
                     </a>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/MyTrips">
+              <li className="nav-item">
+                <a className="nav-link" href="/MyTrips">
                   My trips
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/contact">
+              <li className="nav-item">
+                <a className="nav-link" href="/contact">
                   Contact
                 </a>
               </li>

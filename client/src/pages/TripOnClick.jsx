@@ -4,10 +4,9 @@ import VideoPlayerComponent from "../components/VideoPlayerComponent";
 
 export default function TripOnClick() {
   return (
-    <div>
-      <div class="container text-left"></div>
+    <div class="full-page">
       <header className="header">
-        <h1>No plan, no trip? ...clicK 🛼</h1>
+        <h1>No plan, no trip? ...clicK 🚗</h1>
       </header>
       <VideoPlayerComponent />
     </div>
