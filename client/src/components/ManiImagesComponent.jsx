@@ -8,7 +8,7 @@ import Mani6Image from "./images/Mani6.png";
 import { Link, Routes, Route } from "react-router-dom";
 import ImageSlider from "./ImageSlider";
 import ManiPage from "../pages/ManiPage";
-import "./ManiImageComponent.css";
+import "./ManiImagesComponent.css";
 
 export default function ManiImagesComponent() {
   let imageList = [

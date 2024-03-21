@@ -1,8 +1,0 @@
-.button-box{
-    width: 100px; /* Note: No quotes around numerical values */
-    height: 50px;
-    border: 1px solid black;
-    background-color: lightblue; /* Use hyphen (-) for multi-word properties */
-    border-radius: 5px;
-    cursor: pointer;
-}

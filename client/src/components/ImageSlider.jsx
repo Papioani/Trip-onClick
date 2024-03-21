@@ -25,6 +25,3 @@ const ImageSlider = ({ images }) => {
 };
 
 export default ImageSlider;
-
-/* this component is created to make the images in the TripsComponent slide
-it is imported to the ManiImagesComponent.jsx where the Mani photos are handled */
