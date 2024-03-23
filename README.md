@@ -66,38 +66,17 @@ Create `.env` file in project directory and add
  DB_PASS=your password
 ```
 
-Run `npm run migrate` in your **TERMINAL**, in the **project** folder to create a table called 'items' in your database.
-
-<!-- NPM RUN MIGRATE executes all the comments in the file INIT_DB.SQL!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+Run `npm run migrate` in your **TERMINAL**, in the **project** folder to create a table called 'TripOnClick' in your database.
 
 ### Run Your Development Servers
 
 - Run `npm start` in project directory to start the Express server on port 4000
 - `cd client` and run `npm run dev` to start client server in development mode with hot reloading in port 5173.
-- Client is configured so all API calls will be proxied to port 4000 for a smoother development experience. Yay!
-- You can test your client app in `http://localhost:5173`
-- You can test your API in `http://localhost:4000/api`
-
-## Resources
-
-- [MySQL Cheat Sheet](http://www.mysqltutorial.org/mysql-cheat-sheet.aspx)
-- [MySQL](https://dev.mysql.com/doc/refman/8.0/en/database-use.html)
-- [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-- [React Documentation](https://react.dev/)
+- Client is configured so all API calls will be proxied to port 4000 for a smoother development experience.
 
 ## Notes
 
-_There are a few files and commented out lines that are useless. Ignore them.
-List of elements not used or to be ignored: _
-
-- places.js since my mysql was not working. However, you can use it, if you want, since the tables of the database are populated with data!!
-- OldSleepFrontend is useless
-
-- I might have not imported `import 'bootstrap/dist/css/bootstrap.min.css';`now that I think about it. Probably I should have in app.js (?). And that is probably why the relevant code doesn´t work.
-
-- Screenshot 2023 in images folder: not used yet
-- FetchApiBackend is not used
+List of elements not used or to be ignored: \_
 
 (((for Ioanna use: The error message suggests that you should first pull the changes from the remote repository to integrate them into your local repository before pushing your changes. Here are the steps you can follow:
 

@@ -13,13 +13,13 @@ function FrontendHotelsFetchComponent() {
     PriceMin: "100",
     PriceMax: "200",
   };
-  // a state to store the parameters
+  // a state variable to store the parameters
   const [flightParameters, setFlightParameters] = useState(EMPTY_FORM);
-  // a state for the hotels
+  // a variable for the hotels
   const [results, setResults] = useState([]);
-  // a state for the errors
+  // a state variable for the errors
   const [error, setError] = useState("");
-  // a state for the loading
+  // a state variable for the loading
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     // Without useEffect, this code would be executed every time the component re-renders.
