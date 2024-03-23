@@ -62,7 +62,7 @@ Create `.env` file in project directory and add
 ```
  DB_HOST=localhost
  DB_USER=root
- DB_NAME=ManiPlaces
+ DB_NAME=TripOnClick
  DB_PASS=your password
 ```
 

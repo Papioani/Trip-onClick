@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SpainMapComponent from "./SpainMapComponent";
-import ManiPlacesList from "./ManiPlacesList";
+import ManiHotelFavourites from "./ManiHotelFavourites";
 
 function FrontendRooms() {
   const [hotels, setHotels] = useState([]);
@@ -38,7 +38,7 @@ function FrontendRooms() {
   return (
     <div>
       <div>{console.log(hotels)}</div>
-      <ManiPlacesList hotels={hotels} />
+      <ManiHotelFavourites hotels={hotels} />
     </div>
   );
 }

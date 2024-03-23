@@ -1,7 +1,7 @@
 import React from "react";
 import ManiImagesComponent from "../components/ManiImagesComponent";
 import MapComponent from "../components/MapComponent";
-import ManiPlacesList from "../components/ManiPlacesList";
+import ManiHotelFavourites from "../components/ManiHotelFavourites";
 import "../components/ManiPage.css";
 
 /* <Link> is specifically designed for client-side navigation within a React Router-managed application. It utilizes React Router's routing system to handle navigation without full page reloads.
@@ -56,7 +56,7 @@ export default function ManiPage() {
         <MapComponent />
       </div>
       <div class="container">
-        <ManiPlacesList />
+        <ManiHotelFavourites />
       </div>
     </div>
   );

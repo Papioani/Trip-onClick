@@ -1,5 +1,31 @@
 
 
+DROP TABLE IF EXISTS users; 
+
+CREATE TABLE users (
+	id INT NOT NULL AUTO_INCREMENT, 
+	username VARCHAR(255) NOT NULL, 
+	password VARCHAR(255) NOT NULL, 
+	PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS Mani_hotel_favourites;
+
+CREATE TABLE Mani_hotel_favourites (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  latitude VARCHAR(255),
+  longitude VARCHAR(255),
+  regionalName VARCHAR(255)
+);
+
+DROP TABLE IF EXISTS Spain_hotel_favourites;
+
+CREATE TABLE Spain_hotel_favourites (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  latitude VARCHAR(255),
+  longitude VARCHAR(255),
+  regionalName VARCHAR(255)
+);
 
 DROP TABLE IF EXISTS places;
 

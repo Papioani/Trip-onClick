@@ -45,7 +45,7 @@ router.post("/", async(req, res) => {
 
     try{
       await db(sql);
-      let result = await db("SELECT * FROM books");
+      let result = await db("SELECT * FROM places");
       res.status(201).send(result.data);
     }
     catch(err){
