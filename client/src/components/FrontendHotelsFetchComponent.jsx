@@ -2,9 +2,27 @@ import React, { useEffect, useState } from "react";
 import SpainMapComponent from "./SpainMapComponent";
 import ManiHotelFavourites from "./ManiHotelFavourites";
 
-function FrontendRooms() {
-  const [hotels, setHotels] = useState([]);
+function FrontendHotelsFetchComponent() {
+  // create a form to store the necessary parameters for the hotel search
+  const EMPTY_FORM = {
+    CheckIn: "",
+    CheckOut: "",
+    Adults: "",
+    Rooms: "",
+    Rating: "4",
+    PriceMin: "100",
+    PriceMax: "200",
+  };
+  // a state to store the parameters
+  const [flightParameters, setFlightParameters] = useState(EMPTY_FORM);
+  // a state for the hotels
+  const [results, setResults] = useState([]);
+  // a state for the errors
+  const [error, setError] = useState("");
+  // a state for the loading
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
+    // Without useEffect, this code would be executed every time the component re-renders.
     const options = {
       method: "GET",
       headers: {
@@ -43,4 +61,4 @@ function FrontendRooms() {
   );
 }
 
-export default FrontendRooms;
+export default FrontendHotelsFetchComponent;

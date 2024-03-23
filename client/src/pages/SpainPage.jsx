@@ -1,7 +1,7 @@
 import React from "react";
 import SpainImagesComponent from "../components/SpainImagesComponent";
 import MapComponent from "../components/MapComponent";
-import FrontendRooms from "../components/FrontendRooms";
+import FrontendHotelsFetchComponent from "../components/FrontendHotelsFetchComponent";
 
 export default function SpainPage() {
   return (
@@ -11,7 +11,7 @@ export default function SpainPage() {
           Welcome to Spain
           <div class="vstack gap-3">
             <SpainImagesComponent />
-            <FrontendRooms />
+            <FrontendHotelsFetchComponent />
             <MapComponent />
           </div>
         </div>
