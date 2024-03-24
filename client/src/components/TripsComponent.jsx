@@ -7,6 +7,19 @@ import { Link } from "react-router-dom";
 import "../components/TripsComponent.css";
 
 export default function TripsComponent() {
+  useEffect(() => {
+    // Set the background image when the component mounts
+    document.body.style.backgroundImage =
+      'url("https://images.unsplash.com/photo-1511028931355-082bb4781053?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")';
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+    // Cleanup function to reset the background when the component unmounts
+    return () => {
+      document.body.style.backgroundImage = "";
+      document.body.style.backgroundSize = "";
+      document.body.style.backgroundAttachment = "";
+    };
+  }, []);
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -37,9 +50,6 @@ export default function TripsComponent() {
       return "/norway";
     }
   };
-
-  const defaultImage =
-    "https://unsplash.com/photos/black-concrete-road-surrounded-by-brown-rocks-tMzCrBkM99Y";
 
   return (
     <>
@@ -84,9 +94,7 @@ export default function TripsComponent() {
                 ? Spain
                 : selectedImage === "Mani"
                 ? Mani4Image
-                : selectedImage === "Norway"
-                ? Norway
-                : defaultImage
+                : Norway
             }
             className="figure-img img-fluid rounded"
             alt={selectedImage}

@@ -86,15 +86,7 @@ function FrontendHotelsFetchComponent() {
       // Extract the airportCode from the nested structure
       /* const newAirportCode = data.data[0]?.airportCode || '';  */ /* The optional chaining (?.) is used to handle cases where data or data[0] might be null or undefined.
 || '':  if newAirportCode is undefined (due to optional chaining) or if the extracted airportCode is falsy, it will default to an empty string (''). */
-      let extractedGeoId;
-      if (
-        responseData.data[0]?.secondaryText === "Peloponnese, Greece" &&
-        responseData.data[0]?.geoId
-      ) {
-        extractedGeoId = responseData.data[0].geoId;
-      } else {
-        extractedGeoId = responseData.data[0]?.geoId;
-      }
+      const extractedGeoId = responseData.data[0]?.geoId;
       if (!extractedGeoId) {
         throw new Error("GeoId not found in response");
       }
@@ -150,7 +142,7 @@ function FrontendHotelsFetchComponent() {
           id="checkInDate"
           type="date"
           placeholder="YYYY-MM-DD"
-          value={hotelParameters.checkIn}
+          value={hotelParameters.CheckIn}
           onChange={handleChange}
         />
       </div>
@@ -160,10 +152,17 @@ function FrontendHotelsFetchComponent() {
           id="checkOutDate"
           type="date"
           placeholder="YYYY-MM-DD"
-          value={hotelParameters.checkOut}
+          value={hotelParameters.CheckOut}
           onChange={handleChange}
         />
       </div>
+      {results && (
+        <ManiHotelFavourites results={results} /* deleteCard={deleteCard} */ />
+      )}
+      {/* Error message if there's an error */}
+      {error && <p>{error}</p>}
+      {/* Loading indicator */}
+      {isLoading && <p>Loading...</p>}
     </div>
   );
 }
