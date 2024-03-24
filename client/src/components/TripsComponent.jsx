@@ -5,7 +5,6 @@ import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
 import { Link } from "react-router-dom";
 import "../components/TripsComponent.css";
-import Default from "./images/Default.png";
 
 export default function TripsComponent() {
   const [trip, setTrip] = useState(null);
@@ -38,6 +37,9 @@ export default function TripsComponent() {
       return "/norway";
     }
   };
+
+  const defaultImage =
+    "https://unsplash.com/photos/black-concrete-road-surrounded-by-brown-rocks-tMzCrBkM99Y";
 
   return (
     <>
@@ -84,7 +86,7 @@ export default function TripsComponent() {
                 ? Mani4Image
                 : selectedImage === "Norway"
                 ? Norway
-                : Default
+                : defaultImage
             }
             className="figure-img img-fluid rounded"
             alt={selectedImage}

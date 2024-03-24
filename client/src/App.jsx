@@ -85,7 +85,7 @@ function App() {
         <Route path="Contact" element={<Contact />} />
         <Route path="MyTrips" element={<MyTrips />} />
         <Route path="/Mani/" element={<ManiPage />} />
-        <Route path="/Spain/" element={<SpainPage />} />
+        <Route path="/Spain/*" element={<SpainPage />} />
         <Route path="/Norway/" element={<NorwayPage />} />
       </Routes>
     </div>
