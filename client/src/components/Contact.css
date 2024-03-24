@@ -1,5 +1,5 @@
- contact-container .container {
-    background-color: lightblue;
+  .container {
+    
     font-style: oblique;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
@@ -15,6 +15,17 @@
     color: black;
 }
 
+.form-label {
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    width: 50%;
+    padding: 10px;
+  }
+
+ /*  .form-control{
+    border-bottom: 2px solid red;
+  } */
 
  
 

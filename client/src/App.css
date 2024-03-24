@@ -3,24 +3,28 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-
-  .nav-link {
-    color: black
   }
+
+ 
+.nav-link {
+  font-weight: bold; /* Increase the thickness of the text */
+  font-family: Arial, sans-serif;
+  color: white;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.container-fluid {
+background-color: lightblue;
+color: white;
+/* border-radius: 25px; */
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.navbar-brand {
+  background-color: red;
+  font-size: large; 
+  color: white;
+  border-radius: 30px; 
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+
 
 @keyframes logo-spin {
   from {

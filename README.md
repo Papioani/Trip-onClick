@@ -74,11 +74,9 @@ Run `npm run migrate` in your **TERMINAL**, in the **project** folder to create 
 - `cd client` and run `npm run dev` to start client server in development mode with hot reloading in port 5173.
 - Client is configured so all API calls will be proxied to port 4000 for a smoother development experience.
 
-## Notes
+<!-- ## Notes -->
 
-List of elements not used or to be ignored: \_
-
-(((for Ioanna use: The error message suggests that you should first pull the changes from the remote repository to integrate them into your local repository before pushing your changes. Here are the steps you can follow:
+<!-- (((for Ioanna use: The error message suggests that you should first pull the changes from the remote repository to integrate them into your local repository before pushing your changes. Here are the steps you can follow:
 
 Pull Changes from the Remote Repository:
 bash
@@ -95,4 +93,4 @@ After resolving conflicts, add the resolved files and commit the changes:
 bash
 Copy code
 git add .
-git commit -m "Merged remote changes")))
+git commit -m "Merged remote changes"))) -->
