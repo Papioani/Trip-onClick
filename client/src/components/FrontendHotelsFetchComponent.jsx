@@ -13,7 +13,7 @@ function FrontendHotelsFetchComponent() {
   // a state variable to store the parameters
   const [hotelParameters, setHotelParameters] = useState(EMPTY_FORM);
   // // a state variable for the destinations
-  const [destination, setDestination] = useState("");
+  const [destinationGeoId, setDestinationGeoId] = useState("");
   // a variable for the results
   const [results, setResults] = useState([]);
   // a state variable for the errors
@@ -37,27 +37,17 @@ function FrontendHotelsFetchComponent() {
     };
 
     try {
-      // Wait for both fetch operations to complete
-      const [searchedAirportCodeOrigin, searchedAirportCodeDestination] =
-        await Promise.all([
-          searchAirport(originUrl, "cityOrigin", options),
-          searchAirport(destinationUrl, "cityDestination", options),
-        ]);
+      // Wait for fetch operation to complete
+      const destinationGeoId = await searchGeoId(
+        url,
+        "destinationGeoId",
+        options
+      );
+
       console.log(options);
-      console.log("Origin Airport Code:", searchedAirportCodeOrigin);
-      console.log("Destination Airport Code:", searchedAirportCodeDestination);
-      /// !!!!!!!!!!!!!!!!!!!!!!
-      const ticketUrl = `https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchFlights?sourceAirportCode=${searchedAirportCodeOrigin}&destinationAirportCode=${searchedAirportCodeDestination}&date=${
-        flightParameters.outboundDate
-      }&itineraryType=${
-        flightParameters.itineraryType
-      }&sortOrder=DURATION&numAdults=${
-        flightParameters.numAdults
-      }&numSeniors=0&classOfService=ECONOMY${
-        flightParameters.itineraryType === "ROUND_TRIP"
-          ? `&returnDate=${flightParameters.returnDate}`
-          : ""
-      }&pageNumber=1&currencyCode=USD`; ///   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      console.log("Destination:", searchGeoId);
+
+      const hotelUrl = `https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=${destinationGeoId}&checkIn=${hotelParameters.checkIn}&checkOut=${hotelParameters.checkOut}&pageNumber=1&adults=${hotelParameters.Adults}&rooms=${hotelParameters.Rooms}&currencyCode=Eur&rating=4&priceMin=120&priceMax=200`;
       // Perform the new fetch using the obtained airport codes
       console.log(ticketUrl);
       const ticketResponse = await fetch(ticketUrl, options);
