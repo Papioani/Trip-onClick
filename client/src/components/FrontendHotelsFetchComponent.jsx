@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
 
 function FrontendHotelsFetchComponent() {
   // create a form to store the parameters for the hotel search
@@ -134,9 +135,22 @@ function FrontendHotelsFetchComponent() {
       });
   }, []); */
 
-  const [count, setCount] = useState(0);
-  const AdultHandleClick = () => {
-    setCount(count + 1);
+  const [adultCount, setAdultCount] = useState(0);
+  const [roomCount, setRoomCount] = useState(0);
+
+  const adultHandleClick = () => {
+    setAdultCount(adultCount + 1);
+  };
+
+  const roomHandleClick = () => {
+    setRoomCount(roomCount + 1);
+  };
+  const deleteAdultHandleClick = () => {
+    setAdultCount(adultCount - 1);
+  };
+
+  const deleteRoomHandleClick = () => {
+    setRoomCount(roomCount - 1);
   };
 
   return (
@@ -164,10 +178,22 @@ function FrontendHotelsFetchComponent() {
         />
       </div>
       <br />
-      <Button variant="contained" color="success" onClick={AdultHandleClick}>
-        Adults: {count}
-      </Button>
-
+      <div>
+        <Button variant="contained" color="success" onClick={adultHandleClick}>
+          Adults: {adultCount}
+        </Button>
+        <IconButton aria-label="delete" onClick={deleteAdultHandleClick}>
+          <DeleteIcon />
+        </IconButton>
+      </div>
+      <div>
+        <Button variant="contained" color="success" onClick={roomHandleClick}>
+          Rooms: {roomCount}
+        </Button>
+        <IconButton aria-label="delete" onClick={deleteRoomHandleClick}>
+          <DeleteIcon />
+        </IconButton>
+      </div>
       {results && (
         <ManiHotelFavourites results={results} /* deleteCard={deleteCard} */ />
       )}
