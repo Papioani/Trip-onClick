@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
 
-function FrontendHotelsFetchComponent() {
+function HotelsFetchComponent() {
   // // a state variable for the destinations
   const [destination, setDestination] = useState("");
   // a variable for the results
@@ -137,4 +137,4 @@ function FrontendHotelsFetchComponent() {
   );
 }
 
-export default FrontendHotelsFetchComponent;
+export default HotelsFetchComponent;

@@ -79,8 +79,13 @@ function TripParameters() {
           <DeleteIcon />
         </IconButton>
       </div>
-      <button type="submit">Search</button>
+      <button type="submit">You best road trip only clicks awaY</button>
       {/*  </form> */}
+      <HotelsFetchComponent
+        hotelParameters={hotelParameters}
+        adultCount={adultCount}
+        roomCount={roomCount}
+      />
     </>
   );
 }

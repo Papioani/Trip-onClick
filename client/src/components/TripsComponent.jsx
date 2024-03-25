@@ -55,7 +55,7 @@ export default function TripsComponent() {
     <>
       <div className="container">
         <header className="header">
-          <h2>Choose your road trip </h2>
+          <h2>Step 1. Choose your road trip </h2>
         </header>
         <div class="row row-cols-auto">
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
