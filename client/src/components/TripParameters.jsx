@@ -3,13 +3,11 @@ import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 
-function Requirements() {
+function TripParameters() {
   // create a form to store the parameters for the hotel search
   const EMPTY_FORM = {
-    CheckIn: "",
-    CheckOut: "",
-    Adults: "",
-    Rooms: "",
+    checkIn: "",
+    checkOut: "",
   };
   // a state variable to store the parameters
   const [hotelParameters, setHotelParameters] = useState(EMPTY_FORM);
@@ -18,7 +16,10 @@ function Requirements() {
 
   const handleChange = (event) => {
     const { id, value } = event.target;
-    setHotelParameters({ ...hotelParameters, [id]: value });
+    setHotelParameters({
+      ...hotelParameters,
+      [id]: value,
+    });
   };
 
   const adultHandleClick = () => {
@@ -36,25 +37,28 @@ function Requirements() {
     setRoomCount(roomCount - 1);
   };
 
+  console.log("I am hotelParameters:", hotelParameters);
+
   return (
     <>
+      {/*   <form onSubmit={handleSubmit}> */}
       <div>
         <label htmlFor="checkIn">Check In</label>
         <input
-          id="checkInDate"
+          id="checkIn"
           type="date"
           placeholder="YYYY-MM-DD"
-          value={hotelParameters.CheckIn}
+          value={hotelParameters.checkIn}
           onChange={handleChange}
         />
       </div>
       <div>
         <label htmlFor="checkOut">Check Out</label>
         <input
-          id="checkOutDate"
+          id="checkOut"
           type="date"
           placeholder="YYYY-MM-DD"
-          value={hotelParameters.CheckOut}
+          value={hotelParameters.checkOut}
           onChange={handleChange}
         />
       </div>
@@ -75,8 +79,10 @@ function Requirements() {
           <DeleteIcon />
         </IconButton>
       </div>
+      <button type="submit">Search</button>
+      {/*  </form> */}
     </>
   );
 }
 
-export default Requirements;
+export default TripParameters;
