@@ -94,7 +94,9 @@ export default function TripsComponent() {
                 ? Spain
                 : selectedImage === "Mani"
                 ? Mani4Image
-                : Norway
+                : selectedImage === "Norway"
+                ? Norway
+                : null
             }
             className="figure-img img-fluid rounded"
             alt={selectedImage}

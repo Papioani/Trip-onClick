@@ -35,7 +35,7 @@ function FrontendHotelsFetchComponent() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "314a76c0f8mshba931602e18bfcfp1f7807jsn79a0981b285a",
+        "X-RapidAPI-Key": "693a320c7amshf8a3f0479327cbap12dca4jsn254f4f98016a",
         "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com",
       },
     };
@@ -156,6 +156,10 @@ function FrontendHotelsFetchComponent() {
           onChange={handleChange}
         />
       </div>
+      <br />
+      <Button variant="contained" color="success">
+        Adults
+      </Button>
       {results && (
         <ManiHotelFavourites results={results} /* deleteCard={deleteCard} */ />
       )}
