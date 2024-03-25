@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
+import Button from "@mui/material/Button";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function FrontendHotelsFetchComponent() {
   // create a form to store the parameters for the hotel search
@@ -132,6 +134,11 @@ function FrontendHotelsFetchComponent() {
       });
   }, []); */
 
+  const [count, setCount] = useState(0);
+  const AdultHandleClick = () => {
+    setCount(count + 1);
+  };
+
   return (
     <div className="buttons">
       <button onClick={() => handleClick("Kardamyli")}>Kardamyli sleep</button>
@@ -157,9 +164,10 @@ function FrontendHotelsFetchComponent() {
         />
       </div>
       <br />
-      <Button variant="contained" color="success">
-        Adults
+      <Button variant="contained" color="success" onClick={AdultHandleClick}>
+        Adults: {count}
       </Button>
+
       {results && (
         <ManiHotelFavourites results={results} /* deleteCard={deleteCard} */ />
       )}

@@ -25,7 +25,8 @@ React Leaflet: for incorporating maps into React components;
 Framer Motion: for smooth and visually appealing animations;
 React Player: for embedding and playing media files;
 Bootstrap: for styling and layout of the frontend components.
-Figma: for for designing interfaces for websites;
+Figma: for designing interfaces for websites;
+Material-UI (MUI): for building responsive user interfaces with ready-to-use components
 
 ### DB Design
 
@@ -46,6 +47,10 @@ To install Framer Motion run `npm install framer-motion`
 To install React Pleyer run `npm install react-player`
 
 To install Bootstrap run `npm install bootstrap`
+
+To install Material-UI and its core dependencies run `npm install @mui/material @emotion/react @emotion/styled`
+
+To install the Material-UI icons package run `npm install @mui/icons-material`
 
 ### Database Prep
 
