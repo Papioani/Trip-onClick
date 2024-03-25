@@ -1,21 +1,26 @@
 .full-page {
-  height: 100vh; 
-  width: 90vw; 
-  overflow: hidden; 
-  margin: 0; 
-  padding: 0; 
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-/* .header{
-  border: 4px red;
-} */
+.split-screen {
+  display: flex;
+  height: calc(100% - 4rem); /* Adjust for header height */
+}
+
+.left-panel,
+.right-panel {
+  flex: 1;
+}
+
   .h1 {
     background-color: white;
     padding: 10px;
     font-style: oblique;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
-    border-radius: 30px; 
+    /* border-radius: 30px; */ 
   }
 
   .click-word{

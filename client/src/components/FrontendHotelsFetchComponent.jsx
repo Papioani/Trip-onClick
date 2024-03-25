@@ -1,19 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
-import Button from "@mui/material/Button";
-import DeleteIcon from "@mui/icons-material/Delete";
-import IconButton from "@mui/material/IconButton";
 
 function FrontendHotelsFetchComponent() {
-  // create a form to store the parameters for the hotel search
-  const EMPTY_FORM = {
-    CheckIn: "",
-    CheckOut: "",
-    Adults: "",
-    Rooms: "",
-  };
-  // a state variable to store the parameters
-  const [hotelParameters, setHotelParameters] = useState(EMPTY_FORM);
   // // a state variable for the destinations
   const [destination, setDestination] = useState("");
   // a variable for the results
@@ -22,11 +10,6 @@ function FrontendHotelsFetchComponent() {
   const [error, setError] = useState("");
   // a state variable for the loading
   const [isLoading, setIsLoading] = useState(false);
-
-  const handleChange = (event) => {
-    const { id, value } = event.target;
-    setHotelParameters({ ...hotelParameters, [id]: value });
-  };
 
   const handleClick = async (destination) => {
     setIsLoading(true);
