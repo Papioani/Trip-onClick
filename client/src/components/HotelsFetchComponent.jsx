@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
 
-function HotelsFetchComponent() {
+function HotelsFetchComponent({
+  hotelParameters,
+  setHotelParameters,
+  adultCount,
+  setAdultCount,
+  roomCount,
+  setRoomCount,
+}) {
   // // a state variable for the destinations
   const [destination, setDestination] = useState("");
   // a variable for the results

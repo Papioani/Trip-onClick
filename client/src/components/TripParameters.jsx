@@ -89,6 +89,14 @@ function TripParameters() {
         adultCount={adultCount}
         roomCount={roomCount}
       /> */}
+      <HotelsFetchComponent
+        hotelParameters={hotelParameters}
+        setHotelParameters={setHotelParameters}
+        adultCount={adultCount}
+        setAdultCount={setAdultCount}
+        roomCount={roomCount}
+        setRoomCount={setRoomCount}
+      />
     </>
   );
 }
