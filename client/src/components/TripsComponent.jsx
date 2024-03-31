@@ -4,7 +4,7 @@ import Mani4Image from "./images/Mani4.png";
 import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
 import { Link } from "react-router-dom";
-import "../components/TripsComponent.css";
+import "../../styles/TripsComponent.css";
 
 export default function TripsComponent() {
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "../components/MapComponent.css";
+import "../../styles/MapComponent.css";
 import hotelsjson from "../data/hotels.json";
 
 export default function MapComponent() {

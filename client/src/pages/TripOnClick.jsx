@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import "../components/TripOnClick.css";
+import "../../styles/TripOnClick.css";
 import VideoPlayerComponent from "../components/VideoPlayerComponent";
 import TripParameters from "../components/TripParameters";
 

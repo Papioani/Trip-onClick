@@ -1,6 +1,6 @@
 import React from "react";
 import RoadTrip from "../components/images/RoadTrip.png"; /* import the image from the folder */
-import "../components/MyTrips.css";
+import "../../styles/MyTrips.css";
 
 export default function MyTrips({ favourites }) {
   console.log(favourites);

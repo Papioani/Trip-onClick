@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
+import HotelsFetchComponent from "./HotelsFetchComponent";
 
 function TripParameters() {
-  // create a form to store the parameters for the hotel search
+  // create a form to store the check in , check out parameters for the search
   const EMPTY_FORM = {
     checkIn: "",
     checkOut: "",
   };
   // a state variable to store the parameters
   const [hotelParameters, setHotelParameters] = useState(EMPTY_FORM);
+  // a state variable for the number of travellers
   const [adultCount, setAdultCount] = useState(0);
+  // a state variable for the number of rooms
   const [roomCount, setRoomCount] = useState(0);
 
   const handleChange = (event) => {
@@ -81,11 +84,11 @@ function TripParameters() {
       </div>
       <button type="submit">You best road trip only clicks awaY</button>
       {/*  </form> */}
-      <HotelsFetchComponent
+      {/*  <HotelsFetchComponent
         hotelParameters={hotelParameters}
         adultCount={adultCount}
         roomCount={roomCount}
-      />
+      /> */}
     </>
   );
 }
