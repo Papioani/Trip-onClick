@@ -19,16 +19,18 @@
     padding: 10px;
     font-style: oblique;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: black;
+    color: white;
   }
 
   .click-word{
     background-color: lightblue;
-    font-style: oblique;
-    font-weight: bold; 
-    font-family: Arial, sans-serif;
-    color: orange;
-    border-radius: 30px;
+    /* font-style: oblique;
+    font-weight: bold; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: orange;
+    color: black;
+    border-radius: 30px; 
+    
   }
 
 

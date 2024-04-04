@@ -44,7 +44,7 @@ function TripParameters() {
 
   return (
     <>
-      {/*   <form onSubmit={handleSubmit}> */}
+      {/*  <form onSubmit={handleSubmit}> */}
       <div>
         <label htmlFor="checkIn">Check In</label>
         <input
@@ -82,21 +82,22 @@ function TripParameters() {
           <DeleteIcon />
         </IconButton>
       </div>
-      <button type="submit">You best road trip only clicks awaY</button>
+      <button type="submit">Your best road trip only clicks awaY</button>
       {/*  </form> */}
       {/*  <HotelsFetchComponent
         hotelParameters={hotelParameters}
         adultCount={adultCount}
         roomCount={roomCount}
       /> */}
-      <HotelsFetchComponent
-        hotelParameters={hotelParameters}
-        setHotelParameters={setHotelParameters}
-        adultCount={adultCount}
-        setAdultCount={setAdultCount}
-        roomCount={roomCount}
-        setRoomCount={setRoomCount}
-      />
+      {hotelParameters.checkIn && hotelParameters.checkOut && (
+        <HotelsFetchComponent
+          hotelParameters={hotelParameters}
+          setHotelParameters={setHotelParameters}
+          adultCount={adultCount}
+          roomCount={roomCount}
+        />
+      )}
+      ;
     </>
   );
 }

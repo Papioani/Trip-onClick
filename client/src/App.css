@@ -20,9 +20,10 @@ border-radius: 25px;
 
 .navbar-brand {
   background-color: orange;
-  font-size: large; 
-  color: white;
-  border-radius: 30px; 
+  color: black;
+  border-radius: 40px; 
+  font-family: Georgia, serif;
+  font-size: 40px;
 }
 
 

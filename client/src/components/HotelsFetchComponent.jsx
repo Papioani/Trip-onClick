@@ -20,7 +20,6 @@ function HotelsFetchComponent({
 
   const handleClick = async (destination) => {
     setIsLoading(true);
-    setHotelParameters(EMPTY_FORM);
     setDestination(destination);
     setResults([]);
     setError("");
@@ -44,7 +43,7 @@ function HotelsFetchComponent({
       console.log(options);
       console.log("Destination:", searchGeoId);
 
-      const hotelUrl = `https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=${destinationGeoId}&checkIn=${hotelParameters.checkIn}&checkOut=${hotelParameters.checkOut}&pageNumber=1&adults=${hotelParameters.Adults}&rooms=${hotelParameters.Rooms}&currencyCode=Eur&rating=4&priceMin=120&priceMax=200`;
+      const hotelUrl = `https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=${destinationGeoId}&checkIn=${hotelParameters.checkIn}&checkOut=${hotelParameters.checkOut}&pageNumber=1&adults=${adultCount}&rooms=${roomCount}&currencyCode=Eur&rating=4&priceMin=120&priceMax=200`;
       // Perform the new fetch using the obtained airport codes
       console.log(hotelUrl);
       const hotelResponse = await fetch(hotelUrl, options);
