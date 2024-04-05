@@ -1,3 +1,27 @@
 .parameters-container {
-    flex: 1;
+   
+    position: relative;
 }
+
+  
+.adults-container{
+    position: relative;
+    top: 30%;
+}
+
+.rooms-container{
+    position: relative;
+    top:30%;
+}
+
+.submit-wrapper {
+    position: relative;
+    transition-property: background-color, color;
+    transition-duration: 0.4s;
+    top:30%;
+  }
+  
+  .submit-wrapper:hover {
+    background-color: orange !important; 
+    color: white !important;
+  }

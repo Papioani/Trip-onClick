@@ -18,6 +18,8 @@ function HotelsFetchComponent({
   // a state variable for the loading
   const [isLoading, setIsLoading] = useState(false);
 
+  const apiKey = process.env.REACT_APP_API_KEY;
+
   const handleClick = async (destination) => {
     setIsLoading(true);
     setDestination(destination);
@@ -27,7 +29,7 @@ function HotelsFetchComponent({
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "693a320c7amshf8a3f0479327cbap12dca4jsn254f4f98016a",
+        "X-RapidAPI-Key": apiKey,
         "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com",
       },
     };
@@ -97,7 +99,7 @@ function HotelsFetchComponent({
   /* const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "693a320c7amshf8a3f0479327cbap12dca4jsn254f4f98016a",
+        "X-RapidAPI-Key": apiKey,
         "X-RapidAPI-Host": "hotels4.p.rapidapi.com",
       },
     };

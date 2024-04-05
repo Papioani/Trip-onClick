@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
-import HotelsFetchComponent from "./HotelsFetchComponent";
 
 function TripParameters() {
+  let navigate =
+    useNavigate(); /* With useNavigate, you can programmatically navigate to different URLs, go back and forward in the browser history, replace the current URL, and access other properties related to navigation. */
   // create a form to store the check in , check out parameters for the search
   const EMPTY_FORM = {
     checkIn: "",
@@ -40,11 +42,21 @@ function TripParameters() {
     setRoomCount(roomCount - 1);
   };
 
+  const handleClick = () => {
+    // Navigate to another page and pass props
+    navigate("/Where-to/", {
+      hotelParameters: { hotelParameters },
+      adultCount: { adultCount },
+      roomCount: { roomCount },
+      // Add other props as needed
+    });
+  };
+
   console.log("I am hotelParameters:", hotelParameters);
 
   return (
     <>
-      {/*  <form onSubmit={handleSubmit}> */}
+      {/* Using an <input> element without being wrapped in a <form> tag is perfectly fine, especially when you're not submitting a form. In your case, where you're using it to capture a date for parameters, it's appropriate to use it without a <form> tag. */}
       <div className="parameters-container">
         <label htmlFor="checkIn">Check In</label>
         <input
@@ -65,7 +77,7 @@ function TripParameters() {
         />
       </div>
       <br />
-      <div>
+      <div className="adults-container">
         <Button variant="contained" color="success" onClick={adultHandleClick}>
           Adults: {adultCount}
         </Button>
@@ -73,7 +85,7 @@ function TripParameters() {
           <DeleteIcon />
         </IconButton>
       </div>
-      <div>
+      <div className="rooms-container">
         <Button variant="contained" color="success" onClick={roomHandleClick}>
           Rooms: {roomCount}
         </Button>
@@ -81,22 +93,11 @@ function TripParameters() {
           <DeleteIcon />
         </IconButton>
       </div>
-      <button type="submit">Your best road trip only clicks awaY</button>
-      {/*  </form> */}
-      {/*  <HotelsFetchComponent
-        hotelParameters={hotelParameters}
-        adultCount={adultCount}
-        roomCount={roomCount}
-      /> */}
-      {/*  {hotelParameters.checkIn && hotelParameters.checkOut && (
-        <HotelsFetchComponent
-          hotelParameters={hotelParameters}
-          setHotelParameters={setHotelParameters}
-          adultCount={adultCount}
-          roomCount={roomCount}
-        />
-      )} */}
-      ;
+
+      <button onClick={handleClick}>
+        {/* In React, you should avoid using inline event handlers like onclick and instead use event handlers provided by React.  */}
+        Your best road trip only clicks away
+      </button>
     </>
   );
 }
