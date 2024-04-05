@@ -78,7 +78,11 @@ function TripParameters() {
       </div>
       <br />
       <div className="adults-container">
-        <Button variant="contained" color="success" onClick={adultHandleClick}>
+        <Button
+          variant="contained"
+          style={{ backgroundColor: "#2eb872", color: "white" }}
+          onClick={adultHandleClick}
+        >
           Adults: {adultCount}
         </Button>
         <IconButton aria-label="delete" onClick={deleteAdultHandleClick}>
@@ -86,7 +90,11 @@ function TripParameters() {
         </IconButton>
       </div>
       <div className="rooms-container">
-        <Button variant="contained" color="success" onClick={roomHandleClick}>
+        <Button
+          variant="contained"
+          style={{ backgroundColor: "#2eb872", color: "white" }}
+          onClick={roomHandleClick}
+        >
           Rooms: {roomCount}
         </Button>
         <IconButton aria-label="delete" onClick={deleteRoomHandleClick}>

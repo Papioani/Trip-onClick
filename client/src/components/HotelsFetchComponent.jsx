@@ -9,7 +9,7 @@ function HotelsFetchComponent({
   roomCount,
   setRoomCount,
 }) {
-  // // a state variable for the destinations
+  // // a state variable to store the destinations
   const [destination, setDestination] = useState("");
   // a variable for the results
   const [results, setResults] = useState([]);
@@ -18,9 +18,11 @@ function HotelsFetchComponent({
   // a state variable for the loading
   const [isLoading, setIsLoading] = useState(false);
 
+  // extracting the api key from the.env file
   const apiKey = process.env.REACT_APP_API_KEY;
 
   const handleClick = async (destination) => {
+    // an async function called handleClick
     setIsLoading(true);
     setDestination(destination);
     setResults([]);
