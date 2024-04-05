@@ -21,3 +21,12 @@
     padding: 0; 
 }   */
 
+.btn.btn-outline-success.btn-lg {
+    background-color: orange;
+    color: white; /* Optional: Change text color to contrast */
+  }
+  
+  .btn.btn-outline-success.btn-lg:hover {
+    background-color: #8ea5eb; /* Optional: Change color on hover */
+  }
+
