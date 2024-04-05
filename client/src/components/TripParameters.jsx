@@ -45,7 +45,7 @@ function TripParameters() {
   return (
     <>
       {/*  <form onSubmit={handleSubmit}> */}
-      <div>
+      <div className="parameters-container">
         <label htmlFor="checkIn">Check In</label>
         <input
           id="checkIn"
@@ -54,8 +54,7 @@ function TripParameters() {
           value={hotelParameters.checkIn}
           onChange={handleChange}
         />
-      </div>
-      <div>
+
         <label htmlFor="checkOut">Check Out</label>
         <input
           id="checkOut"
@@ -89,14 +88,14 @@ function TripParameters() {
         adultCount={adultCount}
         roomCount={roomCount}
       /> */}
-      {hotelParameters.checkIn && hotelParameters.checkOut && (
+      {/*  {hotelParameters.checkIn && hotelParameters.checkOut && (
         <HotelsFetchComponent
           hotelParameters={hotelParameters}
           setHotelParameters={setHotelParameters}
           adultCount={adultCount}
           roomCount={roomCount}
         />
-      )}
+      )} */}
       ;
     </>
   );

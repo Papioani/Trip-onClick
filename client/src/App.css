@@ -7,14 +7,18 @@
 
  
 .nav-link {
-  font-weight: bold; /* Increase the thickness of the text */
+  font-weight: bold; 
   font-family: Arial, sans-serif;
   color: white;
 }
 
+.nav-link:hover {
+  color: lightblue;
+}
+
 .container-fluid {
-background-color: lightblue;
-color: white;
+background-color: black;
+color: grey;
 border-radius: 25px;
 }
 

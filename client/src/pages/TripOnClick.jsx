@@ -21,17 +21,17 @@ export default function TripOnClick() {
 
   return (
     <div className="full-page">
-      <header className="header">
-        <h1 className="h1">
-          No plan, no trip? <span className="click-word">...clicK</span>
-        </h1>
-      </header>
       <div className="split-screen">
         <div className="left-panel">
           <VideoPlayerComponent />
         </div>
         <div className="right-panel">
-          <TripParameters />
+          <h1 className="h1">
+            No plan, no trip? <span className="click-word">...clicK</span>
+          </h1>
+          <div className="wrapper">
+            <TripParameters />
+          </div>
         </div>
       </div>
     </div>

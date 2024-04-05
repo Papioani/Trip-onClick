@@ -9,17 +9,44 @@
   height: calc(100% - 4rem); /* Adjust for header height */
 }
 
-.left-panel,
-.right-panel {
+
+.left-panel {
   flex: 1;
 }
 
+.right-panel {
+  flex: 1;
+  margin-top: 50px;
+  margin-left: 30px;;
+}
+
+
+/* .left-panel,
+.right-panel {
+  flex: 1;
+} */
+
   .h1 {
     background-color: lightblue;
-    padding: 10px;
+    padding: 7px;
     font-style: oblique;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: white;
+    color: black;
+    border-radius: 30px;
+    position: relative;
+    margin-right: 30px;
+  }
+
+  .h1::before {
+    content: "";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 1px; /* Adjust the width of the line as needed */
+    height: 100%; /* Make the line span the full height of the wrapper */
+    background-color: black; /* Change the color of the line as needed */
+    margin-left: -5px;
+    margin-right: 10px;
   }
 
   .click-word{
@@ -27,10 +54,28 @@
     /* font-style: oblique;
     font-weight: bold; */
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: orange;
-    color: black;
-    border-radius: 30px; 
+    background-color: orange; 
+    color: white;
+    border-radius: 40px; 
+    -webkit-text-stroke-width: 2px; /* Width of the border */
+  -webkit-text-stroke-color: black;
     
   }
+
+  .wrapper {
+    position: relative;
+   
+  }
+
+    .wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px; /* Adjust the width of the line as needed */
+      height: 100%; /* Make the line span the full height of the wrapper */
+      background-color: black; /* Change the color of the line as needed */
+    }
+
 
 
