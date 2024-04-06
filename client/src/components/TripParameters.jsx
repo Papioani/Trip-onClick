@@ -1,12 +1,12 @@
 import React from "react";
-/* import { useNavigate } from "react-router-dom"; */
+import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 
 function TripParameters(props) {
   /* With useNavigate, you can programmatically navigate to different URLs, go back and forward in the browser history, replace the current URL, and access other properties related to navigation. */
-
+  const navigate = useNavigate(); // Initialize the navigate function
   const {
     hotelParameters,
     setHotelParameters,
