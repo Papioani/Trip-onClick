@@ -1,10 +1,19 @@
 import React from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../../styles/TripOnClick.css";
 import VideoPlayerComponent from "../components/VideoPlayerComponent";
 import TripParameters from "../components/TripParameters";
 
 export default function TripOnClick() {
+  // create a form to store the check in , check out parameters for the search
+  const EMPTY_FORM = {
+    checkIn: "",
+    checkOut: "",
+  };
+  // move the state for the parameters up to the parent component
+  const [hotelParameters, setHotelParameters] = useState(EMPTY_FORM);
+  const [adultCount, setAdultCount] = useState(0);
+  const [roomCount, setRoomCount] = useState(0);
   /*  useEffect(() => { */
   // Set the background image when the component mounts
   /* document.body.style.backgroundImage =
@@ -30,7 +39,14 @@ export default function TripOnClick() {
             No plan, no trip? <span className="click-word">...clicK</span>
           </h1>
           <div className="wrapper">
-            <TripParameters />
+            <TripParameters
+              hotelParameters={hotelParameters}
+              setHotelParameters={setHotelParameters}
+              adultCount={adultCount}
+              setAdultCount={setAdultCount}
+              roomCount={roomCount}
+              setRoomCount={setRoomCount}
+            />
           </div>
         </div>
       </div>

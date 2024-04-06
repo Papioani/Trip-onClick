@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function RefreshingSleep({ hotels }) {
+export default function RandomHotelFetching({ hotels }) {
   console.log("Hotels data:", hotels);
 
   return (

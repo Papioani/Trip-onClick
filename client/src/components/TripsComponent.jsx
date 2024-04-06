@@ -23,11 +23,11 @@ export default function TripsComponent() {
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState(false);
 
   const handleClick = (location) => {
-    setTrip(location);
     setActive(true);
+    setTrip(location);
   };
 
   useEffect(() => {
@@ -57,10 +57,10 @@ export default function TripsComponent() {
         <header className="header">
           <h2>Step 1. Choose your road trip </h2>
         </header>
-        <div class="row row-cols-auto">
+        <div className="row row-cols-auto">
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
             <button
-              class="btn btn-outline-success btn-lg"
+              className="btn btn-outline-success btn-lg"
               type="button"
               onClick={() => handleClick("Mani")}
             >
@@ -69,7 +69,7 @@ export default function TripsComponent() {
           </motion.div>
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
             <button
-              class="btn btn-outline-success btn-lg"
+              className="btn btn-outline-success btn-lg"
               type="button"
               onClick={() => handleClick("Spain")}
             >
@@ -78,7 +78,7 @@ export default function TripsComponent() {
           </motion.div>
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
             <button
-              class="btn btn-outline-success btn-lg"
+              className="btn btn-outline-success btn-lg"
               type="button"
               onClick={() => handleClick("Norway")}
             >

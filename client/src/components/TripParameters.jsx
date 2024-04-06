@@ -1,23 +1,20 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+/* import { useNavigate } from "react-router-dom"; */
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 
-function TripParameters() {
-  let navigate =
-    useNavigate(); /* With useNavigate, you can programmatically navigate to different URLs, go back and forward in the browser history, replace the current URL, and access other properties related to navigation. */
-  // create a form to store the check in , check out parameters for the search
-  const EMPTY_FORM = {
-    checkIn: "",
-    checkOut: "",
-  };
-  // a state variable to store the parameters
-  const [hotelParameters, setHotelParameters] = useState(EMPTY_FORM);
-  // a state variable for the number of travellers
-  const [adultCount, setAdultCount] = useState(0);
-  // a state variable for the number of rooms
-  const [roomCount, setRoomCount] = useState(0);
+function TripParameters(props) {
+  /* With useNavigate, you can programmatically navigate to different URLs, go back and forward in the browser history, replace the current URL, and access other properties related to navigation. */
+
+  const {
+    hotelParameters,
+    setHotelParameters,
+    adultCount,
+    setAdultCount,
+    roomCount,
+    setRoomCount,
+  } = props;
 
   const handleChange = (event) => {
     const { id, value } = event.target;
@@ -48,7 +45,7 @@ function TripParameters() {
       hotelParameters: { hotelParameters },
       adultCount: { adultCount },
       roomCount: { roomCount },
-      // Add other props as needed
+      // When you use the navigate function provided by React Router, it updates the URL and passes state to the new location. This state is then available in the component rendered at the new location.
     });
   };
 

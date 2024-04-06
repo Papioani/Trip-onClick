@@ -8,6 +8,7 @@ import TripsComponent from "./components/TripsComponent";
 import ManiPage from "./pages/ManiPage";
 import SpainPage from "./pages/SpainPage";
 import NorwayPage from "./pages/NorwayPage";
+import TripParameters from "./components/TripParameters";
 
 function App() {
   return (
