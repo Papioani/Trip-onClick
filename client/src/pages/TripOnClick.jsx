@@ -27,7 +27,11 @@ export default function TripOnClick() {
       document.body.style.backgroundAttachment = "";
     };
   }, []); */
-
+  console.log(
+    "I am the TripOnClick component and these are my states now:",
+    adultCount,
+    roomCount
+  );
   return (
     <div className="full-page">
       <div className="split-screen">

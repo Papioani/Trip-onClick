@@ -16,11 +16,17 @@ function TripParameters(props) {
     setRoomCount,
   } = props;
 
+  /*  console.log("this is the TriParameters component and these are the hotelParameters:" + hotelParameters) this is wrong.
+ Cause with  + operator, the object will be converted to a string */
+  console.log(
+    "this is the TriParameters component and these are the hotelParameters:",
+    hotelParameters
+  );
   const handleChange = (event) => {
-    const { id, value } = event.target;
+    const { id, value } = event.target; // event.target refers to the DOM element that triggered the event, in this case, the input field
     setHotelParameters({
       ...hotelParameters,
-      [id]: value,
+      [id]: value, // if the id of the input field is "checkIn", for example, the new object would have a property named "checkIn" with the value of the input field.
     });
   };
 
@@ -42,10 +48,12 @@ function TripParameters(props) {
   const handleClick = () => {
     // Navigate to another page and pass props
     navigate("/Where-to/", {
-      hotelParameters: { hotelParameters },
-      adultCount: { adultCount },
-      roomCount: { roomCount },
-      // When you use the navigate function provided by React Router, it updates the URL and passes state to the new location. This state is then available in the component rendered at the new location.
+      state: {
+        hotelParameters: hotelParameters,
+        adultCount: adultCount,
+        roomCount: roomCount, //When passing PROPS to the NAVIGATE FUNCTION, you should use the OBJECT SYNTAX, where each prop is specified as a key-value pair within curly braces {}
+        // When you use the navigate function provided by React Router, it updates the URL and passes state to the new location. This state is then available in the component rendered at the new location.
+      },
     });
   };
 

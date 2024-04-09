@@ -4,22 +4,17 @@ import Mani4Image from "./images/Mani4.png";
 import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../styles/TripsComponent.css";
+import TripParameters from "./TripParameters";
 
-export default function TripsComponent() {
-  /* useEffect(() => { */
-  // Set the background image when the component mounts
-  /* document.body.style.backgroundImage =
-      'url("https://images.unsplash.com/photo-1511028931355-082bb4781053?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")';
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundAttachment = "fixed"; */
-  // Cleanup function to reset the background when the component unmounts
-  /* return () => {
-      document.body.style.backgroundImage = "";
-      document.body.style.backgroundSize = "";
-      document.body.style.backgroundAttachment = "";
-    };
-  }, []); */
+export default function TripsComponent({
+  hotelParameters,
+  adultCount,
+  roomCount,
+}) {
+  const navigate = useNavigate(); // Initialize the navigate function
+
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -29,7 +24,7 @@ export default function TripsComponent() {
     setActive(true);
     setTrip(location);
   };
-
+  console.log("console.log the:", hotelParameters);
   useEffect(() => {
     /* By using useEffect, the state update for selectedImage based on trip will only trigger when trip changes, preventing an infinite loop caused by continuous state updates. */
     if (trip === "Norway") {
