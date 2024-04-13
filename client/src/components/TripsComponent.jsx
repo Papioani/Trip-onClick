@@ -4,7 +4,6 @@ import Mani4Image from "./images/Mani4.png";
 import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import "../../styles/TripsComponent.css";
 import TripParameters from "./TripParameters";
 
@@ -13,8 +12,6 @@ export default function TripsComponent({
   adultCount,
   roomCount,
 }) {
-  const navigate = useNavigate(); // Initialize the navigate function
-
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -24,7 +21,7 @@ export default function TripsComponent({
     setActive(true);
     setTrip(location);
   };
-  console.log("console.log the:", hotelParameters);
+  console.log("console.log the:", hotelParameters, adultCount, roomCount);
   useEffect(() => {
     /* By using useEffect, the state update for selectedImage based on trip will only trigger when trip changes, preventing an infinite loop caused by continuous state updates. */
     if (trip === "Norway") {

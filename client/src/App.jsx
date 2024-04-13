@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import TripOnClick from "./pages/TripOnClick";
@@ -11,6 +12,15 @@ import NorwayPage from "./pages/NorwayPage";
 import TripParameters from "./components/TripParameters";
 
 function App() {
+  // create a form to store the check in , check out parameters for the search
+  const EMPTY_FORM = {
+    checkIn: "",
+    checkOut: "",
+  };
+  // move the state for the parameters up to the parent component
+  const [hotelParameters, setHotelParameters] = useState(EMPTY_FORM);
+  const [adultCount, setAdultCount] = useState(0);
+  const [roomCount, setRoomCount] = useState(0);
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">

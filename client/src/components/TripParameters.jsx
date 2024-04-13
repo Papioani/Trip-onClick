@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 function TripParameters(props) {
   /* With useNavigate, you can programmatically navigate to different URLs, go back and forward in the browser history, replace the current URL, and access other properties related to navigation. */
   const navigate = useNavigate(); // Initialize the navigate function
+  const [rendering, setRendering] = useState(0);
   const {
     hotelParameters,
     setHotelParameters,
@@ -16,6 +17,9 @@ function TripParameters(props) {
     setRoomCount,
   } = props;
 
+  useEffect(() => {
+    setRendering(rendering + 1);
+  }, []);
   /*  console.log("this is the TriParameters component and these are the hotelParameters:" + hotelParameters) this is wrong.
  Cause with  + operator, the object will be converted to a string */
   console.log(
@@ -111,6 +115,7 @@ function TripParameters(props) {
         {/* In React, you should avoid using inline event handlers like onclick and instead use event handlers provided by React.  */}
         Your best road trip only clicks away
       </button>
+      <div>Rendered {rendering} times</div>
     </>
   );
 }

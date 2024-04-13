@@ -44,7 +44,7 @@ export default function ManiPage() {
       console.log(error);
   })
 };  /* this is the frontend that sends to the api.js to fetch info from the database */
-
+  /* console.log("I am the hotelParameters in ManiPage:", hotelParameters); */
   return (
     <>
       <div>
