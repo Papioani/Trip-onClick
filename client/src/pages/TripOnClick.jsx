@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/TripOnClick.css";
 import VideoPlayerComponent from "../components/VideoPlayerComponent";
-import TripParameters from "../components/TripParameters";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
@@ -45,8 +44,8 @@ export default function TripOnClick() {
     setRoomCount(roomCount - 1);
   };
 
-  const handleClick = () => {
-    // Navigate to another page and pass props
+  function handleClick() {
+    // Navigate to the TripsComponent page and pass props
     navigate("/Where-to/", {
       state: {
         hotelParameters: hotelParameters,
@@ -55,13 +54,13 @@ export default function TripOnClick() {
         // When you use the navigate function provided by React Router, it updates the URL and passes state to the new location. This state is then available in the component rendered at the new location.
       },
     });
-  };
+  }
 
-  /* console.log(
+  console.log(
     "I am the TripOnClick component and these are my states now:",
     adultCount,
     roomCount
-  ); */
+  );
   return (
     <div className="full-page">
       <div className="split-screen">

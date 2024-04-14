@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import Mani4Image from "./images/Mani4.png";
 import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
 import { Link } from "react-router-dom";
 import "../../styles/TripsComponent.css";
-import TripParameters from "./TripParameters";
 
-export default function TripsComponent({
-  hotelParameters,
-  adultCount,
-  roomCount,
-}) {
+export default function TripsComponent() {
+  const location = useLocation();
+  const { hotelParameters, adultCount, roomCount } = location.state;
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
