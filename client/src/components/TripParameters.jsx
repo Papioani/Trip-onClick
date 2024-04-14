@@ -8,6 +8,7 @@ function TripParameters(props) {
   /* With useNavigate, you can programmatically navigate to different URLs, go back and forward in the browser history, replace the current URL, and access other properties related to navigation. */
   const navigate = useNavigate(); // Initialize the navigate function
   const [rendering, setRendering] = useState(0);
+
   const {
     hotelParameters,
     setHotelParameters,
@@ -22,10 +23,7 @@ function TripParameters(props) {
   }, []);
   /*  console.log("this is the TriParameters component and these are the hotelParameters:" + hotelParameters) this is wrong.
  Cause with  + operator, the object will be converted to a string */
-  console.log(
-    "this is the TriParameters component and these are the hotelParameters:",
-    hotelParameters
-  );
+
   const handleChange = (event) => {
     const { id, value } = event.target; // event.target refers to the DOM element that triggered the event, in this case, the input field
     setHotelParameters({
@@ -34,7 +32,7 @@ function TripParameters(props) {
     });
   };
 
-  const adultHandleClick = () => {
+  /* const adultHandleClick = () => {
     setAdultCount(adultCount + 1);
   };
 
@@ -47,7 +45,7 @@ function TripParameters(props) {
 
   const deleteRoomHandleClick = () => {
     setRoomCount(roomCount - 1);
-  };
+  }; */
 
   const handleClick = () => {
     // Navigate to another page and pass props
@@ -66,7 +64,7 @@ function TripParameters(props) {
   return (
     <>
       {/* Using an <input> element without being wrapped in a <form> tag is perfectly fine, especially when you're not submitting a form. In your case, where you're using it to capture a date for parameters, it's appropriate to use it without a <form> tag. */}
-      <div className="parameters-container">
+      {/* <div className="parameters-container">
         <label htmlFor="checkIn">Check In</label>
         <input
           id="checkIn"
@@ -84,7 +82,7 @@ function TripParameters(props) {
           value={hotelParameters.checkOut}
           onChange={handleChange}
         />
-      </div>
+      </div> */}
       <br />
       <div className="adults-container">
         <Button
