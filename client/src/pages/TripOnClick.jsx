@@ -1,5 +1,5 @@
 import React from "react";
-/* import { useState, useEffect } from "react"; */
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/TripOnClick.css";
 import VideoPlayerComponent from "../components/VideoPlayerComponent";
@@ -11,19 +11,6 @@ import IconButton from "@mui/material/IconButton";
 export default function TripOnClick() {
   /* With useNavigate, you can programmatically navigate to different URLs, go back and forward in the browser history, replace the current URL, and access other properties related to navigation. */
   const navigate = useNavigate(); // Initialize the navigate function
-  /*  useEffect(() => { */
-  // Set the background image when the component mounts
-  /* document.body.style.backgroundImage =
-      'url("https://images.unsplash.com/photo-1511028931355-082bb4781053?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")';
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundAttachment = "fixed"; */
-  // Cleanup function to reset the background when the component unmounts
-  /* return () => {
-      document.body.style.backgroundImage = "";
-      document.body.style.backgroundSize = "";
-      document.body.style.backgroundAttachment = "";
-    };
-  }, []); */
 
   // create a form to store the check in , check out parameters for the search
   const EMPTY_FORM = {
@@ -87,7 +74,7 @@ export default function TripOnClick() {
           </h1>
           {/* <div className="wrapper"> */}
           {/* Using an <input> element without being wrapped in a <form> tag is perfectly fine, especially when you're not submitting a form. In your case, where you're using it to capture a date for parameters, it's appropriate to use it without a <form> tag. */}
-          {/* <div className="parameters-container">
+          <div className="parameters-container">
             <label htmlFor="checkIn">Check In</label>
             <input
               id="checkIn"
@@ -105,7 +92,7 @@ export default function TripOnClick() {
               value={hotelParameters.checkOut}
               onChange={handleChange}
             />
-          </div> */}
+          </div>
           <br />
           <div className="adults-container">
             <Button
