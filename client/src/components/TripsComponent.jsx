@@ -6,10 +6,17 @@ import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
 import { Link } from "react-router-dom";
 import "../../styles/TripsComponent.css";
+import NorwayPage from "../pages/NorwayPage";
 
 export default function TripsComponent() {
   const location = useLocation();
   const { hotelParameters, adultCount, roomCount } = location.state;
+  console.log(
+    "i am the hotelParameters, the adultCount and the roomCount:",
+    hotelParameters,
+    adultCount,
+    roomCount
+  );
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -37,7 +44,7 @@ export default function TripsComponent() {
     } else if (selectedImage === "Mani") {
       return "/mani";
     } else if (selectedImage === "Norway") {
-      return "/norway";
+      return <NorwayPage />;
     }
   };
 

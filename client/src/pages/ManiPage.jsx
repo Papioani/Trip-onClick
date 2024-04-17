@@ -3,7 +3,6 @@ import ManiImagesComponent from "../components/ManiImagesComponent";
 import MapComponent from "../components/MapComponent";
 import ManiHotelFavourites from "../components/ManiHotelFavourites";
 import "../../styles/ManiPage.css";
-import TripParameters from "../components/TripParameters";
 
 /* <Link> is specifically designed for client-side navigation within a React Router-managed application. It utilizes React Router's routing system to handle navigation without full page reloads.
 <a> tag, when used in a React application without React Router, behaves as a standard HTML anchor tag and causes full page refreshes or navigates to a different URL */

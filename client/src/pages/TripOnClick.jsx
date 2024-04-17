@@ -10,7 +10,7 @@ import IconButton from "@mui/material/IconButton";
 export default function TripOnClick() {
   /* With useNavigate, you can programmatically navigate to different URLs, go back and forward in the browser history, replace the current URL, and access other properties related to navigation. */
   const navigate = useNavigate(); // Initialize the navigate function
-
+  const [rendering, setRendering] = useState(0);
   // create a form to store the check in , check out parameters for the search
   const EMPTY_FORM = {
     checkIn: "",
@@ -21,10 +21,14 @@ export default function TripOnClick() {
   const [adultCount, setAdultCount] = useState(0);
   const [roomCount, setRoomCount] = useState(0);
 
+  useEffect(() => {
+    setRendering(rendering + 1);
+  }, [adultCount]);
+
   const handleChange = (event) => {
     const { id, value } = event.target; // event.target refers to the DOM element that triggered the event, in this case, the input field
     setHotelParameters({
-      ...hotelParameters,
+      ...hotelParameters, // with objects or arrays in react state is important to create shallow copies
       [id]: value, // if the id of the input field is "checkIn", for example, the new object would have a property named "checkIn" with the value of the input field.
     });
   };
@@ -117,19 +121,11 @@ export default function TripOnClick() {
               <DeleteIcon />
             </IconButton>
           </div>
-          {/*  <TripParameters
-              hotelParameters={hotelParameters}
-              setHotelParameters={setHotelParameters}
-              adultCount={adultCount}
-              setAdultCount={setAdultCount}
-              roomCount={roomCount}
-              setRoomCount={setRoomCount}
-            /> */}
           <button onClick={handleClick}>
             {/* In React, you should avoid using inline event handlers like onclick and instead use event handlers provided by React.  */}
             Your best road trip only clicks away
           </button>
-          {/* <div>Rendered {rendering} times</div> */}
+          <div>Rendered {rendering} times</div>
         </div>
       </div>
     </div>

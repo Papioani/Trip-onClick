@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public'))); /* if we want to put the client inside of the public folder , we´d keep it  */
 // so that "/" will be ... /api
-app.use('/api/places', apiRouter); /* when I want to see the routes I will use jast /   use this route when i want to talk with api.js file  */
+app.use('/api/places', apiRouter);  
 
 
 module.exports = app;
