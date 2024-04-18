@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import Mani4Image from "./images/Mani4.png";
 import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../styles/TripsComponent.css";
 
 export default function TripsComponent() {
   const location = useLocation();
   const { hotelParameters, adultCount, roomCount } = location.state;
+  const navigate = useNavigate();
   console.log(
     "i am the hotelParameters, the adultCount and the roomCount:",
     hotelParameters,

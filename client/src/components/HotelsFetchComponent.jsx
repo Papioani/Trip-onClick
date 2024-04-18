@@ -14,7 +14,7 @@ function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
   // extracting the api key from the.env file
   const apiKey = process.env.REACT_APP_API_KEY;
   console.log(apiKey);
-
+  console.log("I am the hotelParameters: ", hotelParameters);
   const handleClick = async (destination) => {
     // an async function called handleClick
     setIsLoading(true);
