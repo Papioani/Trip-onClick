@@ -6,7 +6,6 @@ import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
 import { Link } from "react-router-dom";
 import "../../styles/TripsComponent.css";
-import NorwayPage from "../pages/NorwayPage";
 
 export default function TripsComponent() {
   const location = useLocation();
@@ -26,7 +25,7 @@ export default function TripsComponent() {
     setActive(true);
     setTrip(location);
   };
-  console.log("console.log the:", hotelParameters, adultCount, roomCount);
+  /* console.log("console.log the:", hotelParameters, adultCount, roomCount); */
   useEffect(() => {
     /* By using useEffect, the state update for selectedImage based on trip will only trigger when trip changes, preventing an infinite loop caused by continuous state updates. */
     if (trip === "Norway") {
@@ -44,7 +43,7 @@ export default function TripsComponent() {
     } else if (selectedImage === "Mani") {
       return "/mani";
     } else if (selectedImage === "Norway") {
-      return <NorwayPage />;
+      return "/norway";
     }
   };
 

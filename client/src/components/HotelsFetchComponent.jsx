@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import ManiHotelFavourites from "./ManiHotelFavourites";
+/* import ManiHotelFavourites from "./ManiHotelFavourites"; */
 
-function HotelsFetchComponent({
-  hotelParameters,
-  setHotelParameters,
-  adultCount,
-  setAdultCount,
-  roomCount,
-  setRoomCount,
-}) {
+function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
   // // a state variable to store the destinations
   const [destination, setDestination] = useState("");
   // a variable for the results
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState("");
   // a state variable for the errors
   const [error, setError] = useState("");
   // a state variable for the loading
@@ -26,7 +19,7 @@ function HotelsFetchComponent({
     // an async function called handleClick
     setIsLoading(true);
     setDestination(destination);
-    setResults([]);
+    setResults("");
     setError("");
     const url = `https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchLocation?query=${destination}`;
     const options = {
@@ -36,14 +29,10 @@ function HotelsFetchComponent({
         "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com",
       },
     };
-
+    console.log("this is the log for the destination URL: ", destination);
     try {
       // Wait for fetch operation to complete
-      const destinationGeoId = await searchGeoId(
-        url,
-        "destinationGeoId",
-        options
-      );
+      const destinationGeoId = await searchGeoId(url, "destination", options);
 
       console.log(options);
       console.log("Destination:", searchGeoId);
@@ -75,15 +64,15 @@ function HotelsFetchComponent({
         throw new Error("failed to fetch hotel data");
       }
       const responseData = await response.json(); /* !!!!!!!! */
-      // Log the cityId and data for debugging
+      // Log the geoId and data for debugging
       console.log(`Geo ID: ${geoId}`, responseData);
       if (!responseData.data || responseData.data.length === 0) {
         throw new Error("No hotel data found");
       }
-      // Extract the airportCode from the nested structure
+      // Extract the GeoID from the nested structure
       /* const newAirportCode = data.data[0]?.airportCode || '';  */ /* The optional chaining (?.) is used to handle cases where data or data[0] might be null or undefined.
 || '':  if newAirportCode is undefined (due to optional chaining) or if the extracted airportCode is falsy, it will default to an empty string (''). */
-      const extractedGeoId = responseData.data[0]?.geoId;
+      let extractedGeoId = responseData.data[0].geoId;
       if (!extractedGeoId) {
         throw new Error("GeoId not found in response");
       }
@@ -133,9 +122,9 @@ function HotelsFetchComponent({
     <>
       <div className="buttons">
         <button onClick={() => handleClick("Kardamyli")}>
-          Kardamyli sleep
+          Sleep in Kardamyli
         </button>
-        <button onClick={() => handleClick("Limeni")}>Limeni sleep</button>
+        <button onClick={() => handleClick("Limeni")}>Sleep in Limeni</button>
       </div>
       {results && (
         <ManiHotelFavourites results={results} /* deleteCard={deleteCard} */ />
