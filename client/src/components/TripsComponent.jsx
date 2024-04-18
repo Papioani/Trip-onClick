@@ -40,11 +40,29 @@ export default function TripsComponent() {
 
   const getImageLink = () => {
     if (selectedImage === "Spain") {
-      return "/spain";
+      navigate("/spain", {
+        state: {
+          hotelParameters: hotelParameters,
+          adultCount: adultCount,
+          roomCount: roomCount,
+        },
+      });
     } else if (selectedImage === "Mani") {
-      return "/mani";
+      navigate("/mani", {
+        state: {
+          hotelParameters: hotelParameters,
+          adultCount: adultCount,
+          roomCount: roomCount,
+        },
+      });
     } else if (selectedImage === "Norway") {
-      return "/norway";
+      navigate("/norway", {
+        state: {
+          hotelParameters: hotelParameters,
+          adultCount: adultCount,
+          roomCount: roomCount,
+        },
+      });
     }
   };
 
