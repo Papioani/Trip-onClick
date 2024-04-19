@@ -9,7 +9,12 @@ import "../../styles/TripsComponent.css";
 
 export default function TripsComponent() {
   const location = useLocation();
-  const { hotelParameters, adultCount, roomCount } = location.state;
+  const {
+    hotelParameters = {},
+    adultCount = 0,
+    roomCount = 0,
+  } = location.state || {}; // For some reason, and following Gpts instructions , I had to change these to hotelParameters = {}, adultCount = 0, roomCount = 0, (?) yo qué sé
+
   const navigate = useNavigate();
   console.log(
     "i am the hotelParameters, the adultCount and the roomCount:",
@@ -40,7 +45,7 @@ export default function TripsComponent() {
 
   const getImageLink = () => {
     if (selectedImage === "Spain") {
-      navigate("/spain", {
+      navigate("/Spain", {
         state: {
           hotelParameters: hotelParameters,
           adultCount: adultCount,
@@ -48,7 +53,7 @@ export default function TripsComponent() {
         },
       });
     } else if (selectedImage === "Mani") {
-      navigate("/mani", {
+      navigate("/Mani", {
         state: {
           hotelParameters: hotelParameters,
           adultCount: adultCount,
@@ -56,7 +61,7 @@ export default function TripsComponent() {
         },
       });
     } else if (selectedImage === "Norway") {
-      navigate("/norway", {
+      navigate("/Norway", {
         state: {
           hotelParameters: hotelParameters,
           adultCount: adultCount,

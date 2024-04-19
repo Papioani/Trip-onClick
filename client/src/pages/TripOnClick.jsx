@@ -121,7 +121,7 @@ export default function TripOnClick() {
               <DeleteIcon />
             </IconButton>
           </div>
-          <button onClick={handleClick}>
+          <button className="road-trip-button" onClick={handleClick}>
             {/* In React, you should avoid using inline event handlers like onclick and instead use event handlers provided by React.  */}
             Your best road trip only clicks away
           </button>

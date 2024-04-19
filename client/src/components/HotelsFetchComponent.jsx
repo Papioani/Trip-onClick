@@ -1,7 +1,22 @@
 import React, { useState } from "react";
-/* import ManiHotelFavourites from "./ManiHotelFavourites"; */
+import { useLocation } from "react-router-dom";
+import ManiHotelFavourites from "./ManiHotelFavourites";
 
-function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
+function HotelsFetchComponent() {
+  // extracting the api key from the.env file
+  const apiKey = process.env.REACT_APP_API_KEY;
+  console.log(apiKey);
+  const location = useLocation();
+  const {
+    hotelParameters = {},
+    adultCount = 0,
+    roomCount = 0,
+  } = location.state || {};
+
+  console.log(
+    "I am the hotelParameters in the HotelsFetchComponent:",
+    hotelParameters
+  );
   // // a state variable to store the destinations
   const [destination, setDestination] = useState("");
   // a variable for the results
@@ -11,9 +26,6 @@ function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
   // a state variable for the loading
   const [isLoading, setIsLoading] = useState(false);
 
-  // extracting the api key from the.env file
-  const apiKey = process.env.REACT_APP_API_KEY;
-  console.log(apiKey);
   console.log("I am the hotelParameters: ", hotelParameters);
   const handleClick = async (destination) => {
     // an async function called handleClick
