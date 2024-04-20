@@ -10,12 +10,12 @@ import "../../styles/TripsComponent.css";
 import TripParametersComponent from "./TripParametersComponent";
 
 export default function TripsComponent() {
-  /* const location = useLocation();
-  const { hotelParameters, adultCount, roomCount } = location.state; */ // For some reason, and following Gpts instructions , I had to change these to hotelParameters = {}, adultCount = 0, roomCount = 0, (?) yo qué sé
+  const location = useLocation();
+  const { hotelParameters, adultCount, roomCount } = location.state; // For some reason, and following Gpts instructions , I had to change these to hotelParameters = {}, adultCount = 0, roomCount = 0, (?) yo qué sé
 
   const navigate = useNavigate();
   const [rendering, setRendering] = useState(0);
-  /* console.log(
+  /*  console.log(
     "i am the hotelParameters, the adultCount and the roomCount:",
     hotelParameters,
     adultCount,
@@ -76,7 +76,13 @@ export default function TripsComponent() {
 
   return (
     <>
-      <TripParametersComponent />
+      <div>
+        <TripParametersComponent
+          hotelParameters={hotelParameters}
+          adultCount={adultCount}
+          roomCount={roomCount}
+        />
+      </div>
       <div className="container">
         <header className="header">
           <h2>Step 1. Choose your road trip </h2>

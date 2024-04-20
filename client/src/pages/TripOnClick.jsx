@@ -1,12 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import "../../styles/TripOnClick.css";
 import TripParametersComponent from "../components/TripParametersComponent";
 import VideoPlayerComponent from "../components/VideoPlayerComponent";
-import Button from "@mui/material/Button";
-import DeleteIcon from "@mui/icons-material/Delete";
-import IconButton from "@mui/material/IconButton";
 
 export default function TripOnClick() {
   const [rendering, setRendering] = useState(0);
@@ -19,6 +15,7 @@ export default function TripOnClick() {
   const [hotelParameters, setHotelParameters] = useState(EMPTY_FORM);
   const [adultCount, setAdultCount] = useState(0);
   const [roomCount, setRoomCount] = useState(0);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     setRendering(rendering + 1);
@@ -26,6 +23,7 @@ export default function TripOnClick() {
 
   console.log(
     "I am the TripOnClick component and these are my states now:",
+    hotelParameters,
     adultCount,
     roomCount
   );
@@ -47,6 +45,8 @@ export default function TripOnClick() {
               setAdultCount={setAdultCount}
               roomCount={roomCount}
               setRoomCount={setRoomCount}
+              showAlert={showAlert}
+              setShowAlert={setShowAlert}
             />
           </div>
         </div>

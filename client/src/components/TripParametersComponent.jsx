@@ -8,7 +8,7 @@ import Alert from "@mui/material/Alert";
 
 export default function TripParametersComponent(props) {
   /* With useNavigate, you can programmatically navigate to different URLs, go back and forward in the browser history, replace the current URL, and access other properties related to navigation. */
-  const navigate = useNavigate(); // Initialize the navigate function
+
   const {
     hotelParameters,
     setHotelParameters,
@@ -16,10 +16,10 @@ export default function TripParametersComponent(props) {
     setAdultCount,
     roomCount,
     setRoomCount,
+    showAlert,
+    setShowAlert,
   } = props;
-
-  const [showAlert, setShowAlert] = useState(false);
-
+  const navigate = useNavigate(); // Initialize the navigate function
   const handleChange = (event) => {
     const { id, value } = event.target; // event.target refers to the DOM element that triggered the event, in this case, the input field
     setHotelParameters({
@@ -51,25 +51,28 @@ export default function TripParametersComponent(props) {
       adultCount === 0 ||
       roomCount === 0
     ) {
-      return (
-        <div>
-          <Alert severity="error">Empty! Please, complete</Alert>
-        </div>
-      );
+      setShowAlert(true);
     } else {
       // Navigate to the TripsComponent page and pass props
-      navigate("/Where-to/"); /* , {
-      state: {
-        hotelParameters: hotelParameters,
-        adultCount: adultCount,
-        roomCount: roomCount, */ //When passing PROPS to the NAVIGATE FUNCTION, you should use the OBJECT SYNTAX, where each prop is specified as a key-value pair within curly braces {}
-      // When you use the navigate function provided by React Router, it updates the URL and passes state to the new location. This state is then available in the component rendered at the new location.
+      navigate("/Where-to/", {
+        state: {
+          hotelParameters: hotelParameters,
+          adultCount: adultCount,
+          roomCount: roomCount, //When passing PROPS to the NAVIGATE FUNCTION, you should use the OBJECT SYNTAX, where each prop is specified as a key-value pair within curly braces {}
+          // When you use the navigate function provided by React Router, it updates the URL and passes state to the new location. This state is then available in the component rendered at the new location.
+        },
+      });
     }
   }
 
   return (
     /* Using an <input> element without being wrapped in a <form> tag is perfectly fine, especially when you're not submitting a form. In your case, where you're using it to capture a date for parameters, it's appropriate to use it without a <form> tag. */
     <>
+      {showAlert && ( // !!!!!!!!!! conditional rendering, if true ...
+        <div>
+          <Alert severity="error">Empty! Please, complete</Alert>
+        </div>
+      )}
       <div className="parameters-container">
         <label htmlFor="checkIn">Check In</label>
         <input

@@ -13,13 +13,13 @@
     color: black;
 }
  
-/* .TripsComponent-container .container {
+ .TripsComponent-container .container {
     height: 100vh; 
     width: 100vw; 
     overflow: hidden; 
     margin: 0; 
     padding: 0; 
-}   */
+}   
 
 .btn.btn-outline-success.btn-lg {
     background-color: lightblue;
