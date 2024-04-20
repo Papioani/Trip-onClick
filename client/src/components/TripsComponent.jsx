@@ -15,12 +15,12 @@ export default function TripsComponent() {
 
   const navigate = useNavigate();
   const [rendering, setRendering] = useState(0);
-  /*  console.log(
+  console.log(
     "i am the hotelParameters, the adultCount and the roomCount:",
     hotelParameters,
     adultCount,
     roomCount
-  ); */
+  );
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -76,66 +76,70 @@ export default function TripsComponent() {
 
   return (
     <>
-      <div>
-        <TripParametersComponent
-          hotelParameters={hotelParameters}
-          adultCount={adultCount}
-          roomCount={roomCount}
-        />
-      </div>
-      <div className="container">
+      <div className="full-page">
         <header className="header">
           <h2>Step 1. Choose your road trip </h2>
           <div>Rendered {rendering} times</div>
         </header>
-        <div className="row row-cols-auto">
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
-            <button
-              className="btn btn-outline-success btn-lg"
-              type="button"
-              onClick={() => handleClick("Mani")}
-            >
-              Mani
-            </button>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
-            <button
-              className="btn btn-outline-success btn-lg"
-              type="button"
-              onClick={() => handleClick("Spain")}
-            >
-              Spain
-            </button>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
-            <button
-              className="btn btn-outline-success btn-lg"
-              type="button"
-              onClick={() => handleClick("Norway")}
-            >
-              Norway
-            </button>
-          </motion.div>
-        </div>
+        <div className="split-screen">
+          <div className="left-panel">
+            <div className="row row-cols-auto">
+              <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
+                <button
+                  className="btn btn-outline-success btn-lg"
+                  type="button"
+                  onClick={() => handleClick("Mani")}
+                >
+                  Mani
+                </button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
+                <button
+                  className="btn btn-outline-success btn-lg"
+                  type="button"
+                  onClick={() => handleClick("Spain")}
+                >
+                  Spain
+                </button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
+                <button
+                  className="btn btn-outline-success btn-lg"
+                  type="button"
+                  onClick={() => handleClick("Norway")}
+                >
+                  Norway
+                </button>
+              </motion.div>
+            </div>
 
-        <Link to={getImageLink(selectedImage)}>
-          {" "}
-          {/* trigger it based on user interactions, such as a button click event */}{" "}
-          {/* <Link to={getImageLink()}></Link> gave error , as it can potentially trigger navigation actions during the render phase of TripsComponent.*/}
-          <img
-            src={
-              selectedImage === "Spain"
-                ? Spain
-                : selectedImage === "Mani"
-                ? Mani4Image
-                : selectedImage === "Norway"
-                ? Norway
-                : null
-            }
-            className="figure-img img-fluid rounded"
-            alt={selectedImage}
-          />
-        </Link>
+            <Link to={getImageLink(selectedImage)}>
+              {" "}
+              {/* trigger it based on user interactions, such as a button click event */}{" "}
+              {/* <Link to={getImageLink()}></Link> gave error , as it can potentially trigger navigation actions during the render phase of TripsComponent.*/}
+              <img
+                src={
+                  selectedImage === "Spain"
+                    ? Spain
+                    : selectedImage === "Mani"
+                    ? Mani4Image
+                    : selectedImage === "Norway"
+                    ? Norway
+                    : null
+                }
+                className="figure-img img-fluid rounded"
+                alt={selectedImage}
+              />
+            </Link>
+          </div>
+          <div className="right-panel">
+            <TripParametersComponent
+              hotelParameters={hotelParameters}
+              adultCount={adultCount}
+              roomCount={roomCount}
+            />
+          </div>
+        </div>
       </div>
     </>
   );
