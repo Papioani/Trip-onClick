@@ -21,10 +21,7 @@
 }
 
 
-/* .left-panel,
-.right-panel {
-  flex: 1;
-} */
+
 
   .h1 {
     background-color: #8ea5eb;
@@ -78,13 +75,6 @@
     }
 
 
-.road-trip-button {
-  background-color: lightblue;  
-  border-radius: 30px;
-}
 
-.clicks {
-  background-color: orange;
-  border-radius: 30px;
 
-}
+

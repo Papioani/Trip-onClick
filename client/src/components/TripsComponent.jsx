@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import SpainImagesComponent from "./SpainImagesComponent";
 import Mani4Image from "./images/Mani4.png";
 import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
@@ -38,7 +39,7 @@ export default function TripsComponent() {
     if (trip === "Norway") {
       setSelectedImage("Norway");
     } else if (trip === "Spain") {
-      setSelectedImage("Spain");
+      setSelectedImage(<SpainImagesComponent />);
     } else if (trip === "Mani") {
       setSelectedImage("Mani");
     }

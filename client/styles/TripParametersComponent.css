@@ -25,3 +25,13 @@
     background-color: orange !important; 
     color: white !important;
   }
+
+  .clicks {
+    background-color: orange;
+    border-radius: 30px;
+  }
+
+  .road-trip-button {
+    background-color: lightblue;  
+    border-radius: 30px;
+  }
