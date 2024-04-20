@@ -18,6 +18,8 @@ export default function TripParametersComponent(props) {
     setRoomCount,
   } = props;
 
+  const [showAlert, setShowAlert] = useState(false);
+
   const handleChange = (event) => {
     const { id, value } = event.target; // event.target refers to the DOM element that triggered the event, in this case, the input field
     setHotelParameters({
