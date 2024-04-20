@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import SpainImagesComponent from "./SpainImagesComponent";
 import Mani4Image from "./images/Mani4.png";
 import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
@@ -35,19 +34,10 @@ export default function TripsComponent() {
     setTrip(location);
   };
   /* console.log("console.log the:", hotelParameters, adultCount, roomCount); */
-  useEffect(() => {
-    /* By using useEffect, the state update for selectedImage based on trip will only trigger when trip changes, preventing an infinite loop caused by continuous state updates. */
-    if (trip === "Norway") {
-      setSelectedImage("Norway");
-    } else if (trip === "Spain") {
-      setSelectedImage(<SpainImagesComponent />);
-    } else if (trip === "Mani") {
-      setSelectedImage("Mani");
-    }
-  }, [trip]);
 
-  const getImageLink = () => {
+  const getImageLink = (selectedImage) => {
     if (selectedImage === "Spain") {
+      setActive(true);
       navigate("/Spain"); /* , {
         state: {
           hotelParameters: hotelParameters,
@@ -56,6 +46,7 @@ export default function TripsComponent() {
         },
       }); */
     } else if (selectedImage === "Mani") {
+      setActive(true);
       navigate("/Mani"); /* , {
         state: {
           hotelParameters: hotelParameters,
@@ -64,6 +55,7 @@ export default function TripsComponent() {
         },
       }); */
     } else if (selectedImage === "Norway") {
+      setActive(true);
       navigate("/Norway"); /* , {
         state: {
           hotelParameters: hotelParameters,
@@ -73,6 +65,17 @@ export default function TripsComponent() {
       }); */
     }
   };
+
+  useEffect(() => {
+    /* By using useEffect, the state update for selectedImage based on trip will only trigger when trip changes, preventing an infinite loop caused by continuous state updates. */
+    if (trip === "Norway") {
+      setSelectedImage("Norway");
+    } else if (trip === "Spain") {
+      setSelectedImage("Spain");
+    } else if (trip === "Mani") {
+      setSelectedImage("Mani");
+    }
+  }, [trip]);
 
   return (
     <>
