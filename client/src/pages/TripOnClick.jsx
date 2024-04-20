@@ -77,54 +77,57 @@ export default function TripOnClick() {
           </h1>
           {/* <div className="wrapper"> */}
           {/* Using an <input> element without being wrapped in a <form> tag is perfectly fine, especially when you're not submitting a form. In your case, where you're using it to capture a date for parameters, it's appropriate to use it without a <form> tag. */}
-          <div className="parameters-container">
-            <label htmlFor="checkIn">Check In</label>
-            <input
-              id="checkIn"
-              type="date"
-              placeholder="YYYY-MM-DD"
-              value={hotelParameters.checkIn}
-              onChange={handleChange}
-            />
+          <form>
+            <div className="parameters-container">
+              <label htmlFor="checkIn">Check In</label>
+              <input
+                id="checkIn"
+                type="date"
+                placeholder="YYYY-MM-DD"
+                value={hotelParameters.checkIn}
+                onChange={handleChange}
+              />
 
-            <label htmlFor="checkOut">Check Out</label>
-            <input
-              id="checkOut"
-              type="date"
-              placeholder="YYYY-MM-DD"
-              value={hotelParameters.checkOut}
-              onChange={handleChange}
-            />
-          </div>
-          <br />
-          <div className="adults-container">
-            <Button
-              variant="contained"
-              style={{ backgroundColor: "#2eb872", color: "white" }}
-              onClick={adultHandleClick}
-            >
-              Adults: {adultCount}
-            </Button>
-            <IconButton aria-label="delete" onClick={deleteAdultHandleClick}>
-              <DeleteIcon />
-            </IconButton>
-          </div>
-          <div className="rooms-container">
-            <Button
-              variant="contained"
-              style={{ backgroundColor: "#2eb872", color: "white" }}
-              onClick={roomHandleClick}
-            >
-              Rooms: {roomCount}
-            </Button>
-            <IconButton aria-label="delete" onClick={deleteRoomHandleClick}>
-              <DeleteIcon />
-            </IconButton>
-          </div>
-          <button className="road-trip-button" onClick={handleClick}>
-            {/* In React, you should avoid using inline event handlers like onclick and instead use event handlers provided by React.  */}
-            Your best road trip only clicks away
-          </button>
+              <label htmlFor="checkOut">Check Out</label>
+              <input
+                id="checkOut"
+                type="date"
+                placeholder="YYYY-MM-DD"
+                value={hotelParameters.checkOut}
+                onChange={handleChange}
+              />
+            </div>
+            <br />
+            <div className="adults-container">
+              <Button
+                variant="contained"
+                style={{ backgroundColor: "#2eb872", color: "white" }}
+                onClick={adultHandleClick}
+              >
+                Adults: {adultCount}
+              </Button>
+              <IconButton aria-label="delete" onClick={deleteAdultHandleClick}>
+                <DeleteIcon />
+              </IconButton>
+            </div>
+            <div className="rooms-container">
+              <Button
+                variant="contained"
+                style={{ backgroundColor: "#2eb872", color: "white" }}
+                onClick={roomHandleClick}
+              >
+                Rooms: {roomCount}
+              </Button>
+              <IconButton aria-label="delete" onClick={deleteRoomHandleClick}>
+                <DeleteIcon />
+              </IconButton>
+            </div>
+            <button className="road-trip-button" onClick={handleClick}>
+              {/* In React, you should avoid using inline event handlers like onclick and instead use event handlers provided by React.  */}
+              Your best road trip only <span className="clicks">clicks</span>{" "}
+              away
+            </button>
+          </form>
           <div>Rendered {rendering} times</div>
         </div>
       </div>

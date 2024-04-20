@@ -4,7 +4,7 @@ import ManiHotelFavourites from "./ManiHotelFavourites";
 
 function HotelsFetchComponent() {
   // extracting the api key from the.env file
-  const apiKey = process.env.REACT_APP_API_KEY;
+  const apiKey = "693a320c7amshf8a3f0479327cbap12dca4jsn254f4f98016a";
   console.log(apiKey);
   const location = useLocation();
   const {
@@ -28,6 +28,7 @@ function HotelsFetchComponent() {
 
   console.log("I am the hotelParameters: ", hotelParameters);
   const handleClick = async (destination) => {
+    /* **** */
     // an async function called handleClick
     setIsLoading(true);
     setDestination(destination);
@@ -58,6 +59,7 @@ function HotelsFetchComponent() {
       }
       const result = await hotelResponse.json();
       setResults(result);
+      console.log("results here: ", results);
       setIsLoading(true);
       console.log(result);
     } catch (error) {
@@ -148,5 +150,8 @@ function HotelsFetchComponent() {
     </>
   );
 }
+
+/* ****  The data fetching operation in HotelsFetchComponent is directly tied to the handleClick function, which is invoked when the user clicks a button.
+Since the data fetching is initiated by user interaction, it doesn't need to occur immediately after the component is mounted, which is what useEffect with an empty dependency array is typically used for. */
 
 export default HotelsFetchComponent;

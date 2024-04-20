@@ -16,6 +16,7 @@ export default function TripsComponent() {
   } = location.state || {}; // For some reason, and following Gpts instructions , I had to change these to hotelParameters = {}, adultCount = 0, roomCount = 0, (?) yo qué sé
 
   const navigate = useNavigate();
+  const [rendering, setRendering] = useState(0);
   console.log(
     "i am the hotelParameters, the adultCount and the roomCount:",
     hotelParameters,
@@ -26,6 +27,10 @@ export default function TripsComponent() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    setRendering(rendering + 1);
+  }, []);
 
   const handleClick = (location) => {
     setActive(true);
@@ -76,6 +81,7 @@ export default function TripsComponent() {
       <div className="container">
         <header className="header">
           <h2>Step 1. Choose your road trip </h2>
+          <div>Rendered {rendering} times</div>
         </header>
         <div className="row row-cols-auto">
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
