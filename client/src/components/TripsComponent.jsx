@@ -9,11 +9,7 @@ import "../../styles/TripsComponent.css";
 
 export default function TripsComponent() {
   const location = useLocation();
-  const {
-    hotelParameters = {},
-    adultCount = 0,
-    roomCount = 0,
-  } = location.state || {}; // For some reason, and following Gpts instructions , I had to change these to hotelParameters = {}, adultCount = 0, roomCount = 0, (?) yo qué sé
+  const { hotelParameters, adultCount, roomCount } = location.state; // For some reason, and following Gpts instructions , I had to change these to hotelParameters = {}, adultCount = 0, roomCount = 0, (?) yo qué sé
 
   const navigate = useNavigate();
   const [rendering, setRendering] = useState(0);
@@ -113,7 +109,10 @@ export default function TripsComponent() {
           </motion.div>
         </div>
 
-        <Link to={getImageLink()}>
+        <Link to={getImageLink(selectedImage)}>
+          {" "}
+          {/* trigger it based on user interactions, such as a button click event */}{" "}
+          {/* <Link to={getImageLink()}></Link> gave error , as it can potentially trigger navigation actions during the render phase of TripsComponent.*/}
           <img
             src={
               selectedImage === "Spain"

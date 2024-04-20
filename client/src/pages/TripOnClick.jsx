@@ -77,7 +77,9 @@ export default function TripOnClick() {
           </h1>
           {/* <div className="wrapper"> */}
           {/* Using an <input> element without being wrapped in a <form> tag is perfectly fine, especially when you're not submitting a form. In your case, where you're using it to capture a date for parameters, it's appropriate to use it without a <form> tag. */}
-          <form>
+          <form /* onSubmit={(e) => e.preventDefault()} */>
+            {" "}
+            {/* using an HTML form element (<form>) without an associated submit button (<button type="submit"></button> will give error message. That´s why I use onSubmit={(e) => e.preventDefault()}  inside the form */}
             <div className="parameters-container">
               <label htmlFor="checkIn">Check In</label>
               <input
