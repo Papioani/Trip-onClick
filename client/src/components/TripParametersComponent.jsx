@@ -4,6 +4,7 @@ import "../../styles/TripParametersComponent.css";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
+import Alert from "@mui/material/Alert";
 
 export default function TripParametersComponent(props) {
   /* With useNavigate, you can programmatically navigate to different URLs, go back and forward in the browser history, replace the current URL, and access other properties related to navigation. */
@@ -41,15 +42,27 @@ export default function TripParametersComponent(props) {
   };
 
   function handleClick() {
-    // Navigate to the TripsComponent page and pass props
-    navigate("/Where-to/", {
+    if (
+      !hotelParameters ||
+      !hotelParameters.checkIn ||
+      !hotelParameters.checkOut ||
+      adultCount === 0 ||
+      roomCount === 0
+    ) {
+      return (
+        <div>
+          <Alert severity="error">Empty! Please, complete</Alert>
+        </div>
+      );
+    } else {
+      // Navigate to the TripsComponent page and pass props
+      navigate("/Where-to/"); /* , {
       state: {
         hotelParameters: hotelParameters,
         adultCount: adultCount,
-        roomCount: roomCount, //When passing PROPS to the NAVIGATE FUNCTION, you should use the OBJECT SYNTAX, where each prop is specified as a key-value pair within curly braces {}
-        // When you use the navigate function provided by React Router, it updates the URL and passes state to the new location. This state is then available in the component rendered at the new location.
-      },
-    });
+        roomCount: roomCount, */ //When passing PROPS to the NAVIGATE FUNCTION, you should use the OBJECT SYNTAX, where each prop is specified as a key-value pair within curly braces {}
+      // When you use the navigate function provided by React Router, it updates the URL and passes state to the new location. This state is then available in the component rendered at the new location.
+    }
   }
 
   return (
