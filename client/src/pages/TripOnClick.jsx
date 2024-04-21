@@ -4,7 +4,16 @@ import "../../styles/TripOnClick.css";
 import TripParametersComponent from "../components/TripParametersComponent";
 import VideoPlayerComponent from "../components/VideoPlayerComponent";
 
-export default function TripOnClick() {
+export default function TripOnClick({
+  hotelParameters,
+  setHotelParameters,
+  adultCount,
+  setAdultCount,
+  roomCount,
+  setRoomCount,
+  showAlert,
+  setShowAlert,
+}) {
   const [rendering, setRendering] = useState(0);
 
   useEffect(() => {

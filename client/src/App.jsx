@@ -91,7 +91,21 @@ function App() {
 
       <Routes>
         <Route path="/" element={<TripOnClick />} />
-        <Route path="/TripOnClick/" element={<TripOnClick />} />
+        <Route
+          path="/TripOnClick/"
+          element={
+            <TripOnClick
+              hotelParameters={hotelParameters}
+              setHotelParameters={setHotelParameters}
+              adultCount={adultCount}
+              setAdultCount={setAdultCount}
+              roomCount={roomCount}
+              setRoomCount={setRoomCount}
+              showAlert={showAlert}
+              setShowAlert={setShowAlert}
+            />
+          }
+        />
         <Route path="/Where-to/" element={<TripsComponent />} />
         <Route path="Contact" element={<Contact />} />
         <Route path="MyTrips" element={<MyTrips />} />
