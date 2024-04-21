@@ -9,17 +9,17 @@ import "../../styles/TripsComponent.css";
 import TripParametersComponent from "./TripParametersComponent";
 
 export default function TripsComponent() {
-  const location = useLocation();
-  const { hotelParameters, adultCount, roomCount } = location.state; // For some reason, and following Gpts instructions , I had to change these to hotelParameters = {}, adultCount = 0, roomCount = 0, (?) yo qué sé
+  /* const location = useLocation();
+  const { hotelParameters, adultCount, roomCount } = location.state; */ // For some reason, and following Gpts instructions , I had to change these to hotelParameters = {}, adultCount = 0, roomCount = 0, (?) yo qué sé
 
   const navigate = useNavigate();
   const [rendering, setRendering] = useState(0);
-  console.log(
+  /* console.log(
     "i am the hotelParameters, the adultCount and the roomCount:",
     hotelParameters,
     adultCount,
     roomCount
-  );
+  ); */
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -137,9 +137,9 @@ export default function TripsComponent() {
           </div>
           <div className="right-panel">
             <TripParametersComponent
-              hotelParameters={hotelParameters}
+            /* hotelParameters={hotelParameters}
               adultCount={adultCount}
-              roomCount={roomCount}
+              roomCount={roomCount} */
             />
           </div>
         </div>
