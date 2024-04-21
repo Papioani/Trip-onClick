@@ -51,3 +51,8 @@
     background-color: orange; /* Optional: Change color on hover */
   }
 
+  .clickit {
+    background-color: orange; 
+    color: black;
+    border-radius: 40px; 
+  }

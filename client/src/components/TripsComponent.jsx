@@ -6,20 +6,19 @@ import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/TripsComponent.css";
-import TripParametersComponent from "./TripParametersComponent";
 
 export default function TripsComponent() {
-  /* const location = useLocation();
-  const { hotelParameters, adultCount, roomCount } = location.state; */ // For some reason, and following Gpts instructions , I had to change these to hotelParameters = {}, adultCount = 0, roomCount = 0, (?) yo qué sé
+  const location = useLocation();
+  const { hotelParameters, adultCount, roomCount } = location.state; // For some reason, and following Gpts instructions , I had to change these to hotelParameters = {}, adultCount = 0, roomCount = 0, (?) yo qué sé
 
   const navigate = useNavigate();
   const [rendering, setRendering] = useState(0);
-  /* console.log(
+  console.log(
     "i am the hotelParameters, the adultCount and the roomCount:",
     hotelParameters,
     adultCount,
     roomCount
-  ); */
+  );
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -81,7 +80,10 @@ export default function TripsComponent() {
     <>
       <div className="full-page">
         <header className="header">
-          <h2>Step 1. Choose your road trip </h2>
+          <h2>
+            Step 1. If it clicks with you,{" "}
+            <span className="clickit">click it</span>{" "}
+          </h2>
           <div>Rendered {rendering} times</div>
         </header>
         <div className="split-screen">
@@ -115,8 +117,8 @@ export default function TripsComponent() {
                 </button>
               </motion.div>
             </div>
-
-            <Link to={getImageLink(selectedImage)}>
+            <p>this is the : {hotelParameters.checkIn}</p>
+            <Link to={getImageLink()}>
               {" "}
               {/* trigger it based on user interactions, such as a button click event */}{" "}
               {/* <Link to={getImageLink()}></Link> gave error , as it can potentially trigger navigation actions during the render phase of TripsComponent.*/}
@@ -136,11 +138,13 @@ export default function TripsComponent() {
             </Link>
           </div>
           <div className="right-panel">
-            <TripParametersComponent
-            /* hotelParameters={hotelParameters}
+            {" "}
+            This is hotelParameters.checkIn {hotelParameters.checkIn}
+            {/* <TripParametersComponent
+            hotelParameters={hotelParameters}
               adultCount={adultCount}
-              roomCount={roomCount} */
-            />
+              roomCount={roomCount} 
+            /> */}
           </div>
         </div>
       </div>

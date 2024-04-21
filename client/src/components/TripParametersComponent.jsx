@@ -19,6 +19,7 @@ export default function TripParametersComponent(props) {
     showAlert,
     setShowAlert,
   } = props;
+
   const navigate = useNavigate(); // Initialize the navigate function
   const handleChange = (event) => {
     const { id, value } = event.target; // event.target refers to the DOM element that triggered the event, in this case, the input field
@@ -44,13 +45,7 @@ export default function TripParametersComponent(props) {
   };
 
   function handleClick() {
-    if (
-      !hotelParameters ||
-      !hotelParameters.checkIn ||
-      !hotelParameters.checkOut ||
-      adultCount === 0 ||
-      roomCount === 0
-    ) {
+    if (!hotelParameters || adultCount === 0 || roomCount === 0) {
       setShowAlert(true);
     } else {
       // Navigate to the TripsComponent page and pass props

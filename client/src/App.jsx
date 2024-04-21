@@ -90,7 +90,21 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<TripOnClick />} />
+        <Route
+          path="/"
+          element={
+            <TripOnClick
+              hotelParameters={hotelParameters}
+              setHotelParameters={setHotelParameters}
+              adultCount={adultCount}
+              setAdultCount={setAdultCount}
+              roomCount={roomCount}
+              setRoomCount={setRoomCount}
+              showAlert={showAlert}
+              setShowAlert={setShowAlert}
+            />
+          }
+        />
         <Route
           path="/TripOnClick/"
           element={
@@ -106,12 +120,55 @@ function App() {
             />
           }
         />
-        <Route path="/Where-to/" element={<TripsComponent />} />
+        <Route
+          path="/Where-to/"
+          element={
+            <TripsComponent
+              hotelParameters={hotelParameters}
+              adultCount={adultCount}
+              roomCount={roomCount}
+              showAlert={showAlert}
+              setShowAlert={setShowAlert}
+            />
+          }
+        />
         <Route path="Contact" element={<Contact />} />
         <Route path="MyTrips" element={<MyTrips />} />
-        <Route path="/Mani//*" element={<ManiPage />} />
-        <Route path="/Spain/*" element={<SpainPage />} />
-        <Route path="/Norway/" element={<NorwayPage />} />
+        <Route
+          path="/Mani//*"
+          element={
+            <ManiPage
+              hotelParameters={hotelParameters}
+              adultCount={adultCount}
+              roomCount={roomCount}
+              showAlert={showAlert}
+            />
+          }
+        />
+        <Route
+          path="/Spain/*"
+          element={
+            <SpainPage
+              hotelParameters={hotelParameters}
+              adultCount={adultCount}
+              roomCount={roomCount}
+              showAlert={showAlert}
+              setShowAlert={setShowAlert}
+            />
+          }
+        />
+        <Route
+          path="/Norway/"
+          element={
+            <NorwayPage
+              hotelParameters={hotelParameters}
+              adultCount={adultCount}
+              roomCount={roomCount}
+              showAlert={showAlert}
+              setShowAlert={setShowAlert}
+            />
+          }
+        />
       </Routes>
     </div>
   );
