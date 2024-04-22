@@ -4,14 +4,13 @@ import { motion } from "framer-motion";
 import Mani4Image from "./images/Mani4.png";
 import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../styles/TripsComponent.css";
 
 export default function TripsComponent() {
   const location = useLocation();
   const { hotelParameters, adultCount, roomCount } = location.state;
 
-  const navigate = useNavigate();
   const [rendering, setRendering] = useState(0);
   console.log(
     "i am the hotelParameters, the adultCount and the roomCount:",
@@ -118,8 +117,12 @@ export default function TripsComponent() {
               </motion.div>
             </div>
             <p>this is the : {hotelParameters.checkIn}</p>
-            <Link to={getImageLink()}>
-              {" "}
+            <Link to {{pathname: "/Spain",
+        state: {
+          hotelParameters: hotelParameters,
+          adultCount: adultCount,
+          roomCount: roomCount}}>
+              
               {/* trigger it based on user interactions, such as a button click event */}{" "}
               {/* <Link to={getImageLink()}></Link> gave error , as it can potentially trigger navigation actions during the render phase of TripsComponent.*/}
               <img
