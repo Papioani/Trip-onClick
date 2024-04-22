@@ -31,7 +31,7 @@ export default function TripsComponent() {
     setActive(true);
     setTrip(location);
   };
-  /* console.log("console.log the:", hotelParameters, adultCount, roomCount); */
+  console.log("console.log the:", hotelParameters, adultCount, roomCount);
 
   /* const getImageLink = (selectedImage) => {
     if (selectedImage === "Spain") {
@@ -121,12 +121,17 @@ export default function TripsComponent() {
               to={{
                 pathname:
                   selectedImage === "Spain"
-                    ? "/Spain/*"
+                    ? "/Spain//*"
                     : selectedImage === "Mani"
-                    ? "/Mani/*"
+                    ? "/Mani//*"
                     : selectedImage === "Norway"
                     ? "/Norway/"
                     : null,
+                /* state: {
+                  hotelParameters: hotelParameters,
+                  adultCount: adultCount,
+                  roomCount: roomCount,
+                }, */
               }}
             >
               <img
@@ -148,7 +153,7 @@ export default function TripsComponent() {
             {" "}
             Going 🤩: {hotelParameters.checkIn}
             <br></br>
-            Leaving: 😩{hotelParameters.checlOut}
+            Leaving: 😩{hotelParameters.checkOut}
             <br></br>
             How many 🤔: {adultCount} people
             <br></br>Rooms 😴: {roomCount}

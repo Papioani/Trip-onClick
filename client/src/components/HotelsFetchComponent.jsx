@@ -1,17 +1,10 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
 import ManiHotelFavourites from "./ManiHotelFavourites";
 
-function HotelsFetchComponent() {
+function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
   // extracting the api key from the.env file
   const apiKey = "693a320c7amshf8a3f0479327cbap12dca4jsn254f4f98016a";
   console.log(apiKey);
-  const location = useLocation();
-  const {
-    hotelParameters = {},
-    adultCount = 0,
-    roomCount = 0,
-  } = location.state || {};
 
   console.log(
     "I am the hotelParameters in the HotelsFetchComponent:",

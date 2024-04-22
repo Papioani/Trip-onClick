@@ -51,7 +51,7 @@ export default function ManiImagesComponent() {
       </Link>
 
       <Routes>
-        <Route path="/mani/*" element={<ManiPage />} />
+        <Route path="/mani//*" element={<ManiPage />} />
       </Routes>
     </div>
   );

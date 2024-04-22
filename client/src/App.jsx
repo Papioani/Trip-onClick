@@ -58,12 +58,12 @@ function App() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="/Mani/">
+                    <a className="dropdown-item" href="/Mani//*">
                       Mani
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/Spain/">
+                    <a className="dropdown-item" href="/Spain//*">
                       Spain
                     </a>
                   </li>
@@ -127,8 +127,6 @@ function App() {
               hotelParameters={hotelParameters}
               adultCount={adultCount}
               roomCount={roomCount}
-              showAlert={showAlert}
-              setShowAlert={setShowAlert}
             />
           }
         />
@@ -141,19 +139,16 @@ function App() {
               hotelParameters={hotelParameters}
               adultCount={adultCount}
               roomCount={roomCount}
-              showAlert={showAlert}
             />
           }
         />
         <Route
-          path="/Spain/*"
+          path="/Spain//*"
           element={
             <SpainPage
               hotelParameters={hotelParameters}
               adultCount={adultCount}
               roomCount={roomCount}
-              showAlert={showAlert}
-              setShowAlert={setShowAlert}
             />
           }
         />
@@ -164,8 +159,6 @@ function App() {
               hotelParameters={hotelParameters}
               adultCount={adultCount}
               roomCount={roomCount}
-              showAlert={showAlert}
-              setShowAlert={setShowAlert}
             />
           }
         />

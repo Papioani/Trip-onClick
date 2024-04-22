@@ -1,8 +1,9 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import Norway from "../components/images/Norway.png";
 
-export default function NorwayPage(props) {
-  const { hotelParameters, adultCount, roomCount } = props;
+export default function NorwayPage() {
+  const { hotelParameters, adultCount, roomCount } = useParams();
   console.log(
     "log my parameters in Norway:",
     hotelParameters,
