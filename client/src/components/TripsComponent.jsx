@@ -120,11 +120,11 @@ export default function TripsComponent() {
             <Link
               to={{
                 pathname:
-                  imageSelected === "Spain"
+                  selectedImage === "Spain"
                     ? "/Spain/*"
-                    : imageSelected === "Mani"
+                    : selectedImage === "Mani"
                     ? "/Mani/*"
-                    : imageSelected === "Norway"
+                    : selectedImage === "Norway"
                     ? "/Norway/"
                     : null,
               }}

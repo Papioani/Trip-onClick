@@ -19,7 +19,11 @@ export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
           Welcome to Spain
           <div className="vstack gap-3">
             <SpainImagesComponent />
-            <HotelsFetchComponent />
+            <HotelsFetchComponent
+              hotelParameters={hotelParameters}
+              adultCount={adultCount}
+              roomCount={roomCount}
+            />
             <MapComponent />
           </div>
         </div>
