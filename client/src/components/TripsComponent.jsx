@@ -117,14 +117,18 @@ export default function TripsComponent() {
               </motion.div>
             </div>
             <p>this is the : {hotelParameters.checkIn}</p>
-            <Link to {{pathname: "/Spain",
-        state: {
-          hotelParameters: hotelParameters,
-          adultCount: adultCount,
-          roomCount: roomCount}}>
-              
-              {/* trigger it based on user interactions, such as a button click event */}{" "}
-              {/* <Link to={getImageLink()}></Link> gave error , as it can potentially trigger navigation actions during the render phase of TripsComponent.*/}
+            <Link
+              to={{
+                pathname:
+                  imageSelected === "Spain"
+                    ? "/Spain/*"
+                    : imageSelected === "Mani"
+                    ? "/Mani/*"
+                    : imageSelected === "Norway"
+                    ? "/Norway/"
+                    : null,
+              }}
+            >
               <img
                 src={
                   selectedImage === "Spain"
