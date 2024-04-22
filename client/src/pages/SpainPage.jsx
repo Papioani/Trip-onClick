@@ -1,12 +1,11 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import SpainImagesComponent from "../components/SpainImagesComponent";
 import MapComponent from "../components/MapComponent";
 import HotelsFetchComponent from "../components/HotelsFetchComponent";
 
-export default function SpainPage() {
-  /* const location = useLocation();
-  const { hotelParameters, adultCount, roomCount } = location.state; */
+export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
+  console.log("i am the hotelParameters of the SpainPage:", hotelParameters);
   console.log(
     "we are the hotelParameters:",
     hotelParameters,

@@ -9,7 +9,7 @@ import "../../styles/TripsComponent.css";
 
 export default function TripsComponent() {
   const location = useLocation();
-  const { hotelParameters, adultCount, roomCount } = location.state; // For some reason, and following Gpts instructions , I had to change these to hotelParameters = {}, adultCount = 0, roomCount = 0, (?) yo qué sé
+  const { hotelParameters, adultCount, roomCount } = location.state;
 
   const navigate = useNavigate();
   const [rendering, setRendering] = useState(0);
@@ -26,7 +26,7 @@ export default function TripsComponent() {
 
   useEffect(() => {
     setRendering(rendering + 1);
-  }, []);
+  }, [trip]);
 
   const handleClick = (location) => {
     setActive(true);
@@ -34,36 +34,36 @@ export default function TripsComponent() {
   };
   /* console.log("console.log the:", hotelParameters, adultCount, roomCount); */
 
-  const getImageLink = (selectedImage) => {
+  /* const getImageLink = (selectedImage) => {
     if (selectedImage === "Spain") {
       setActive(true);
-      navigate("/Spain"); /* , {
+      navigate("/Spain", {
         state: {
           hotelParameters: hotelParameters,
           adultCount: adultCount,
           roomCount: roomCount,
         },
-      }); */
+      });
     } else if (selectedImage === "Mani") {
       setActive(true);
-      navigate("/Mani"); /* , {
+      navigate("/Mani", {
         state: {
           hotelParameters: hotelParameters,
           adultCount: adultCount,
           roomCount: roomCount,
         },
-      }); */
+      });
     } else if (selectedImage === "Norway") {
       setActive(true);
-      navigate("/Norway"); /* , {
+      navigate("/Norway", {
         state: {
           hotelParameters: hotelParameters,
           adultCount: adultCount,
           roomCount: roomCount,
         },
-      }); */
+      });
     }
-  };
+  }; */
 
   useEffect(() => {
     /* By using useEffect, the state update for selectedImage based on trip will only trigger when trip changes, preventing an infinite loop caused by continuous state updates. */
@@ -139,12 +139,12 @@ export default function TripsComponent() {
           </div>
           <div className="right-panel">
             {" "}
-            This is hotelParameters.checkIn {hotelParameters.checkIn}
-            {/* <TripParametersComponent
-            hotelParameters={hotelParameters}
-              adultCount={adultCount}
-              roomCount={roomCount} 
-            /> */}
+            Going 🤩: {hotelParameters.checkIn}
+            <br></br>
+            Leaving: 😩{hotelParameters.checlOut}
+            <br></br>
+            How many 🤔: {adultCount} people
+            <br></br>Rooms 😴: {roomCount}
           </div>
         </div>
       </div>
