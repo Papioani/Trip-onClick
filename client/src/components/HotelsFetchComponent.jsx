@@ -100,8 +100,6 @@ function HotelsFetchComponent({
     }
   }
 
-  if (country === Spain) {
-  }
   // useEffect(() => {
   // Without useEffect, this code would be executed every time the component re-renders.
   /* const options = {
@@ -136,19 +134,15 @@ function HotelsFetchComponent({
 
   return (
     <>
-      <div className="buttons">
-        <button id="Spain1" onClick={() => handleClick("Kardamyli")}>
-          Sleep in Kardamyli
-        </button>
-        <button id="Spain2" onClick={() => handleClick("Limeni")}>
-          Sleep in Limeni
-        </button>
-      </div>
-
-      {results && (
-        <RandomHotelFetching results={results} destination={destination} />
+      {country === "Spain" && (
+        <div className="buttons">
+          <button onClick={() => handleClick("Kardamyli")}>
+            Sleep in Kardamyli
+          </button>
+          <button onClick={() => handleClick("Limeni")}>Sleep in Limeni</button>
+        </div>
       )}
-
+      {results && <RandomHotelFetching results={results} />}
       {/* Error message if there's an error */}
       {error && <p>{error}</p>}
       {/* Loading indicator */}

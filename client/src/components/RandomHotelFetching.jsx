@@ -2,12 +2,8 @@ import React from "react";
 import { useState } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
 
-export default function RandomHotelFetching({ results, destination }) {
-  console.log(
-    "THESE are the RESULTS data and DESTINATION:",
-    results,
-    destination
-  );
+export default function RandomHotelFetching({ results }) {
+  console.log("THESE are the RESULTS data and DESTINATION:", results);
 
   const [hotelData, setHotelData] = useState([]);
 
