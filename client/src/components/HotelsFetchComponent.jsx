@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
 import RandomHotelFetching from "./RandomHotelFetching";
 
-function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
+function HotelsFetchComponent({
+  hotelParameters,
+  adultCount,
+  roomCount,
+  country,
+}) {
   // extracting the api key from the.env file
   const apiKey = "693a320c7amshf8a3f0479327cbap12dca4jsn254f4f98016a";
   console.log(apiKey);
@@ -94,6 +99,9 @@ function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
       throw err; // superimportante !!
     }
   }
+
+  if (country === Spain) {
+  }
   // useEffect(() => {
   // Without useEffect, this code would be executed every time the component re-renders.
   /* const options = {
@@ -129,12 +137,17 @@ function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
   return (
     <>
       <div className="buttons">
-        <button onClick={() => handleClick("Kardamyli")}>
+        <button id="Spain1" onClick={() => handleClick("Kardamyli")}>
           Sleep in Kardamyli
         </button>
-        <button onClick={() => handleClick("Limeni")}>Sleep in Limeni</button>
+        <button id="Spain2" onClick={() => handleClick("Limeni")}>
+          Sleep in Limeni
+        </button>
       </div>
-      {results && <RandomHotelFetching results={results} />}
+
+      {results && (
+        <RandomHotelFetching results={results} destination={destination} />
+      )}
 
       {/* Error message if there's an error */}
       {error && <p>{error}</p>}

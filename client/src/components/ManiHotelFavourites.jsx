@@ -9,11 +9,10 @@ export default function ManiHotelFavourites({ hotelData }) {
   const [rejected, setRejected] = useState([]);
   const [nextId, setNextId] = useState(1);
 
-  console.log("I am the RANDOMHOTEL of ManiHotelFavourites", randomHotel);
-
   console.log("Favourites:", favourites);
   console.log("Rejected:", rejected);
 
+  console.log("I am the h");
   function handleClick() {
     const randomIndex = Math.floor(Math.random() * hotelData.length);
     const selectedRandomHotel = hotelData[randomIndex];
@@ -39,7 +38,7 @@ export default function ManiHotelFavourites({ hotelData }) {
       setRejected(newRejected);
     }
   }
-
+  console.log("I am the RANDOMHOTEL of ManiHotelFavourites", randomHotel);
   return (
     <div>
       {randomHotel ? (
@@ -48,9 +47,8 @@ export default function ManiHotelFavourites({ hotelData }) {
 
           <div>
             <p>
-              Hotel name: {randomHotel.title} Rating:{" "}
-              {randomHotel.bubbleRating.rating} Price:{" "}
-              {randomHotel.priceForDisplay}
+              Hotel name: {randomHotel.title} Rating: {randomHotel.rating}{" "}
+              Price: {randomHotel.price}
             </p>
             <button onClick={handleLike}>like</button>
             <button onClick={handleNah}>nah</button>
@@ -65,13 +63,13 @@ export default function ManiHotelFavourites({ hotelData }) {
       <button
         className="button-box"
         type="button"
-        onClick={handleClick}
+        onClick={() => handleClick("Limeni")}
         class="btn btn-outline-success"
       >
         Refreshιng Sleep
       </button>
 
-      <MyTrips favourites={favourites} />
+      {/*   <MyTrips favourites={favourites} /> */}
     </div>
   );
 }
