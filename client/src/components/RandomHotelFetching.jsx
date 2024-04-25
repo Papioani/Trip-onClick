@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
 
 export default function RandomHotelFetching({ results }) {
