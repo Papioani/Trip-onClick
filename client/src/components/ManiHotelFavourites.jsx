@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MyTrips from "../pages/MyTrips";
 
-export default function ManiHotelFavourites({ results }) {
-  console.log("results data:", results);
+export default function ManiHotelFavourites({ hotelData }) {
+  console.log("results data:", hotelData);
 
   const [randomHotel, setRandomHotel] = useState(null);
   const [favourites, setFavourites] = useState([]);
