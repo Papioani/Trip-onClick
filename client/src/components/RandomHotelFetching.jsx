@@ -3,8 +3,6 @@ import { useState } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
 
 export default function RandomHotelFetching({ results }) {
-  console.log("THESE are the RESULTS data and DESTINATION:", results);
-
   const [hotelData, setHotelData] = useState([]);
 
   const hotelDataFetchingFunction = (title, rating, price) => {
@@ -19,7 +17,7 @@ export default function RandomHotelFetching({ results }) {
     <>
       <div>
         <ul>
-          {results.data.data.map((hotel, index) => (
+          {hotelData.map((hotel, index) => (
             <li key={index}>
               {hotelDataFetchingFunction(
                 hotel.title,

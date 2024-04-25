@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
 import RandomHotelFetching from "./RandomHotelFetching";
 
@@ -9,7 +9,7 @@ function HotelsFetchComponent({
   country,
 }) {
   // extracting the api key from the.env file
-  const apiKey = "693a320c7amshf8a3f0479327cbap12dca4jsn254f4f98016a";
+  const apiKey = "6eafd6dacamsh9595106e7e22e75p1d3894jsn14bcd3ec4338";
   console.log(apiKey);
 
   console.log(
@@ -19,7 +19,7 @@ function HotelsFetchComponent({
   // // a state variable to store the destinations
   const [destination, setDestination] = useState("");
   // a variable for the results
-  const [results, setResults] = useState("");
+  const [results, setResults] = useState([]);
   // a state variable for the errors
   const [error, setError] = useState("");
   // a state variable for the loading
@@ -28,7 +28,11 @@ function HotelsFetchComponent({
   console.log("I am the DESTINATION of the HotelsFetchComponent:", destination);
 
   console.log("I am the hotelParameters: ", hotelParameters);
+  console.log("we are the RESULTS in the HotelsFetchComponent:", results);
+
   const handleClick = async (destination) => {
+    // Define it inside
+    //  the async function returns promise and the useEffect doesn't expect callback function to return promise. It should return nothing or a function. Can´t use async with useEffect
     /* **** */
     setIsLoading(true);
     setDestination(destination);
@@ -58,7 +62,12 @@ function HotelsFetchComponent({
         throw new Error("Failed to fetch hotel search data");
       }
       const result = await hotelResponse.json();
-      setResults(result);
+      if (
+        result &&
+        !results.some((existingResult) => existingResult.id === result.id)
+      ) {
+        setResults(...results, result);
+      }
       setIsLoading(true);
       console.log(result);
     } catch (error) {
@@ -99,6 +108,10 @@ function HotelsFetchComponent({
       throw err; // superimportante !!
     }
   }
+
+  /*  useEffect(() => {
+    handleClick();
+  }, [destination]); */
 
   // useEffect(() => {
   // Without useEffect, this code would be executed every time the component re-renders.
