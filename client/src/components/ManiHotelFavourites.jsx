@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MyTrips from "../pages/MyTrips";
 
-export default function ManiHotelFavourites({ hotels }) {
-  console.log("Hotels data:", hotels);
+export default function ManiHotelFavourites({ results }) {
+  console.log("results data:", results);
 
   const [randomHotel, setRandomHotel] = useState(null);
   const [favourites, setFavourites] = useState([]);
@@ -13,8 +13,8 @@ export default function ManiHotelFavourites({ hotels }) {
   console.log("Rejected:", rejected);
 
   function handleClick() {
-    const randomIndex = Math.floor(Math.random() * hotels.length);
-    const selectedRandomHotel = hotels[randomIndex];
+    const randomIndex = Math.floor(Math.random() * results.length);
+    const selectedRandomHotel = results[randomIndex];
     setRandomHotel(selectedRandomHotel);
   }
 
@@ -46,8 +46,9 @@ export default function ManiHotelFavourites({ hotels }) {
 
           <div>
             <p>
-              Latitude: {randomHotel.latitude} Longitude:{" "}
-              {randomHotel.longitude} Name: {randomHotel.regionalName}
+              Hotel name: {randomHotel.title} Rating:{" "}
+              {randomHotel.bubbleRating.rating} Price:{" "}
+              {randomHotel.priceForDisplay}
             </p>
             <button onClick={handleLike}>like</button>
             <button onClick={handleNah}>nah</button>
