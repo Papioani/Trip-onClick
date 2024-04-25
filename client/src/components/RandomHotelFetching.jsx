@@ -1,19 +1,17 @@
 import React from "react";
 
 export default function RandomHotelFetching({ results }) {
-  console.log("Hotels data:", hotels);
+  console.log("THESE are the RESULTS data:", results);
 
-  return (
-    <div>
+  return {
+    /* <div>
       <ul>
-        {results.map((result, index) => (
+        {results.data.data.map((hotel, index) => (
           <li key={index}>
-            {result.data.data[0].title}{" "}
-            {result.data.data[0].bubbleRating.rating}{" "}
-            {result.data.data[0].priceForDisplay}
+            {hotel.title} {hotel.bubbleRating.rating} {hotel.priceForDisplay}
           </li>
         ))}
       </ul>
-    </div>
-  );
+    </div> */
+  };
 }
