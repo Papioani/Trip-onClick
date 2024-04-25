@@ -9,12 +9,14 @@ export default function ManiHotelFavourites({ results }) {
   const [rejected, setRejected] = useState([]);
   const [nextId, setNextId] = useState(1);
 
+  console.log("I am the RANDOMHOTEL of ManiHotelFavourites", randomHotel);
+
   console.log("Favourites:", favourites);
   console.log("Rejected:", rejected);
 
   function handleClick() {
-    const randomIndex = Math.floor(Math.random() * results.length);
-    const selectedRandomHotel = results[randomIndex];
+    const randomIndex = Math.floor(Math.random() * results.data.data.length);
+    const selectedRandomHotel = results.data.data[randomIndex];
     setRandomHotel(selectedRandomHotel);
   }
 
