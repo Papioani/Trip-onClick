@@ -54,7 +54,6 @@ function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
       }
       const result = await hotelResponse.json();
       setResults(result);
-      console.log("results here: ", results);
       setIsLoading(true);
       console.log(result);
     } catch (error) {

@@ -7,17 +7,14 @@ export default function RandomHotelFetching({ results }) {
 
   const [hotelData, setHotelData] = useState([]);
 
-  console.log("I am the HOTELDATA in the randomHotelFetching", hotelData);
   const hotelDataFetchingFunction = (title, rating, price) => {
-    setHotelData(
-      ...(prevHotelData) => [
-        // an arrow function ((prevHotelData) => [...]), with only 1 parameter)
-        prevHotelData,
-        { title: title, rating: rating, price: price },
-      ]
-    );
+    setHotelData((prevHotelData) => [
+      // an arrow function ((prevHotelData) => [...]), with only 1 parameter)
+      ...prevHotelData,
+      { title: title, rating: rating, price: price },
+    ]);
   };
-
+  console.log("I am the HOTELDATA in the randomHotelFetching", hotelData);
   return (
     <>
       <div>
