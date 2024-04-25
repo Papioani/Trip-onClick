@@ -3,8 +3,8 @@ import React from "react";
 export default function RandomHotelFetching({ results }) {
   console.log("THESE are the RESULTS data:", results);
 
-  return {
-    /* <div>
+  return (
+    <div>
       <ul>
         {results.data.data.map((hotel, index) => (
           <li key={index}>
@@ -12,6 +12,6 @@ export default function RandomHotelFetching({ results }) {
           </li>
         ))}
       </ul>
-    </div> */
-  };
+    </div>
+  );
 }

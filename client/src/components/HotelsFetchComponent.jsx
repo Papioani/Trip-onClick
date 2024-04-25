@@ -135,7 +135,7 @@ function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
         </button>
         <button onClick={() => handleClick("Limeni")}>Sleep in Limeni</button>
       </div>
-      {results && <RandomHotelFetching results={results} />}
+      {results && <ManiHotelFavourites results={results} />}
 
       {/* Error message if there's an error */}
       {error && <p>{error}</p>}
