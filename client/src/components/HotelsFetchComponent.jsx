@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
+import RandomHotelFetching from "./RandomHotelFetching";
 
 function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
   // extracting the api key from the.env file
@@ -19,10 +20,11 @@ function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
   // a state variable for the loading
   const [isLoading, setIsLoading] = useState(false);
 
+  console.log("I am the DESTINATION of the HotelsFetchComponent:", destination);
+
   console.log("I am the hotelParameters: ", hotelParameters);
   const handleClick = async (destination) => {
     /* **** */
-    // an async function called handleClick
     setIsLoading(true);
     setDestination(destination);
     setResults("");
@@ -133,9 +135,8 @@ function HotelsFetchComponent({ hotelParameters, adultCount, roomCount }) {
         </button>
         <button onClick={() => handleClick("Limeni")}>Sleep in Limeni</button>
       </div>
-      {results && (
-        <ManiHotelFavourites results={results} /* deleteCard={deleteCard} */ />
-      )}
+      {results && <RandomHotelFetching results={results} />}
+
       {/* Error message if there's an error */}
       {error && <p>{error}</p>}
       {/* Loading indicator */}

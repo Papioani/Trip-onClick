@@ -1,14 +1,21 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import SpainImagesComponent from "../components/SpainImagesComponent";
 import MapComponent from "../components/MapComponent";
 import HotelsFetchComponent from "../components/HotelsFetchComponent";
 
-export default function SpainPage() {
-  // if you're passing props through the route definition in React Router v6, you should use the useParams hook to access those props within the component
-  const { hotelParameters, adultCount, roomCount } = useParams();
-  /* console.log("i am the hotelParameters of the SpainPage:", hotelParameters);
+export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
+  let hotelThings = JSON.stringify(hotelParameters);
   console.log(
+    "This is finally the hotelParameters in the SpainPage, line 9:",
+    hotelThings
+  );
+  // if you're passing props through the route definition in React Router v6, you should use the useParams hook to access those props within the component
+  /*  const location = useLocation;
+  const { state } = location;
+  const { hotelParameters, adultCount, roomCount } = state;*/
+  console.log("i am the hotelParameters of the SpainPage:", hotelParameters);
+  /* console.log(
     "we are the hotelParameters:",
     hotelParameters,
     adultCount,

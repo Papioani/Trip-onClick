@@ -58,12 +58,12 @@ function App() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="/Mani//*">
+                    <a className="dropdown-item" href="/Mani/*">
                       Mani
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/Spain//*">
+                    <a className="dropdown-item" href="/Spain/*">
                       Spain
                     </a>
                   </li>
@@ -133,7 +133,7 @@ function App() {
         <Route path="Contact" element={<Contact />} />
         <Route path="MyTrips" element={<MyTrips />} />
         <Route
-          path="/Mani//*"
+          path="/Mani/*"
           element={
             <ManiPage
               hotelParameters={hotelParameters}
@@ -143,7 +143,7 @@ function App() {
           }
         />
         <Route
-          path="/Spain//*"
+          path="/Spain/*"
           element={
             <SpainPage
               hotelParameters={hotelParameters}

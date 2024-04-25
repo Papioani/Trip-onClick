@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Mani4Image from "./images/Mani4.png";
 import Spain from "./images/Spain.png";
@@ -121,17 +122,12 @@ export default function TripsComponent() {
               to={{
                 pathname:
                   selectedImage === "Spain"
-                    ? "/Spain//*"
+                    ? "/Spain/*"
                     : selectedImage === "Mani"
-                    ? "/Mani//*"
+                    ? "/Mani/*"
                     : selectedImage === "Norway"
                     ? "/Norway/"
                     : null,
-                /* state: {
-                  hotelParameters: hotelParameters,
-                  adultCount: adultCount,
-                  roomCount: roomCount,
-                }, */
               }}
             >
               <img
