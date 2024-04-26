@@ -1,10 +1,14 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import SpainImagesComponent from "../components/SpainImagesComponent";
 import MapComponent from "../components/MapComponent";
 import HotelsFetchComponent from "../components/HotelsFetchComponent";
 
 export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
+  const [country, setCountry] = useState("");
+
+  useEffect(() => {
+    setCountry("Spain");
+  }, []);
   console.log(country);
   let hotelThings = JSON.stringify(hotelParameters);
   console.log(
