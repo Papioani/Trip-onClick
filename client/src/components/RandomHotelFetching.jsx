@@ -5,6 +5,7 @@ import ManiHotelFavourites from "./ManiHotelFavourites";
 export default function RandomHotelFetching({ results }) {
   const [hotelData, setHotelData] = useState([]);
 
+  console.log("I am the RESULTS of RandomHotelFetching:", results);
   const hotelDataFetchingFunction = (title, rating, price) => {
     setHotelData((prevHotelData) => [
       // an arrow function ((prevHotelData) => [...]), with only 1 parameter)
@@ -17,7 +18,7 @@ export default function RandomHotelFetching({ results }) {
     <>
       <div>
         <ul>
-          {hotelData.map((hotel, index) => (
+          {results.data.data.map((hotel, index) => (
             <li key={index}>
               {hotelDataFetchingFunction(
                 hotel.title,
@@ -28,7 +29,7 @@ export default function RandomHotelFetching({ results }) {
           ))}
         </ul>
       </div>
-      <ManiHotelFavourites hotelData={hotelData} />
+      {/* <ManiHotelFavourites hotelData={hotelData} /> */}
     </>
   );
 }

@@ -5,8 +5,6 @@ import MapComponent from "../components/MapComponent";
 import HotelsFetchComponent from "../components/HotelsFetchComponent";
 
 export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
-  const [country, setCountry] = useState("Spain");
-
   console.log(country);
   let hotelThings = JSON.stringify(hotelParameters);
   console.log(

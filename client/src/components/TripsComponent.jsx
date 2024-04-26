@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Mani4Image from "./images/Mani4.png";
 import Spain from "./images/Spain.png";
@@ -11,6 +10,7 @@ import "../../styles/TripsComponent.css";
 export default function TripsComponent() {
   const location = useLocation();
   const { hotelParameters, adultCount, roomCount } = location.state;
+  const [country, setCountry] = useState("Spain");
 
   const [rendering, setRendering] = useState(0);
   console.log(
