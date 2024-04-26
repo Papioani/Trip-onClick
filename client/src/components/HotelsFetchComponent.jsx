@@ -62,12 +62,8 @@ function HotelsFetchComponent({
         throw new Error("Failed to fetch hotel search data");
       }
       const result = await hotelResponse.json();
-      if (
-        result &&
-        !results.some((existingResult) => existingResult.id === result.id)
-      ) {
-        setResults(...results, result);
-      }
+
+      setResults(result);
       setIsLoading(true);
       console.log(result);
     } catch (error) {
@@ -155,7 +151,7 @@ function HotelsFetchComponent({
           <button onClick={() => handleClick("Limeni")}>Sleep in Limeni</button>
         </div>
       )}
-      {/*  <RandomHotelFetching results={results} /> */}
+      <ManiHotelFavourites results={results} />
       {/* Error message if there's an error */}
       {error && <p>{error}</p>}
       {/* Loading indicator */}

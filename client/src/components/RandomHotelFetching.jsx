@@ -18,7 +18,7 @@ export default function RandomHotelFetching({ results }) {
     <>
       <div>
         <ul>
-          {results.data.data.map((hotel, index) => (
+          {results.data.data[0].map((hotel, index) => (
             <li key={index}>
               {hotelDataFetchingFunction(
                 hotel.title,
