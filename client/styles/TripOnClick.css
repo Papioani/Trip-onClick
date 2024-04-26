@@ -5,6 +5,7 @@
 }
 
 .split-screen {
+  background-color: #F8F8F8;
   display: flex;
   height: calc(100% - 4rem); /* Adjust for header height */
 }
