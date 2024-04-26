@@ -10,7 +10,6 @@ import "../../styles/TripsComponent.css";
 export default function TripsComponent() {
   const location = useLocation();
   const { hotelParameters, adultCount, roomCount } = location.state;
-  const [country, setCountry] = useState("");
 
   const [rendering, setRendering] = useState(0);
   console.log(
@@ -69,13 +68,10 @@ export default function TripsComponent() {
     /* By using useEffect, the state update for selectedImage based on trip will only trigger when trip changes, preventing an infinite loop caused by continuous state updates. */
     if (trip === "Norway") {
       setSelectedImage("Norway");
-      setCountry("Norway");
     } else if (trip === "Spain") {
       setSelectedImage("Spain");
-      setCountry("SPain");
     } else if (trip === "Mani") {
       setSelectedImage("Mani");
-      setCountry("Mani");
     }
   }, [trip]);
 
