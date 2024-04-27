@@ -9,7 +9,7 @@ function HotelsFetchComponent({
   country,
 }) {
   // extracting the api key from the.env file
-  const apiKey = "6eafd6dacamsh9595106e7e22e75p1d3894jsn14bcd3ec4338";
+  const apiKey = "314a76c0f8mshba931602e18bfcfp1f7807jsn79a0981b285a";
   console.log(apiKey);
 
   console.log(
@@ -151,7 +151,7 @@ function HotelsFetchComponent({
           <button onClick={() => handleClick("Limeni")}>Sleep in Limeni</button>
         </div>
       )}
-      <ManiHotelFavourites results={results} />
+      <RandomHotelFetching results={results} />
       {/* Error message if there's an error */}
       {error && <p>{error}</p>}
       {/* Loading indicator */}

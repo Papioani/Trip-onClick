@@ -14,8 +14,8 @@ export default function ManiHotelFavourites({ results }) {
 
   console.log("I am the h");
   function handleClick() {
-    const randomIndex = Math.floor(Math.random() * hotelData.length);
-    const selectedRandomHotel = hotelData[randomIndex];
+    const randomIndex = Math.floor(Math.random() * results.data.data.length);
+    const selectedRandomHotel = results.data.data[randomIndex];
     setRandomHotel(selectedRandomHotel);
   }
 
@@ -47,8 +47,8 @@ export default function ManiHotelFavourites({ results }) {
 
           <div>
             <p>
-              Hotel name: {randomHotel.title} Rating: {randomHotel.rating}{" "}
-              Price: {randomHotel.price}
+              Hotel name: {randomHotel.title} Rating:{" "}
+              {randomHotel.bubbleRating.rating} Price: {randomHotel.priceFo}
             </p>
             <button onClick={handleLike}>like</button>
             <button onClick={handleNah}>nah</button>
@@ -57,18 +57,6 @@ export default function ManiHotelFavourites({ results }) {
       ) : (
         <p>No hotel selected</p>
       )}
-
-      <br />
-      <br />
-      <button
-        className="button-box"
-        type="button"
-        onClick={() => handleClick("Limeni")}
-        class="btn btn-outline-success"
-      >
-        Refreshιng Sleep
-      </button>
-
       {/*   <MyTrips favourites={favourites} /> */}
     </div>
   );

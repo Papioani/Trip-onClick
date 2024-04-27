@@ -16,7 +16,7 @@ export default function RandomHotelFetching({ results }) {
   console.log("I am the HOTELDATA in the randomHotelFetching", hotelData);
   return (
     <>
-      <div>
+      {/*  <div>
         <ul>
           {results.data.data[0].map((hotel, index) => (
             <li key={index}>
@@ -28,7 +28,7 @@ export default function RandomHotelFetching({ results }) {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
       {/* <ManiHotelFavourites hotelData={hotelData} /> */}
     </>
   );
