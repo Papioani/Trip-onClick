@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
 
 export default function RandomHotelFetching({ results }) {
-  const [hotelData, setHotelData] = useState([]);
+  const [randomHotelData, setRandomHotelData] = useState([]);
   const [randomHotel, setRandomHotel] = useState(null);
 
   // I was struggling with accessing the results.data.data , but apparently they were not accessible yet when I was
@@ -16,6 +16,26 @@ export default function RandomHotelFetching({ results }) {
       setRandomHotel(selectedRandomHotel);
     }
   }, [results]);
+
+  function handleLike() {
+    if (randomHotel) {
+      const newHotel = { ...randomHotel, id: nextId };
+      setNextId(nextId + 1);
+
+      const newFavourites = [...favourites, newHotel];
+      setFavourites(newFavourites);
+    }
+  }
+
+  function handleNah() {
+    if (randomHotel) {
+      const newHotel = { ...randomHotel, id: nextId };
+      setNextId(nextId + 1);
+
+      const newRejected = [...rejected, newHotel];
+      setRejected(newRejected);
+    }
+  }
 
   console.log("I am the RANDOMHOTEL in the RandomHotelsFetching:", randomHotel);
   console.log("I am the RESULTS of RandomHotelFetching:", results);
@@ -36,6 +56,15 @@ export default function RandomHotelFetching({ results }) {
           <p>Price: {randomHotel.priceForDisplay}</p>
         </div>
       )}
+      {randomHotel ? (
+        <div>
+          <button onClick={handleLike}>like</button>
+          <button onClick={handleNah}>nah</button>
+        </div>
+      ) : (
+        <p>No hotel selected</p>
+      )}
+
       {/* <>
       <div>
         <ul>

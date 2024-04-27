@@ -26,7 +26,7 @@ function HotelsFetchComponent({
   const [isLoading, setIsLoading] = useState(false);
 
   console.log("I am the DESTINATION of the HotelsFetchComponent:", destination);
-
+  console.log("I am the COUNTRY:", country);
   console.log("I am the hotelParameters: ", hotelParameters);
   console.log("we are the RESULTS in the HotelsFetchComponent:", results);
 
