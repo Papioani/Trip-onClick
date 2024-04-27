@@ -4,7 +4,6 @@ import MyTrips from "../pages/MyTrips";
 export default function ManiHotelFavourites({ results }) {
   console.log("RESULTS of Mani Favoutites :", results);
 
-  const [randomHotel, setRandomHotel] = useState(null);
   const [favourites, setFavourites] = useState([]);
   const [rejected, setRejected] = useState([]);
   const [nextId, setNextId] = useState(1);
@@ -13,11 +12,6 @@ export default function ManiHotelFavourites({ results }) {
   console.log("Rejected:", rejected);
 
   console.log("I am the h");
-  function handleClick() {
-    const randomIndex = Math.floor(Math.random() * results.data.data.length);
-    const selectedRandomHotel = results.data.data[randomIndex];
-    setRandomHotel(selectedRandomHotel);
-  }
 
   function handleLike() {
     if (randomHotel) {
