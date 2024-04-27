@@ -4,6 +4,9 @@ import ManiHotelFavourites from "./ManiHotelFavourites";
 export default function RandomHotelFetching({ results }) {
   const [randomHotelData, setRandomHotelData] = useState([]);
   const [randomHotel, setRandomHotel] = useState(null);
+  const [favourites, setFavourites] = useState([]);
+  const [rejected, setRejected] = useState([]);
+  const [nextId, setNextId] = useState(1);
 
   // I was struggling with accessing the results.data.data , but apparently they were not accessible yet when I was
   // trying to access them. So , with the following code I made sure they are available first and then use them!!!
