@@ -151,7 +151,7 @@ function HotelsFetchComponent({
           <button onClick={() => handleClick("Limeni")}>Sleep in Limeni</button>
         </div>
       )}
-      {/* <RandomHotelFetching results={results} /> */}
+      <RandomHotelFetching results={results} />
       {/* Error message if there's an error */}
       {error && <p>{error}</p>}
       {/* Loading indicator */}

@@ -5,10 +5,16 @@ export default function RandomHotelFetching({ results }) {
   const [hotelData, setHotelData] = useState([]);
   const [randomHotel, setRandomHotel] = useState(null);
 
+  // I was struggling with accessing the results.data.data , but apparently they were not accessible yet when I was
+  // trying to access them. So , with the following code I made sure they are available first and then use them!!!
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * results.data.data.length);
-    const selectedRandomHotel = results.data.data[randomIndex];
-    setRandomHotel(selectedRandomHotel);
+    // useEffect is asynchronous. To make sure that results are available before accessing them, incluse results aa a dependency
+    if (results && results.data && results.data.data) {
+      const lengthData = results.data.data.length;
+      const randomIndex = Math.floor(Math.random() * lengthData);
+      const selectedRandomHotel = results.data.data[randomIndex];
+      setRandomHotel(selectedRandomHotel);
+    }
   }, [results]);
 
   console.log("I am the RANDOMHOTEL in the RandomHotelsFetching:", randomHotel);
