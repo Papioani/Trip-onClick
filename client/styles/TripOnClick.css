@@ -1,19 +1,22 @@
-.full-page {
+ .full-page {
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
+} 
 
 .split-screen {
   background-color: #F8F8F8;
   display: flex;
-  height: calc(100% - 4rem); /* Adjust for header height */
+  /* height: calc(100% - 4rem); */ /* Adjust for header height */
 }
 
 
 .left-panel {
   flex: 1;
+  margin-top: 50px;
+  margin-left: 30px;;
 }
+
 
 .right-panel {
   flex: 1;
@@ -25,12 +28,11 @@
 
 
   .h1 {
-    background-color: #8ea5eb;
     padding: 7px;
     font-style: oblique;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: white;
-    border-radius: 30px;
+    color: black;
+    
     position: relative;
     margin-right: 30px;
   }
@@ -63,6 +65,9 @@
   .wrapper {
     position: relative;
     top: 10%;
+    background-color: #BBC9F3;
+    border-radius: 30px;
+    padding: 7px;
   }
 
     .wrapper::before {
