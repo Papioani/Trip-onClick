@@ -28,14 +28,19 @@ export default function RandomHotelFetching({ results }) {
     }
   }, [results]);
 
-  function handleLike() {
-    if (randomHotel) {
-      const newHotel = { ...randomHotel, id: nextId };
+  console.log("I am the RANDOMHOTEL[0]:", randomHotel[0]);
+  function handleLike(index) {
+    const selectedHotel = randomHotel[index];
+    setFavourites([...favourites, selectedHotel]);
+    const updatedRandomHotel = [...randomHotel];
+    updatedRandomHotel.splice(index, 1);
+    setRandomHotel(updatedRandomHotel);
+
+    /* const newHotel = { ...randomHotel, id: nextId };
       setNextId(nextId + 1);
 
       const newFavourites = [...favourites, newHotel];
-      setFavourites(newFavourites);
-    }
+      setFavourites(newFavourites); */
   }
 
   function handleNah() {
