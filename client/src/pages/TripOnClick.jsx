@@ -34,9 +34,9 @@ export default function TripOnClick({
           <div className="videoplayer">
             <VideoPlayerComponent />
           </div>
-          {/* <div className="mapscreenshot">
-            <img src={MapScreenshot} alt="Route sample" />
-          </div> */}
+          <div className="mapscreenshot">
+            {/* <img src={MapScreenshot} alt="Route sample" /> */}
+          </div>
         </div>
         <div className="right-panel">
           <div className="wrapper">

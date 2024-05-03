@@ -11,10 +11,25 @@
 }
 
 
-.left-panel {
+/* .left-panel {
   flex: 1;
   margin-top: 50px;
   margin-left: 30px;;
+} */
+
+.left-panel {
+  flex: 1;
+  margin-top: 50px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.video-player,
+.img {
+  flex: 1;
+  margin-bottom: 10px; /* Adjust margin as needed */
 }
 
 
