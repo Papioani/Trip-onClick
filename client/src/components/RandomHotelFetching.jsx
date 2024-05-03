@@ -3,7 +3,7 @@ import ManiHotelFavourites from "./ManiHotelFavourites";
 
 export default function RandomHotelFetching({ results }) {
   const [randomHotelData, setRandomHotelData] = useState([]);
-  const [randomHotel, setRandomHotel] = useState(null);
+  const [randomHotel, setRandomHotel] = useState([]);
   const [favourites, setFavourites] = useState([]);
   const [rejected, setRejected] = useState([]);
   const [nextId, setNextId] = useState(1);
@@ -14,9 +14,16 @@ export default function RandomHotelFetching({ results }) {
     // useEffect is asynchronous. To make sure that results are available before accessing them, incluse results aa a dependency
     if (results && results.data && results.data.data) {
       const lengthData = results.data.data.length;
-      const randomHotelindices = [];
-      const randomIndex = Math.floor(Math.random() * lengthData);
-      const selectedRandomHotel = results.data.data[randomIndex];
+      const randomHotelIndices = [];
+      while (randomHotelIndices.length < 4) {
+        const randomIndex = Math.floor(Math.random() * lengthData);
+        if (!randomHotelIndices.includes(randomIndex)) {
+          randomHotelIndices.push(randomIndex);
+        }
+      }
+      const selectedRandomHotel = randomHotelIndices.map(
+        (index) => results.data.data[index]
+      );
       setRandomHotel(selectedRandomHotel);
     }
   }, [results]);
@@ -53,18 +60,18 @@ export default function RandomHotelFetching({ results }) {
   /* console.log("I am the HOTELDATA in the randomHotelFetching", hotelData); */
   return (
     <>
-      {randomHotel && (
-        <div>
-          <p>Hotel name: {randomHotel.title}</p>
-          <p>Rating: {randomHotel.bubbleRating.rating}</p>
-          <p>Price: {randomHotel.priceForDisplay}</p>
-        </div>
-      )}
-      {randomHotel ? (
-        <div>
-          <button onClick={handleLike}>like</button>
-          <button onClick={handleNah}>nah</button>
-        </div>
+      {randomHotel.length > 0 ? (
+        randomHotel.map((hotel, index) => (
+          <div key={index}>
+            <p>Hotel name: {hotel.title}</p>
+            <p>Rating: {hotel.bubbleRating.rating}</p>
+            <p>Price: {hotel.priceForDisplay}</p>
+            <div>
+              <button onClick={() => handleLike(index)}>like</button>
+              <button onClick={() => handleNah(index)}>nah</button>
+            </div>
+          </div>
+        ))
       ) : (
         <p>No hotel selected</p>
       )}
