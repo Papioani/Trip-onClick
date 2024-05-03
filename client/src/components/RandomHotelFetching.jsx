@@ -3,7 +3,7 @@ import ManiHotelFavourites from "./ManiHotelFavourites";
 
 export default function RandomHotelFetching({ results }) {
   const [randomHotelData, setRandomHotelData] = useState([]);
-  const [randomHotel, setRandomHotel] = useState([]);
+  const [randomHotel, setRandomHotel] = useState(null);
   const [favourites, setFavourites] = useState([]);
   const [rejected, setRejected] = useState([]);
   const [nextId, setNextId] = useState(1);
@@ -14,7 +14,7 @@ export default function RandomHotelFetching({ results }) {
     // useEffect is asynchronous. To make sure that results are available before accessing them, incluse results aa a dependency
     if (results && results.data && results.data.data) {
       const lengthData = results.data.data.length;
-
+      const randomHotelindices = [];
       const randomIndex = Math.floor(Math.random() * lengthData);
       const selectedRandomHotel = results.data.data[randomIndex];
       setRandomHotel(selectedRandomHotel);
