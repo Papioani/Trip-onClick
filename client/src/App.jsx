@@ -102,80 +102,84 @@ function App() {
         </div>
       </nav>
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <TripOnClick
-              hotelParameters={hotelParameters}
-              setHotelParameters={setHotelParameters}
-              adultCount={adultCount}
-              setAdultCount={setAdultCount}
-              roomCount={roomCount}
-              setRoomCount={setRoomCount}
-              showAlert={showAlert}
-              setShowAlert={setShowAlert}
+      <div>
+        <UserContext.Provider value={contextValue}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <TripOnClick
+                  hotelParameters={hotelParameters}
+                  setHotelParameters={setHotelParameters}
+                  adultCount={adultCount}
+                  setAdultCount={setAdultCount}
+                  roomCount={roomCount}
+                  setRoomCount={setRoomCount}
+                  showAlert={showAlert}
+                  setShowAlert={setShowAlert}
+                />
+              }
             />
-          }
-        />
-        <Route
-          path="/TripOnClick/"
-          element={
-            <TripOnClick
-              hotelParameters={hotelParameters}
-              setHotelParameters={setHotelParameters}
-              adultCount={adultCount}
-              setAdultCount={setAdultCount}
-              roomCount={roomCount}
-              setRoomCount={setRoomCount}
-              showAlert={showAlert}
-              setShowAlert={setShowAlert}
+            <Route
+              path="/TripOnClick/"
+              element={
+                <TripOnClick
+                  hotelParameters={hotelParameters}
+                  setHotelParameters={setHotelParameters}
+                  adultCount={adultCount}
+                  setAdultCount={setAdultCount}
+                  roomCount={roomCount}
+                  setRoomCount={setRoomCount}
+                  showAlert={showAlert}
+                  setShowAlert={setShowAlert}
+                />
+              }
             />
-          }
-        />
-        <Route
-          path="/Where-to/"
-          element={
-            <TripsComponent
-              hotelParameters={hotelParameters}
-              adultCount={adultCount}
-              roomCount={roomCount}
+            <Route
+              path="/Where-to/"
+              element={
+                <TripsComponent
+                  hotelParameters={hotelParameters}
+                  adultCount={adultCount}
+                  roomCount={roomCount}
+                />
+              }
             />
-          }
-        />
-        <Route path="Contact" element={<Contact />} />
-        <Route path="MyTrips" element={<MyTrips />} />
-        <Route
-          path="/Mani/*"
-          element={
-            <ManiPage
-              hotelParameters={hotelParameters}
-              adultCount={adultCount}
-              roomCount={roomCount}
+            <Route path="Contact" element={<Contact />} />
+            <Route path="MyTrips" element={<MyTrips />} />
+            <Route
+              path="/Mani/*"
+              element={
+                <ManiPage
+                  hotelParameters={hotelParameters}
+                  adultCount={adultCount}
+                  roomCount={roomCount}
+                />
+              }
             />
-          }
-        />
-        <Route
-          path="/Spain/*"
-          element={
-            <SpainPage
-              hotelParameters={hotelParameters}
-              adultCount={adultCount}
-              roomCount={roomCount}
+            <Route
+              path="/Spain/*"
+              element={
+                <SpainPage
+                  hotelParameters={hotelParameters}
+                  adultCount={adultCount}
+                  roomCount={roomCount}
+                />
+              }
             />
-          }
-        />
-        <Route
-          path="/Norway/"
-          element={
-            <NorwayPage
-              hotelParameters={hotelParameters}
-              adultCount={adultCount}
-              roomCount={roomCount}
+            <Route
+              path="/Norway/"
+              element={
+                <NorwayPage
+                  hotelParameters={hotelParameters}
+                  adultCount={adultCount}
+                  roomCount={roomCount}
+                />
+              }
             />
-          }
-        />
-      </Routes>
+          </Routes>
+        </UserContext.Provider>
+      </div>
     </div>
   );
 }
