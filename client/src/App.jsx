@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import UserContext from "./UserContext";
 import "./App.css";
 import TripOnClick from "./pages/TripOnClick";
 import Contact from "./pages/Contact";
@@ -10,7 +11,6 @@ import ManiPage from "./pages/ManiPage";
 import SpainPage from "./pages/SpainPage";
 import NorwayPage from "./pages/NorwayPage";
 
-export const Context = React.createContext();
 function App() {
   // create a form to store the check in , check out parameters for the search
   const EMPTY_FORM = {
