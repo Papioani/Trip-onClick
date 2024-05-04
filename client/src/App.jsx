@@ -10,6 +10,7 @@ import ManiPage from "./pages/ManiPage";
 import SpainPage from "./pages/SpainPage";
 import NorwayPage from "./pages/NorwayPage";
 
+export const Context = React.createContext();
 function App() {
   // create a form to store the check in , check out parameters for the search
   const EMPTY_FORM = {
@@ -21,6 +22,18 @@ function App() {
   const [adultCount, setAdultCount] = useState(0);
   const [roomCount, setRoomCount] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
+
+  // Create an object to hold all the states
+  const contextValue = {
+    hotelParameters,
+    setHotelParameters,
+    adultCount,
+    setAdultCount,
+    roomCount,
+    setRoomCount,
+    showAlert,
+    setShowAlert,
+  };
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">

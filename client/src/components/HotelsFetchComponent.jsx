@@ -9,7 +9,7 @@ function HotelsFetchComponent({
   country,
 }) {
   // extracting the api key from the.env file
-  const apiKey = "314a76c0f8mshba931602e18bfcfp1f7807jsn79a0981b285a";
+  const apiKey = "d85fe120cdmsh6cffb70251d5d1cp16f3d1jsn7328646e0be7";
   console.log(apiKey);
 
   console.log(
