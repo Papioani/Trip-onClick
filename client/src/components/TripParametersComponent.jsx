@@ -69,23 +69,30 @@ export default function TripParametersComponent(props) {
         </div>
       )}
       <div className="parameters-container">
-        <label htmlFor="checkIn">Check In</label>
-        <input
-          id="checkIn"
-          type="date"
-          placeholder="YYYY-MM-DD"
-          value={hotelParameters.checkIn}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="checkOut">Check Out</label>
-        <input
-          id="checkOut"
-          type="date"
-          placeholder="YYYY-MM-DD"
-          value={hotelParameters.checkOut}
-          onChange={handleChange}
-        />
+        <div className="row">
+          <div className="col">
+            <label htmlFor="checkIn">Check In</label>
+            <input
+              id="checkIn"
+              type="date"
+              className="form-control"
+              placeholder="YYYY-MM-DD"
+              value={hotelParameters.checkIn}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col">
+            <label htmlFor="checkOut">Check Out</label>
+            <input
+              id="checkOut"
+              type="date"
+              className="form-control"
+              placeholder="YYYY-MM-DD"
+              value={hotelParameters.checkOut}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
       </div>
       <br />
       <div className="adults-container">
@@ -112,6 +119,7 @@ export default function TripParametersComponent(props) {
           <DeleteIcon />
         </IconButton>
       </div>
+      <br />
       <button className="road-trip-button" onClick={handleClick}>
         {/* In React, you should avoid using inline event handlers like onclick and instead use event handlers provided by React.  */}
         Your best road trip only <span className="clicks">clicks</span> away

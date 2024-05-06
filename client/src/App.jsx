@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import UserContext from "./UserContext";
+/* import UserContext from "./UserContext"; */
 import "./App.css";
 import TripOnClick from "./pages/TripOnClick";
 import Contact from "./pages/Contact";
@@ -24,7 +24,7 @@ function App() {
   const [showAlert, setShowAlert] = useState(false);
 
   // Create an object to hold all the states
-  const contextValue = {
+  /* const contextValue = {
     hotelParameters,
     setHotelParameters,
     adultCount,
@@ -33,7 +33,7 @@ function App() {
     setRoomCount,
     showAlert,
     setShowAlert,
-  };
+  }; */
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -103,82 +103,82 @@ function App() {
       </nav>
 
       <div>
-        <UserContext.Provider value={contextValue}>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <TripOnClick
-                  hotelParameters={hotelParameters}
-                  setHotelParameters={setHotelParameters}
-                  adultCount={adultCount}
-                  setAdultCount={setAdultCount}
-                  roomCount={roomCount}
-                  setRoomCount={setRoomCount}
-                  showAlert={showAlert}
-                  setShowAlert={setShowAlert}
-                />
-              }
-            />
-            <Route
-              path="/TripOnClick/"
-              element={
-                <TripOnClick
-                  hotelParameters={hotelParameters}
-                  setHotelParameters={setHotelParameters}
-                  adultCount={adultCount}
-                  setAdultCount={setAdultCount}
-                  roomCount={roomCount}
-                  setRoomCount={setRoomCount}
-                  showAlert={showAlert}
-                  setShowAlert={setShowAlert}
-                />
-              }
-            />
-            <Route
-              path="/Where-to/"
-              element={
-                <TripsComponent
-                  hotelParameters={hotelParameters}
-                  adultCount={adultCount}
-                  roomCount={roomCount}
-                />
-              }
-            />
-            <Route path="Contact" element={<Contact />} />
-            <Route path="MyTrips" element={<MyTrips />} />
-            <Route
-              path="/Mani/*"
-              element={
-                <ManiPage
-                  hotelParameters={hotelParameters}
-                  adultCount={adultCount}
-                  roomCount={roomCount}
-                />
-              }
-            />
-            <Route
-              path="/Spain/*"
-              element={
-                <SpainPage
-                  hotelParameters={hotelParameters}
-                  adultCount={adultCount}
-                  roomCount={roomCount}
-                />
-              }
-            />
-            <Route
-              path="/Norway/"
-              element={
-                <NorwayPage
-                  hotelParameters={hotelParameters}
-                  adultCount={adultCount}
-                  roomCount={roomCount}
-                />
-              }
-            />
-          </Routes>
-        </UserContext.Provider>
+        {/*  <UserContext.Provider value={contextValue}> */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <TripOnClick
+                hotelParameters={hotelParameters}
+                setHotelParameters={setHotelParameters}
+                adultCount={adultCount}
+                setAdultCount={setAdultCount}
+                roomCount={roomCount}
+                setRoomCount={setRoomCount}
+                showAlert={showAlert}
+                setShowAlert={setShowAlert}
+              />
+            }
+          />
+          <Route
+            path="/TripOnClick/"
+            element={
+              <TripOnClick
+                hotelParameters={hotelParameters}
+                setHotelParameters={setHotelParameters}
+                adultCount={adultCount}
+                setAdultCount={setAdultCount}
+                roomCount={roomCount}
+                setRoomCount={setRoomCount}
+                showAlert={showAlert}
+                setShowAlert={setShowAlert}
+              />
+            }
+          />
+          <Route
+            path="/Where-to/"
+            element={
+              <TripsComponent
+                hotelParameters={hotelParameters}
+                adultCount={adultCount}
+                roomCount={roomCount}
+              />
+            }
+          />
+          <Route path="Contact" element={<Contact />} />
+          <Route path="MyTrips" element={<MyTrips />} />
+          <Route
+            path="/Mani/*"
+            element={
+              <ManiPage
+                hotelParameters={hotelParameters}
+                adultCount={adultCount}
+                roomCount={roomCount}
+              />
+            }
+          />
+          <Route
+            path="/Spain/*"
+            element={
+              <SpainPage
+                hotelParameters={hotelParameters}
+                adultCount={adultCount}
+                roomCount={roomCount}
+              />
+            }
+          />
+          <Route
+            path="/Norway/"
+            element={
+              <NorwayPage
+                hotelParameters={hotelParameters}
+                adultCount={adultCount}
+                roomCount={roomCount}
+              />
+            }
+          />
+        </Routes>
+        {/* </UserContext.Provider> */}
       </div>
     </div>
   );

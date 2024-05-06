@@ -1,6 +1,7 @@
 .parameters-container {
    
     position: relative;
+
 }
 
   
@@ -28,11 +29,16 @@
 
   .clicks {
     background-color: orange;
-    border-radius: 30px;
+    border-radius: 10px;
     font-size:x-large;
   }
 
   .road-trip-button {
     background-color: lightblue;  
-    border-radius: 30px;
+    border-radius: 10px;
   }
+
+ .parameter_inputs{
+
+  border-radius: 10px;
+ }

@@ -13,18 +13,18 @@ DROP TABLE IF EXISTS Mani_hotel_favourites;
 
 CREATE TABLE Mani_hotel_favourites (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  latitude VARCHAR(255),
-  longitude VARCHAR(255),
-  regionalName VARCHAR(255)
+  Hotel VARCHAR(255),
+  Rating VARCHAR(255),
+  Price VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS Spain_hotel_favourites;
 
 CREATE TABLE Spain_hotel_favourites (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  latitude VARCHAR(255),
-  longitude VARCHAR(255),
-  regionalName VARCHAR(255)
+  Hotel name VARCHAR(255),
+  Rating VARCHAR(255),
+  Price VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS places;

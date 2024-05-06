@@ -46,7 +46,7 @@
     padding: 7px;
     font-style: oblique;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: black;
+    color: white;
     
     position: relative;
     margin-right: 30px;
@@ -66,21 +66,22 @@
 
   .click-word{
     background-color: lightblue;
-    /* font-style: oblique;
-    font-weight: bold; */
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "GFS Neohellenic", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 40px;
     background-color: orange; 
-    color: white;
+    color: black;
     border-radius: 40px; 
-    -webkit-text-stroke-width: 2px; /* Width of the border */
-  -webkit-text-stroke-color: black;
+    /* -webkit-text-stroke-width: 2px; */ /* Width of the border */
+  /* -webkit-text-stroke-color: black; */
     
   }
 
   .wrapper {
     position: relative;
     top: 10%;
-    background-color: #BBC9F3;
+    background-color: lightblue;
     border-radius: 30px;
     padding: 7px;
   }
