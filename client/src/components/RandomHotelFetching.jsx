@@ -29,6 +29,7 @@ export default function RandomHotelFetching({ results }) {
   }, [results]);
 
   console.log("I am the RANDOMHOTEL[0]:", randomHotel[0]);
+
   function handleLike(index) {
     const selectedHotel = randomHotel[index];
     setFavourites([...favourites, selectedHotel]);
