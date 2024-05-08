@@ -22,10 +22,13 @@ DROP TABLE IF EXISTS Spain_hotel_favourites;
 
 CREATE TABLE Spain_hotel_favourites (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  Hotel name VARCHAR(255),
+  Hotel VARCHAR(255),
   Rating VARCHAR(255),
   Price VARCHAR(255)
 );
+
+
+
 
 DROP TABLE IF EXISTS places;
 
