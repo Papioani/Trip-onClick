@@ -9,15 +9,15 @@
 .nav-link {
   font-weight: bold; 
   font-family: Arial, sans-serif;
-  color: white;
+  color: black;
 }
 
 .nav-link:hover {
-  color: lightblue;
+  color: /* #8ea5eb */orange;
 }
 
 .container-fluid {
-background-color: #8ea5eb;
+background-color: /* #8ea5eb */ lightblue;
 color: grey;
 border-radius: 25px;
 }
