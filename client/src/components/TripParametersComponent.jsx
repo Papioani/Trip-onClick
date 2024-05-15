@@ -45,9 +45,16 @@ export default function TripParametersComponent(props) {
   };
 
   function handleClick() {
-    if (!hotelParameters || adultCount === 0 || roomCount === 0) {
+    if (
+      !hotelParameters.checkIn ||
+      !hotelParameters.checkOut ||
+      !hotelParameters ||
+      adultCount === 0 ||
+      roomCount === 0
+    ) {
       setShowAlert(true);
     } else {
+      setShowAlert(false);
       // Navigate to the TripsComponent page and pass props
       navigate("/Where-to/", {
         state: {
