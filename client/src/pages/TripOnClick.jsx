@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "../../styles/TripOnClick.css";
 import MapScreenshot from "../components/images/MapScreenshot.png";
 import TripParametersComponent from "../components/TripParametersComponent";
-import VideoPlayerComponent from "../components/VideoPlayerComponent";
+import PlayerComponent from "../components/PlayerComponent";
 
 export default function TripOnClick({
   hotelParameters,
@@ -32,7 +32,7 @@ export default function TripOnClick({
       <div className="split-screen">
         <div className="left-panel">
           <div className="videoplayer">
-            <VideoPlayerComponent />
+            <PlayerComponent />
           </div>
           <div className="mapscreenshot">
             {/* <img src={MapScreenshot} alt="Route sample" /> */}

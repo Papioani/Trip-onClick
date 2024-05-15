@@ -2,7 +2,7 @@ import ReactPlayer from "react-player";
 import React, { useRef } from "react";
 const VIDEO_PATH = "/Videos/Video.mp4";
 
-function VideoPlayerComponent() {
+function PlayerComponent() {
   /* The useRef hook is being called, and it initializes the playerRef variable with a reference object.
     The useRef hook returns a mutable object with a .current property that can hold any value. 
     This .current property is initialized with the value passed as an argument to the useRef function.
@@ -27,4 +27,4 @@ function VideoPlayerComponent() {
     </div>
   );
 }
-export default VideoPlayerComponent;
+export default PlayerComponent;
