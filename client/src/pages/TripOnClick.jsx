@@ -31,9 +31,9 @@ export default function TripOnClick({
     <div className="full-page">
       <div className="split-screen">
         <div className="left-panel">
-          <div className="videoplayer">
+          {/* <div className="videoplayer">
             <PlayerComponent />
-          </div>
+          </div> */}
           <div className="mapscreenshot">
             {/* <img src={MapScreenshot} alt="Route sample" /> */}
           </div>
