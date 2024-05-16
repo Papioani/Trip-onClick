@@ -1,8 +1,8 @@
- .full-page {
+/*  .full-page {
   display: flex;
   flex-direction: column;
   height: 100vh;
-} 
+}  */
 
 .split-screen {
   background-color: #F8F8F8;
