@@ -44,8 +44,11 @@
 
   .h1 {
     padding: 7px;
-    font-style: oblique;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique; 
+    font-family: "GFS Neohellenic", sans-serif;
+    font-weight: 500;
+    /* font-style: normal; */
+    font-size: 40px;
     color: black;
     
     position: relative;
@@ -81,9 +84,8 @@
   .wrapper {
     position: relative;
     top: 10%;
-    
-    background-color: lightblue;
-   
+      /* background: linear-gradient(to right, #e3f2fd, #bbdefb, #90caf9, #64b5f6 , #42a5f5 );  */
+      background-color: lightblue;
     padding: 7px;
   }
 
