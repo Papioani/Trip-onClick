@@ -46,7 +46,7 @@
     padding: 7px;
     font-style: oblique;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: white;
+    color: black;
     
     position: relative;
     margin-right: 30px;
@@ -81,8 +81,9 @@
   .wrapper {
     position: relative;
     top: 10%;
+    
     background-color: lightblue;
-    border-radius: 30px;
+   
     padding: 7px;
   }
 

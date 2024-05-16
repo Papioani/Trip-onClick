@@ -3,21 +3,21 @@
   flex-direction: column;
   height: 100vh;
 
-  .split-screen {
+  /* .split-screen {
     display: flex;
-    height: calc(100% - 4rem); /* Adjust for header height */
-  }
+    height: calc(100% - 4rem);} */ /* Adjust for header height */
+  
 }
 
-.left-panel {
+/* .left-panel {
   flex: 1;
-}
+} */
 
-.right-panel {
+/* .right-panel {
   flex: 1;
   margin-top: 50px;
   margin-left: 30px;;
-}
+} */
 
  .figure-img { 
     width: 90%; 

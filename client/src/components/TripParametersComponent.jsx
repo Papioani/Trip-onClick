@@ -129,7 +129,8 @@ export default function TripParametersComponent(props) {
       <br />
       <button className="road-trip-button" onClick={handleClick}>
         {/* In React, you should avoid using inline event handlers like onclick and instead use event handlers provided by React.  */}
-        Your best road trip only <span className="clicks">clicks</span> away
+        {/* Your best road trip only <span className="clicks">clicks</span> away */}
+        ...clicK
       </button>
     </>
   );
