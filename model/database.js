@@ -1,3 +1,4 @@
+// MySQL connection setup
 require("dotenv").config();
 const mysql = require("mysql");
 const fs = require("fs");  /* the backend for the fetching of database is here */
@@ -15,11 +16,13 @@ const con = mysql.createConnection({
   multipleStatements: true
 });
 
+// Connecting to MySQL server and executing initialization SQL script
+
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
 
-  let sql = fs.readFileSync(__dirname + "/init_db.sql").toString();
+  let sql = fs.readFileSync(__dirname + "/init_db.sql").toString();   // will execute whatever is in here
   con.query(sql, function(err, result) {
     if (err) throw err;
     console.log("Table creation `places` was successful!");

@@ -57,3 +57,5 @@ VALUES ('Gerolimenas', "https://www.thetimes.co.uk/article/the-mani-the-most-beg
             
 
        
+/* If you created tables and databases directly in MySQL Workbench, they are stored in the MySQL server and are not automatically reflected in your SQL file. The SQL file typically contains scripts that are used to initialize or update the database schema, 
+but it may not include all the changes made directly within the MySQL environment. */
