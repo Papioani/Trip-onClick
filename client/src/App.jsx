@@ -101,23 +101,27 @@ function App() {
                     My trips
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link nav-link-ltr" href="/contact">
-                    Contact
-                  </a>
-                </li>
               </ul>
-              <form className="d-flex">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                ></input>
-                <button className="btn btn-outline-success" type="submit">
-                  Search
-                </button>
-              </form>
+              <div className="d-flex align-items-center topnav-right">
+                <ul className="navbar-nav">
+                  <li className="nav-item">
+                    <a className="nav-link" href="/contact">
+                      Contact
+                    </a>
+                  </li>
+                  <form className="d-flex">
+                    <input
+                      className="form-control me-2"
+                      type="search"
+                      placeholder="Search"
+                      aria-label="Search"
+                    ></input>
+                    <button className="btn btn-outline-success" type="submit">
+                      Search
+                    </button>
+                  </form>
+                </ul>
+              </div>
             </div>
           </div>
         </nav>

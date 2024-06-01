@@ -11,6 +11,9 @@
       position: relative;
     }
 
+    .topnav-right{
+      float: "right";
+    }
 
     .nav-link::before{
       display:block;
@@ -39,14 +42,10 @@ transition:width 1s ease;
   
   
   
-  .container-fluid {
-      /* background: linear-gradient(to right, #3ca2c3,
-      #63b5cf,
-      #add8e6,
-      #b1dae7,
-      #d8ecf3); */
-        color:lightsteelblue
-    } 
+ .container-fluid {
+    width: 100%;
+  overflow: auto;
+    }  
   
   
   .navbar-brand {
