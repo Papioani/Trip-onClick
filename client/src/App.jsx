@@ -39,7 +39,7 @@ function App() {
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
             <a className="navbar-brand" href="/TripOnClick">
-              Trιp onClick
+              Τrιp onClick
             </a>
             <button
               className="navbar-toggler"
@@ -57,7 +57,7 @@ function App() {
                 <li className="nav-item">
                   {/* this leads to TripsComponent */}
                   <a
-                    className="nav-link active"
+                    className="nav-link active nav-link-ltr"
                     aria-current="page"
                     href="/where-to"
                   >
@@ -66,14 +66,14 @@ function App() {
                 </li>
                 <li className="nav-item dropdown">
                   <a
-                    className="nav-link dropdown-toggle"
+                    className="nav-link dropdown-toggle nav-link-ltr"
                     href="#"
                     id="navbarDropdown"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Road trιps
+                    Road trips
                   </a>
                   <ul
                     className="dropdown-menu"
@@ -97,12 +97,12 @@ function App() {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/MyTrips">
+                  <a className="nav-link nav-link-ltr" href="/MyTrips">
                     My trips
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/contact">
+                  <a className="nav-link nav-link-ltr" href="/contact">
                     Contact
                   </a>
                 </li>

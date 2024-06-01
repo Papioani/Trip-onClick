@@ -2,19 +2,42 @@
     max-width: 1280px;
     margin: 0 auto;
     text-align: center;
-
+}
     .nav-link {
       color: black;
-      font-weight: bold; 
-    font-family: Arial, sans-serif;
+      font-weight:lighter; 
+      font-family: "GFS Didot", serif;
+      font-size:larger;
+      position: relative;
     }
-}
+
+
+    .nav-link::before{
+      display:block;
+      content:"";
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:0;
+      height:2px;
+      background: black;
+transition:width 1s ease;
+    }
+
+    .nav-link:hover:before {
+      width: 100%;
+    }
+    
+
   
+.dropdown-item{
+  font-weight:lighter; 
+  font-family: "GFS Didot", serif;
+  font-size: large;
+}
  
   
- .nav-link:hover {
-    color: #8ea5eb ;
-  }   
+  
   
   .container-fluid {
       /* background: linear-gradient(to right, #3ca2c3,
@@ -27,9 +50,9 @@
   
   
   .navbar-brand {
-    background-color: #fda403;
+    background-color: #ffa323;
     color: black; 
-    /* border-radius: 40px; */ 
+     border-radius: 10px; 
       font-family: "GFS Didot", serif;
       font-weight: 400;
       font-style: normal;
