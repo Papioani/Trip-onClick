@@ -1,8 +1,8 @@
-/*  .full-page {
+/* .full-page {
   display: flex;
   flex-direction: column;
   height: 100vh;
-}  */
+}   */
 
 .split-screen {
   background-color: #F8F8F8;
@@ -26,11 +26,11 @@
   justify-content: space-between;
 }
 
-.video-player,
+/* .video-player,
 .img {
   flex: 1;
-  margin-bottom: 10px; /* Adjust margin as needed */
-}
+  margin-bottom: 10px; } *//* Adjust margin as needed */
+
 
 
 .right-panel {

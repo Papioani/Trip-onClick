@@ -1,41 +1,46 @@
-#root {
+/* #root {
     max-width: 1280px;
     margin: 0 auto;
     text-align: center;
-    }
+    } */
   
-    
-  .nav-link {
+  
+  /* .nav-link {
     font-weight: bold; 
     font-family: Arial, sans-serif;
     color: black;
-  }
+  }  */
   
-  .nav-link:hover {
+ /*   .nav-link:hover {
     color: #8ea5eb ;
-  } 
+  }   */
   
-  .container-fluid {
+  /* .container-fluid {
       background: linear-gradient(to right, #3ca2c3,
       #63b5cf,
       #add8e6,
       #b1dae7,
       #d8ecf3);
-    }
+    } */
   
   
   .navbar-brand {
-    /* background-color: orange; */
-    color: black;
-    border-radius: 40px; 
+    background-color: orange;
+    color: black; 
+    /* border-radius: 40px; */ 
+      font-family: "GFS Didot", serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 40px;
+    }
+    
     /* font-family: "GFS Neohellenic", sans-serif;
-    font-weight: 700;
-    font-style: normal; */
-    font-family: "Bungee Spice", sans-serif;
     font-weight: 400;
-    font-style: normal;
+    font-style: normal;  */
+    /* font-family: "Bungee Spice", sans-serif; */
+    /* font-style: normal;
     font-size: 40px;
-  }
+  } */
   
   
   
@@ -57,11 +62,11 @@
   
   
   
-  
+ /*  
   .leaflet-container{
   width: 80vw;
   height: 80vh;
-  }
+  } */
   
   
   
