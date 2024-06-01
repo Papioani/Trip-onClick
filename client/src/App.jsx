@@ -36,7 +36,7 @@ function App() {
   return (
     <>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
             <a className="navbar-brand" href="/TripOnClick">
               Trιp onClick
@@ -53,24 +53,32 @@ function App() {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul className="nav nav-underline">
+              <ul className="navbar-nav">
                 <li className="nav-item">
                   {/* this leads to TripsComponent */}
-                  <a className="nav-link" href="/where-to">
+                  <a
+                    className="nav-link active"
+                    aria-current="page"
+                    href="/where-to"
+                  >
                     Trips
                   </a>
                 </li>
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
-                    href="/myTrips"
+                    href="#"
+                    id="navbarDropdown"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     Road trιps
                   </a>
-                  <ul className="dropdown-menu">
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="navbarDropdown"
+                  >
                     <li>
                       <a className="dropdown-item" href="/Mani/*">
                         Mani
@@ -99,6 +107,17 @@ function App() {
                   </a>
                 </li>
               </ul>
+              <form className="d-flex">
+                <input
+                  className="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                ></input>
+                <button className="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+              </form>
             </div>
           </div>
         </nav>
@@ -146,8 +165,8 @@ function App() {
                 />
               }
             />
-            <Route path="Contact" element={<Contact />} />
-            <Route path="MyTrips" element={<MyTrips />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="/MyTrips" element={<MyTrips />} />
             <Route
               path="/Mani/*"
               element={
