@@ -1,7 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
-/* import UserContext from "./UserContext"; */
 import "./App.css";
 import TripOnClick from "./pages/TripOnClick";
 import Contact from "./pages/Contact";
@@ -10,6 +8,9 @@ import TripsComponent from "./components/TripsComponent";
 import ManiPage from "./pages/ManiPage";
 import SpainPage from "./pages/SpainPage";
 import NorwayPage from "./pages/NorwayPage";
+
+// Call createContext outside any components to create one or more contexts.
+export const FormContext = React.createContext();
 
 function App() {
   const EMPTY_FORM = {
@@ -22,7 +23,7 @@ function App() {
   const [showAlert, setShowAlert] = useState(false);
 
   // Create an object to hold all the states
-  /* const contextValue = {
+  const contextValues = {
     hotelParameters,
     setHotelParameters,
     adultCount,
@@ -31,7 +32,7 @@ function App() {
     setRoomCount,
     showAlert,
     setShowAlert,
-  }; */
+  };
 
   return (
     <>
@@ -127,82 +128,23 @@ function App() {
         </nav>
 
         <div>
-          {/*  <UserContext.Provider value={contextValue}> */}
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <TripOnClick
-                  hotelParameters={hotelParameters}
-                  setHotelParameters={setHotelParameters}
-                  adultCount={adultCount}
-                  setAdultCount={setAdultCount}
-                  roomCount={roomCount}
-                  setRoomCount={setRoomCount}
-                  showAlert={showAlert}
-                  setShowAlert={setShowAlert}
-                />
-              }
-            />
-            <Route
-              path="/TripOnClick/"
-              element={
-                <TripOnClick
-                  hotelParameters={hotelParameters}
-                  setHotelParameters={setHotelParameters}
-                  adultCount={adultCount}
-                  setAdultCount={setAdultCount}
-                  roomCount={roomCount}
-                  setRoomCount={setRoomCount}
-                  showAlert={showAlert}
-                  setShowAlert={setShowAlert}
-                />
-              }
-            />
-            <Route
-              path="/Where-to/"
-              element={
-                <TripsComponent
-                  hotelParameters={hotelParameters}
-                  adultCount={adultCount}
-                  roomCount={roomCount}
-                />
-              }
-            />
-            <Route path="/Contact" element={<Contact />} />
-            <Route path="/MyTrips" element={<MyTrips />} />
-            <Route
-              path="/Mani/*"
-              element={
-                <ManiPage
-                  hotelParameters={hotelParameters}
-                  adultCount={adultCount}
-                  roomCount={roomCount}
-                />
-              }
-            />
-            <Route
-              path="/Spain/*"
-              element={
-                <SpainPage
-                  hotelParameters={hotelParameters}
-                  adultCount={adultCount}
-                  roomCount={roomCount}
-                />
-              }
-            />
-            <Route
-              path="/Norway/"
-              element={
-                <NorwayPage
-                  hotelParameters={hotelParameters}
-                  adultCount={adultCount}
-                  roomCount={roomCount}
-                />
-              }
-            />
-          </Routes>
-          {/* </UserContext.Provider> */}
+          {/* you will use SomeContext.Provider in components above to specify the context value
+          When you call useContext(SomeContext), you are reading the context value that was provided by a SomeContext.Provider */}
+          {/* Wrap your components into a context provider to specify the value of this context for all components inside: This is the props*/}
+          {/* The value that you want to pass to all the components reading this context inside this provider, no matter how deep. 
+          A component calling useContext(SomeContext) inside of the provider receives the value */}
+          <FormContext.Provider value={contextValues}>
+            <Routes>
+              <Route path="/" element={<TripOnClick />} />
+              <Route path="/TripOnClick/" element={<TripOnClick />} />
+              <Route path="/Where-to/" element={<TripsComponent />} />
+              <Route path="/Contact" element={<Contact />} />
+              <Route path="/MyTrips" element={<MyTrips />} />
+              <Route path="/Mani/*" element={<ManiPage />} />
+              <Route path="/Spain/*" element={<SpainPage />} />
+              <Route path="/Norway/" element={<NorwayPage />} />
+            </Routes>
+          </FormContext.Provider>
         </div>
       </div>
     </>
