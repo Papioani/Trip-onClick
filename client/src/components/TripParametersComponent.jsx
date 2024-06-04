@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { FormContext } from "../App";
 import "../../styles/TripParametersComponent.css";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -18,7 +19,7 @@ export default function TripParametersComponent(props) {
     setRoomCount,
     showAlert,
     setShowAlert,
-  } = props;
+  } = useContext(FormContext);
 
   const navigate = useNavigate(); // Initialize the navigate function
   const handleChange = (event) => {

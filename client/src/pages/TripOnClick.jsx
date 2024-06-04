@@ -1,20 +1,23 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { FormContext } from "../App";
 import "../../styles/TripOnClick.css";
 /* import Video from "../components/images/Video.mp4"; */
 import TripParametersComponent from "../components/TripParametersComponent";
 /* import PlayerComponent from "./components/PlayerComponent"; */
 
-export default function TripOnClick({
-  hotelParameters,
-  setHotelParameters,
-  adultCount,
-  setAdultCount,
-  roomCount,
-  setRoomCount,
-  showAlert,
-  setShowAlert,
-}) {
+export default function TripOnClick() {
+  /* access the entire context object to maintain flexibility and consistency, even if you aren't using all the values immediately. This approach makes it easier to add more context values in the future */
+  const {
+    hotelParameters,
+    setHotelParameters,
+    adultCount,
+    setAdultCount,
+    roomCount,
+    setRoomCount,
+    showAlert,
+    setShowAlert,
+  } = useContext(FormContext);
+
   const [rendering, setRendering] = useState(0);
 
   useEffect(() => {
@@ -50,16 +53,7 @@ export default function TripOnClick({
           <div className="size-40 relative w-full max-w-screen-xl">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="wrapper w-3/4">
-                <TripParametersComponent
-                  hotelParameters={hotelParameters}
-                  setHotelParameters={setHotelParameters}
-                  adultCount={adultCount}
-                  setAdultCount={setAdultCount}
-                  roomCount={roomCount}
-                  setRoomCount={setRoomCount}
-                  showAlert={showAlert}
-                  setShowAlert={setShowAlert}
-                />
+                <TripParametersComponent />
               </div>
             </div>
           </div>
