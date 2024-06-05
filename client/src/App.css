@@ -49,13 +49,14 @@ transition:width 1s ease;
   
   
   .navbar-brand {
-    background-color: #ffa323;
+    /* background-color: #ffa323;  */
     color: black; 
      border-radius: 10px; 
       font-family: "GFS Didot", serif;
       font-weight: 400;
       font-style: normal;
       font-size: 40px;
+      box-shadow: 0 50px 50px orange;
     }
     
     /* font-family: "GFS Neohellenic", sans-serif;
