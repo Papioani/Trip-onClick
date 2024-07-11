@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
-/* import UserContext from "./UserContext"; */
 import "./App.css";
+
+/* import UserContext from "./UserContext"; */
 import TripOnClick from "./pages/TripOnClick";
 import Contact from "./pages/Contact";
 import MyTrips from "./pages/MyTrips";
@@ -59,7 +59,7 @@ function App() {
                 {/*  <a
                     className="nav-link active nav-link-ltr"
                     aria-current="page"
-                    href="/where-to"
+                    href="/trips"
                   >
                     Trips
                   </a>
@@ -102,14 +102,14 @@ function App() {
                   </a>
                 </li>
               </ul>
-              <div className="d-flex align-items-center topnav-right">
-                <ul className="navbar-nav">
-                  <li className="nav-item">
-                    <a className="nav-link" href="/contact">
-                      Contact
-                    </a>
-                  </li>
-                  <form className="d-flex">
+              {/* <div className="d-flex align-items-center topnav-right"> */}
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <a className="nav-link" href="/contact">
+                    Contact
+                  </a>
+                </li>
+                {/* <form className="d-flex ms-auto align-items-center">
                     <input
                       className="form-control me-2"
                       type="search"
@@ -119,9 +119,9 @@ function App() {
                     <button className="btn btn-outline-success" type="submit">
                       Search
                     </button>
-                  </form>
-                </ul>
-              </div>
+                  </form> */}
+              </ul>
+              {/*  </div> */}
             </div>
           </div>
         </nav>
@@ -160,7 +160,7 @@ function App() {
               }
             />
             <Route
-              path="/Where-to/"
+              path="/trips/"
               element={
                 <TripsComponent
                   hotelParameters={hotelParameters}

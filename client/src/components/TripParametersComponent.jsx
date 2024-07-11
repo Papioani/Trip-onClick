@@ -56,7 +56,7 @@ export default function TripParametersComponent(props) {
     } else {
       setShowAlert(false);
       // Navigate to the TripsComponent page and pass props
-      navigate("/Where-to/", {
+      navigate("/trips/", {
         state: {
           hotelParameters: hotelParameters,
           adultCount: adultCount,
