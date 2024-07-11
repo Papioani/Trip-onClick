@@ -1,9 +1,8 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/TripOnClick.css";
-/* import Video from "../components/images/Video.mp4"; */
+import Video from "../components/images/Video.mp4";
 import TripParametersComponent from "../components/TripParametersComponent";
-/* import PlayerComponent from "./components/PlayerComponent"; */
+import PlayerComponent from "../components/PlayerComponent";
 
 export default function TripOnClick({
   hotelParameters,
@@ -29,9 +28,9 @@ export default function TripOnClick({
   );
   return (
     <>
-      {/* <video autoPlay loop muted id="video">
+      <video autoPlay loop muted id="video">
         <source src={Video} type="video/mp4" />
-      </video> */}
+      </video>
       <div className="full-page">
         <h1 className="h1">
           No plan, no trip? {/* <span className="click-word">...clicK</span> */}
@@ -42,7 +41,7 @@ export default function TripOnClick({
             <PlayerComponent />
           </div> */}
         <div className="mapscreenshot">
-          {/* <img src={MapScreenshot} alt="Route sample" /> */}
+          {/*    <img src={MapScreenshot} alt="Route sample" /> */}
         </div>
         {/* </div> */}
         {/* <div className="right-panel"> */}
@@ -60,6 +59,9 @@ export default function TripOnClick({
                   showAlert={showAlert}
                   setShowAlert={setShowAlert}
                 />
+                <div className="videoplayer">
+                  <PlayerComponent />
+                </div>
               </div>
             </div>
           </div>

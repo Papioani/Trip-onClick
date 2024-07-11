@@ -134,12 +134,14 @@ function App() {
               </ul>
               {/*  </div> */}
             </div>
+            {/* footer  */}
           </div>
         </nav>
 
         <div>
           {/*  <UserContext.Provider value={contextValue}> */}
           <Routes>
+            <Route path="/" element={<TripOnClick {...commonProps} />} />
             <Route
               path="/TripOnClick/"
               element={<TripOnClick {...commonProps} />}
