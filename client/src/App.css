@@ -1,74 +1,66 @@
 #root {
-    max-width: 1280px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
 }
-    .nav-link {
-      color: black;
-      font-weight:lighter; 
-      font-family: "GFS Didot", serif;
-      font-size:larger;
-      position: relative;
-    }
+.nav-link {
+  color: black;
+  font-weight: lighter;
+  font-family: "GFS Didot", serif;
+  font-size: larger;
+  position: relative;
+}
 
-    .topnav-right{
-      float: "right";
-    }
+.topnav-right {
+  float: "right";
+}
 
-    .nav-link::before{
-      display:block;
-      content:"";
-      position:absolute;
-      bottom:0;
-      left:0;
-      width:0;
-      height:2px;
-      background: black;
-transition:width 1s ease;
-    }
+.nav-link::before {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width 1s ease;
+}
 
-    .nav-link:hover:before {
-      width: 100%;
-    }
-    
+.nav-link:hover:before {
+  width: 100%;
+}
 
-  
-.dropdown-item{
-  font-weight:lighter; 
+.dropdown-item {
+  font-weight: lighter;
   font-family: "GFS Didot", serif;
   font-size: large;
 }
- 
-  
-  
-  
- .container-fluid {
+
+/* .container-fluid {
     width: 100%;
   overflow: auto;
-    }  
-  
-  
-  .navbar-brand {
-    background-color: #ffa323;
-    color: black; 
-     border-radius: 10px; 
-      font-family: "GFS Didot", serif;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 40px;
-    }
-    
-    /* font-family: "GFS Neohellenic", sans-serif;
+    }   */
+
+.navbar-brand {
+  background-color: #ffa323;
+  color: black;
+  border-radius: 10px;
+  font-family: "GFS Didot", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+}
+
+/* font-family: "GFS Neohellenic", sans-serif;
     font-weight: 400;
     font-style: normal;  */
-    /* font-family: "Bungee Spice", sans-serif; */
-    /* font-style: normal;
+/* font-family: "Bungee Spice", sans-serif; */
+/* font-style: normal;
     font-size: 40px;
   } */
-  
-  
-  
-  /* @keyframes logo-spin {
+
+/* @keyframes logo-spin {
     from {
       transform: rotate(0deg);
     }
@@ -76,27 +68,15 @@ transition:width 1s ease;
       transform: rotate(360deg);
     }
   } */
-  
-  /* @media (prefers-reduced-motion: no-preference) {
+
+/* @media (prefers-reduced-motion: no-preference) {
     a:nth-of-type(2) .logo {
       animation: logo-spin infinite 20s linear;
     }
   } */
-  
-  
-  
-  
- /*  
+
+/*  
   .leaflet-container{
   width: 80vw;
   height: 80vh;
   } */
-  
-  
-  
-  
-  
-  
-  
-  
-  

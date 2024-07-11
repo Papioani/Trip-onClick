@@ -54,16 +54,16 @@ function App() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav">
-                <li className="nav-item">
-                  {/* this leads to TripsComponent */}
-                  <a
+                {/* <li className="nav-item"> */}
+                {/* this leads to TripsComponent */}
+                {/*  <a
                     className="nav-link active nav-link-ltr"
                     aria-current="page"
                     href="/where-to"
                   >
                     Trips
                   </a>
-                </li>
+                </li> */}
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle nav-link-ltr"
