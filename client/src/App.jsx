@@ -21,6 +21,17 @@ function App() {
   const [roomCount, setRoomCount] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
 
+  const commonProps = {
+    hotelParameters,
+    setHotelParameters,
+    adultCount,
+    setAdultCount,
+    roomCount,
+    setRoomCount,
+    showAlert,
+    setShowAlert,
+  };
+
   // Create an object to hold all the states
   /* const contextValue = {
     hotelParameters,
@@ -130,34 +141,8 @@ function App() {
           {/*  <UserContext.Provider value={contextValue}> */}
           <Routes>
             <Route
-              path="/"
-              element={
-                <TripOnClick
-                  hotelParameters={hotelParameters}
-                  setHotelParameters={setHotelParameters}
-                  adultCount={adultCount}
-                  setAdultCount={setAdultCount}
-                  roomCount={roomCount}
-                  setRoomCount={setRoomCount}
-                  showAlert={showAlert}
-                  setShowAlert={setShowAlert}
-                />
-              }
-            />
-            <Route
               path="/TripOnClick/"
-              element={
-                <TripOnClick
-                  hotelParameters={hotelParameters}
-                  setHotelParameters={setHotelParameters}
-                  adultCount={adultCount}
-                  setAdultCount={setAdultCount}
-                  roomCount={roomCount}
-                  setRoomCount={setRoomCount}
-                  showAlert={showAlert}
-                  setShowAlert={setShowAlert}
-                />
-              }
+              element={<TripOnClick {...commonProps} />}
             />
             <Route
               path="/trips/"
