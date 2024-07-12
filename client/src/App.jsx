@@ -206,29 +206,29 @@ function App() {
         {/* <div className="videoplayer">
             <PlayerComponent />
           </div> */}
-        <div className="mapscreenshot">
-          {/* <img src={MapScreenshot} alt="Route sample" /> */}
-        </div>
+        {/* <div className="mapscreenshot"> */}
+        {/* <img src={MapScreenshot} alt="Route sample" /> */}
+        {/*  </div> */}
         {/* </div> */}
         {/* <div className="right-panel"> */}
-        <div className=" h-screen flex items-center justify-center">
-          <div className="size-40 relative w-full max-w-screen-xl">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="wrapper w-3/4">
-                <TripParametersComponent
-                  hotelParameters={hotelParameters}
-                  setHotelParameters={setHotelParameters}
-                  adultCount={adultCount}
-                  setAdultCount={setAdultCount}
-                  roomCount={roomCount}
-                  setRoomCount={setRoomCount}
-                  showAlert={showAlert}
-                  setShowAlert={setShowAlert}
-                />
-              </div>
-            </div>
+        {/* <div className=" h-screen flex items-center justify-center">
+          <div className="size-40 relative w-full max-w-screen-xl"> */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="wrapper w-3/4">
+            <TripParametersComponent
+              hotelParameters={hotelParameters}
+              setHotelParameters={setHotelParameters}
+              adultCount={adultCount}
+              setAdultCount={setAdultCount}
+              roomCount={roomCount}
+              setRoomCount={setRoomCount}
+              showAlert={showAlert}
+              setShowAlert={setShowAlert}
+            />
           </div>
         </div>
+        {/* </div>
+        </div> */}
         {/*  </div> */}
         <div>Rendered {rendering} times</div>
         {/* </div> */}

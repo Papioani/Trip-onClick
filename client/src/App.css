@@ -3,6 +3,7 @@
   margin: 0 auto;
   text-align: center;
 }
+
 .nav-link {
   color: black;
   font-weight: lighter;
@@ -11,10 +12,7 @@
   position: relative;
 }
 
-.topnav-right {
-  float: "right";
-}
-
+/* nav-link:before combined with  nav-link:hover:before create the underline effect*/
 .nav-link::before {
   display: block;
   content: "";
@@ -37,11 +35,6 @@
   font-size: large;
 }
 
-/* .container-fluid {
-    width: 100%;
-  overflow: auto;
-    }   */
-
 .navbar-brand {
   background-color: #ffa323;
   color: black;
@@ -52,125 +45,20 @@
   font-size: 40px;
 }
 
-/* font-family: "GFS Neohellenic", sans-serif;
-    font-weight: 400;
-    font-style: normal;  */
-/* font-family: "Bungee Spice", sans-serif; */
-/* font-style: normal;
-    font-size: 40px;
-  } */
-
-/* @keyframes logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  } */
-
-/* @media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-      animation: logo-spin infinite 20s linear;
-    }
-  } */
-
-/*  
-  .leaflet-container{
-  width: 80vw;
-  height: 80vh;
-  } */
-
-.full-page {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.split-screen {
-  background-color: #f8f8f8;
-  display: flex;
-  /* height: calc(100% - 4rem); */ /* Adjust for header height */
-}
-
-/* .left-panel {
-    flex: 1;
-    margin-top: 50px;
-    margin-left: 30px;;
-  }  */
-
-.left-panel {
-  flex: 1;
-  margin-top: 50px;
-  margin-left: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* .video-player,
-  .img {
-    flex: 1;
-    margin-bottom: 10px; } */ /* Adjust margin as needed */
-
-.right-panel {
-  flex: 1;
-  margin-top: 50px;
-  margin-left: 30px;
-}
-
 .h1 {
   padding: 7px;
   font-style: oblique;
   font-family: "GFS Didot", serif;
   font-weight: 500;
-  /* font-style: normal; */
   font-size: 40px;
   color: black;
-
   position: relative;
   margin-right: 30px;
-}
-
-.h1::before {
-  content: "";
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 1px; /* Adjust the width of the line as needed */
-  height: 100%; /* Make the line span the full height of the wrapper */
-  background-color: black; /* Change the color of the line as needed */
-  margin-left: -5px;
-  margin-right: 10px;
-}
-
-.click-word {
-  background-color: lightblue;
-  font-family: "GFS Neohellenic", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 40px;
-  background-color: orange;
-  color: black;
-  border-radius: 40px;
-  /* -webkit-text-stroke-width: 2px; */ /* Width of the border */
-  /* -webkit-text-stroke-color: black; */
 }
 
 .wrapper {
   position: relative;
   top: 10%;
-  /* background: linear-gradient(to right, #e3f2fd, #bbdefb, #90caf9, #64b5f6 , #42a5f5 );  */
   background-color: lightblue;
-  padding: 7px;
-}
-
-.wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2px; /* Adjust the width of the line as needed */
-  height: 100%; /* Make the line span the full height of the wrapper */
-  background-color: black; /* Change the color of the line as needed */
+  padding: 27px;
 }
