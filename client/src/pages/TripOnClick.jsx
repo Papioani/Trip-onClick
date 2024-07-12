@@ -4,16 +4,19 @@ import Video from "../components/images/Video.mp4";
 import TripParametersComponent from "../components/TripParametersComponent";
 import PlayerComponent from "../components/PlayerComponent";
 
-export default function TripOnClick({
-  hotelParameters,
-  setHotelParameters,
-  adultCount,
-  setAdultCount,
-  roomCount,
-  setRoomCount,
-  showAlert,
-  setShowAlert,
-}) {
+export default function TripOnClick() {
+  /* access the entire context object to maintain flexibility and consistency, even if you aren't using all the values immediately. This approach makes it easier to add more context values in the future */
+  const {
+    hotelParameters,
+    setHotelParameters,
+    adultCount,
+    setAdultCount,
+    roomCount,
+    setRoomCount,
+    showAlert,
+    setShowAlert,
+  } = useContext(FormContext);
+
   const [rendering, setRendering] = useState(0);
 
   useEffect(() => {

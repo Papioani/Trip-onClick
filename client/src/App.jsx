@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-
-/* import UserContext from "./UserContext"; */
 import TripOnClick from "./pages/TripOnClick";
 import Contact from "./pages/Contact";
 import MyTrips from "./pages/MyTrips";
@@ -10,6 +8,9 @@ import TripsComponent from "./components/TripsComponent";
 import ManiPage from "./pages/ManiPage";
 import SpainPage from "./pages/SpainPage";
 import NorwayPage from "./pages/NorwayPage";
+
+// Call createContext outside any components to create one or more contexts.
+export const FormContext = React.createContext();
 
 function App() {
   const EMPTY_FORM = {
@@ -33,7 +34,7 @@ function App() {
   };
 
   // Create an object to hold all the states
-  /* const contextValue = {
+  const contextValues = {
     hotelParameters,
     setHotelParameters,
     adultCount,
@@ -42,7 +43,7 @@ function App() {
     setRoomCount,
     showAlert,
     setShowAlert,
-  }; */
+  };
 
   return (
     <>
