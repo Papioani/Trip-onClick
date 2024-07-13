@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Video from "./components/images/Video.mp4";
-/* import PlayerComponent from "./components/PlayerComponent"; */
+/* import Video from "./components/images/Video.mp4";
+ */ /* import PlayerComponent from "./components/PlayerComponent"; */
 
 import TripParametersComponent from "./components/TripParametersComponent";
 import Contact from "./pages/Contact";
@@ -60,6 +60,9 @@ function App() {
 
   return (
     <>
+      {/* <video autoPlay loop muted id="video">
+        <source src={Video} type="video/mp4" />
+      </video> */}
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="/TripOnClick">
@@ -147,11 +150,8 @@ function App() {
         </div>
       </nav>
 
-      {/* <video autoPlay loop muted id="video">
-        <source src={Video} type="video/mp4" />
-      </video> */}
-      <div className="full-page">
-        <h1 className="h1">
+      <div className="container-fluid d-flex flex-column align-items-center justify-content-center">
+        <h1 className="title-h1">
           No plan, no trip? {/* <span className="click-word">...clicK</span> */}
         </h1>
 
