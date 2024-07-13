@@ -75,7 +75,9 @@ export default function TripParametersComponent(props) {
           <Alert severity="error">Empty! Please, complete</Alert>
         </div>
       )}
-      <div className="parameters-container">
+      <div className="container-fluid">
+        {" "}
+        {/* "parameters-container"> */}
         <div className="row">
           <div className="col">
             <label htmlFor="checkIn">Check In</label>
@@ -103,7 +105,9 @@ export default function TripParametersComponent(props) {
         </div>
       </div>
       <br />
-      <div className="adults-container">
+      <div className="container-fluid">
+        {" "}
+        {/* adults-container */}
         <Button
           type="button"
           class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
@@ -121,7 +125,7 @@ export default function TripParametersComponent(props) {
           <DeleteIcon />
         </IconButton>
       </div>
-      <div className="rooms-container">
+      <div className="container-fluid">
         <Button
           /* class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" */
           class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
