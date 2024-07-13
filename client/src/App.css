@@ -59,6 +59,7 @@
 .wrapper {
   position: relative;
   top: 10%;
-  background-color: lightblue;
+  background-color: #b9d9eb;
+  /*  background-color: #eefbee; */
   padding: 27px;
 }
