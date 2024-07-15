@@ -9,15 +9,15 @@ import "../../styles/TripsComponent.css";
 
 export default function TripsComponent() {
   const location = useLocation();
-  const { hotelParameters, adultCount, roomCount } = location.state;
+  /* const { hotelParameters, adultCount, roomCount } = location.state; */
 
   const [rendering, setRendering] = useState(0);
-  console.log(
+  /* console.log(
     "i am the hotelParameters, the adultCount and the roomCount:",
     hotelParameters,
     adultCount,
     roomCount
-  );
+  ); */
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -31,9 +31,9 @@ export default function TripsComponent() {
     setActive(true);
     setTrip(location);
   };
-  console.log("console.log the:", hotelParameters, adultCount, roomCount);
+  /*  console.log("console.log the:", hotelParameters, adultCount, roomCount); */
 
-  /* const getImageLink = (selectedImage) => {
+  const getImageLink = (selectedImage) => {
     if (selectedImage === "Spain") {
       setActive(true);
       navigate("/Spain", {
@@ -62,7 +62,7 @@ export default function TripsComponent() {
         },
       });
     }
-  }; */
+  };
 
   useEffect(() => {
     /* By using useEffect, the state update for selectedImage based on trip will only trigger when trip changes, preventing an infinite loop caused by continuous state updates. */
@@ -77,11 +77,11 @@ export default function TripsComponent() {
 
   return (
     <>
-      <div className="full-page">
+      <div className="container-fluid">
         <header className="header">
           <h2>
-            Step 1. If it clicks with you,{" "}
-            <span className="clickit">click it</span>{" "}
+            Step 2. your best road trip only{" "}
+            <span className="clickit">clicks</span> away
           </h2>
           <div>Rendered {rendering} times</div>
         </header>
@@ -116,7 +116,7 @@ export default function TripsComponent() {
                 </button>
               </motion.div>
             </div>
-            <p>this is the : {hotelParameters.checkIn}</p>
+            {/*  <p>this is the : {hotelParameters.checkIn}</p> */}
             <Link
               to={{
                 pathname:
@@ -144,7 +144,7 @@ export default function TripsComponent() {
               />
             </Link>
           </div>
-          <div className="right-panel">
+          {/* <div className="right-panel">
             {" "}
             Going 🤩: {hotelParameters.checkIn}
             <br></br>
@@ -152,7 +152,7 @@ export default function TripsComponent() {
             <br></br>
             How many 🤔: {adultCount} people
             <br></br>Rooms 😴: {roomCount}
-          </div>
+          </div> */}
         </div>
       </div>
     </>

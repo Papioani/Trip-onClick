@@ -34,18 +34,13 @@
 }
 
 .road-trip-button {
-  /*  background-color: lightblue;  
-    border-radius: 10px; */
-  background-color: lightblue;
-  font-family: "GFS Neohellenic", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 40px;
+  font-family: "GFS Didot", serif;
+  font-weight: 200;
+  font-size: 30px;
   background-color: orange;
   color: black;
-  border-radius: 40px;
-  /* -webkit-text-stroke-width: 2px; */ /* Width of the border */
-  /* -webkit-text-stroke-color: black; */
+  border-radius: 20px;
+  padding: 10px 20px;
 }
 
 .parameter_inputs {
