@@ -85,66 +85,66 @@ export default function TripsComponent() {
           </h2>
           <div>Rendered {rendering} times</div>
         </header>
-        <div className="split-screen">
-          <div className="left-panel">
-            <div className="row row-cols-auto">
-              <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
-                <button
-                  className="btn btn-outline-success btn-lg"
-                  type="button"
-                  onClick={() => handleClick("Mani")}
-                >
-                  Mani
-                </button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
-                <button
-                  className="btn btn-outline-success btn-lg"
-                  type="button"
-                  onClick={() => handleClick("Spain")}
-                >
-                  Spain
-                </button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
-                <button
-                  className="btn btn-outline-success btn-lg"
-                  type="button"
-                  onClick={() => handleClick("Norway")}
-                >
-                  Norway
-                </button>
-              </motion.div>
-            </div>
-            {/*  <p>this is the : {hotelParameters.checkIn}</p> */}
-            <Link
-              to={{
-                pathname:
-                  selectedImage === "Spain"
-                    ? "/Spain/*"
-                    : selectedImage === "Mani"
-                    ? "/Mani/*"
-                    : selectedImage === "Norway"
-                    ? "/Norway/"
-                    : null,
-              }}
+        {/*  <div className="split-screen"> */}
+        {/* <div className="left-panel"> */}
+        <div className="row row-cols-auto">
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
+            <button
+              className="btn btn-outline-success btn-lg"
+              type="button"
+              onClick={() => handleClick("Mani")}
             >
-              <img
-                src={
-                  selectedImage === "Spain"
-                    ? Spain
-                    : selectedImage === "Mani"
-                    ? Mani4Image
-                    : selectedImage === "Norway"
-                    ? Norway
-                    : null
-                }
-                className="figure-img img-fluid rounded"
-                alt={selectedImage}
-              />
-            </Link>
-          </div>
-          {/* <div className="right-panel">
+              Mani
+            </button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
+            <button
+              className="btn btn-outline-success btn-lg"
+              type="button"
+              onClick={() => handleClick("Spain")}
+            >
+              Spain
+            </button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
+            <button
+              className="btn btn-outline-success btn-lg"
+              type="button"
+              onClick={() => handleClick("Norway")}
+            >
+              Norway
+            </button>
+          </motion.div>
+        </div>
+        {/*  <p>this is the : {hotelParameters.checkIn}</p> */}
+        <Link
+          to={{
+            pathname:
+              selectedImage === "Spain"
+                ? "/Spain/*"
+                : selectedImage === "Mani"
+                ? "/Mani/*"
+                : selectedImage === "Norway"
+                ? "/Norway/"
+                : null,
+          }}
+        >
+          <img
+            src={
+              selectedImage === "Spain"
+                ? Spain
+                : selectedImage === "Mani"
+                ? Mani4Image
+                : selectedImage === "Norway"
+                ? Norway
+                : null
+            }
+            className="figure-img img-fluid rounded"
+            alt={selectedImage}
+          />
+        </Link>
+      </div>
+      {/* <div className="right-panel">
             {" "}
             Going 🤩: {hotelParameters.checkIn}
             <br></br>
@@ -153,8 +153,8 @@ export default function TripsComponent() {
             How many 🤔: {adultCount} people
             <br></br>Rooms 😴: {roomCount}
           </div> */}
-        </div>
-      </div>
+      {/* </div>
+      </div>{" "} */}
     </>
   );
 }

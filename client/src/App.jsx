@@ -4,8 +4,8 @@ import "./App.css";
 /* import Video from "./components/images/Video.mp4";
  */ /* import PlayerComponent from "./components/PlayerComponent"; */
 
-import TripOnClick from "./pages/TripOnClick";
-/* import TripParametersComponent from "./components/TripParametersComponent"; */
+/* import TripOnClick from "./pages/TripOnClick"; */
+import TripParametersComponent from "./components/TripParametersComponent";
 import Contact from "./pages/Contact";
 import MyTrips from "./pages/MyTrips";
 import TripsComponent from "./components/TripsComponent";
@@ -25,7 +25,7 @@ function App() {
   const [roomCount, setRoomCount] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
 
-  // some common props to be passes (optional)
+  // some common props to be passed (optional)
   const commonProps = {
     hotelParameters,
     setHotelParameters,
@@ -161,28 +161,27 @@ function App() {
         <h1 className="title-h1">
           No plan, no trip? {/* <span className="click-word">...clicK</span> */}
         </h1>
-
         {/* <div className="videoplayer">
             <PlayerComponent />
           </div> */}
-
         {/* </div> */}
         {/*  <div className=" h-screen flex items-center justify-center"> */}
-        <div className="size-40 relative w-full max-w-screen-xl">
-          {/* <div className="absolute inset-0 flex items-center justify-center"> */}
-          <div className="wrapper w-3/4">
-            <TripOnClick
-              hotelParameters={hotelParameters}
-              setHotelParameters={setHotelParameters}
-              adultCount={adultCount}
-              setAdultCount={setAdultCount}
-              roomCount={roomCount}
-              setRoomCount={setRoomCount}
-              showAlert={showAlert}
-              setShowAlert={setShowAlert}
-            />
-          </div>
-        </div>
+        {/*         <div className="size-40 relative w-full max-w-screen-xl">
+         */}{" "}
+        {/* <div className="absolute inset-0 flex items-center justify-center"> */}
+        {/* <div className="wrapper w-3/4">
+          <TripParametersComponent
+            hotelParameters={hotelParameters}
+            setHotelParameters={setHotelParameters}
+            adultCount={adultCount}
+            setAdultCount={setAdultCount}
+            roomCount={roomCount}
+            setRoomCount={setRoomCount}
+            showAlert={showAlert}
+            setShowAlert={setShowAlert}
+          />
+        </div> */}
+        {/*   </div> */}
         {/* </div>
         </div> */}
         {/*  </div> */}
@@ -192,7 +191,21 @@ function App() {
 
       {/*  <UserContext.Provider value={contextValue}> */}
       <Routes>
-        <Route path="/" element={<TripOnClick />} />
+        <Route
+          path="/"
+          element={
+            <TripParametersComponent
+              hotelParameters={hotelParameters}
+              setHotelParameters={setHotelParameters}
+              adultCount={adultCount}
+              setAdultCount={setAdultCount}
+              roomCount={roomCount}
+              setRoomCount={setRoomCount}
+              showAlert={showAlert}
+              setShowAlert={setShowAlert}
+            />
+          }
+        />
         <Route
           path="/trips/"
           element={
