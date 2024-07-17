@@ -80,8 +80,7 @@ export default function TripsComponent() {
       <div className="container-fluid">
         <header className="header">
           <h2>
-            Step 2. your best road trip only{" "}
-            <span className="clickit">clicks</span> away
+            Your best road trip one <span className="clickit">click</span> away
           </h2>
           <div>Rendered {rendering} times</div>
         </header>

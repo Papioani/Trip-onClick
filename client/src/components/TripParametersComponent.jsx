@@ -76,6 +76,9 @@ export default function TripParametersComponent(props) {
     /* Using an <input> element without being wrapped in a <form> tag is perfectly fine, especially when you're not submitting a form. In your case, where you're using it to capture a date for parameters, it's appropriate to use it without a <form> tag. */
     <>
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center">
+        <h1 className="title-h1">
+          No plan, no trip? {/* <span className="click-word">...clicK</span> */}
+        </h1>
         <div className="absolute inset-0 flex items-center justify-center">
           {showAlert && ( // !!!!!!!!!! conditional rendering, if true ...
             <div>

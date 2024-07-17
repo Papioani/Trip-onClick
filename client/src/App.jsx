@@ -156,20 +156,15 @@ function App() {
           </div>
         </div>
       </nav>
-
-      <div className="container-fluid d-flex flex-column align-items-center justify-content-center">
-        <h1 className="title-h1">
-          No plan, no trip? {/* <span className="click-word">...clicK</span> */}
-        </h1>
-        {/* <div className="videoplayer">
+      {/* <div className="videoplayer">
             <PlayerComponent />
           </div> */}
-        {/* </div> */}
-        {/*  <div className=" h-screen flex items-center justify-center"> */}
-        {/*         <div className="size-40 relative w-full max-w-screen-xl">
-         */}{" "}
-        {/* <div className="absolute inset-0 flex items-center justify-center"> */}
-        {/* <div className="wrapper w-3/4">
+      {/* </div> */}
+      {/*  <div className=" h-screen flex items-center justify-center"> */}
+      {/*         <div className="size-40 relative w-full max-w-screen-xl">
+       */}{" "}
+      {/* <div className="absolute inset-0 flex items-center justify-center"> */}
+      {/* <div className="wrapper w-3/4">
           <TripParametersComponent
             hotelParameters={hotelParameters}
             setHotelParameters={setHotelParameters}
@@ -181,14 +176,12 @@ function App() {
             setShowAlert={setShowAlert}
           />
         </div> */}
-        {/*   </div> */}
-        {/* </div>
+      {/*   </div> */}
+      {/* </div>
         </div> */}
-        {/*  </div> */}
-        <div>Rendered {rendering} times</div>
-        {/* </div> */}
-      </div>
-
+      {/*  </div> */}
+      <div>Rendered {rendering} times</div>
+      {/* </div> */}
       {/*  <UserContext.Provider value={contextValue}> */}
       <Routes>
         <Route
