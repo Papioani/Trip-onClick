@@ -1,10 +1,10 @@
 import React from "react";
-import Mani1Image from "./images/Mani1.png";
-import Mani2Image from "./images/Mani2.png";
-import Mani3Image from "./images/Mani3.png";
-import Mani4Image from "./images/Mani4.png";
-import Mani5Image from "./images/Mani5.png";
-import Mani6Image from "./images/Mani6.png";
+import Mani1Image from "../assets/images/Mani1.png";
+import Mani2Image from "../assets/images/Mani2.png";
+import Mani3Image from "../assets/images/Mani3.png";
+import Mani4Image from "../assets/images/Mani4.png";
+import Mani5Image from "../assets/images/Mani5.png";
+import Mani6Image from "../assets/images/Mani6.png";
 import { Link, Routes, Route } from "react-router-dom";
 import ImageSlider from "./ImageSlider";
 import ManiPage from "../pages/ManiPage";

@@ -3,6 +3,7 @@ import SpainImagesComponent from "../components/SpainImagesComponent";
 import MapComponent from "../components/MapComponent";
 import HotelsFetchComponent from "../components/HotelsFetchComponent";
 
+// passed to SpainPage directly from its parent component or via route configuration.
 export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
   const [country, setCountry] = useState("Spain");
 
@@ -36,7 +37,7 @@ export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
               roomCount={roomCount}
               country={country}
             />
-            <MapComponent />
+            {/*  <MapComponent /> */}
           </div>
         </div>
       </div>

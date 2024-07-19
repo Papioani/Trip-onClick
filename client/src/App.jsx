@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
-import Video from "./components/images/Video.mp4";
-/* import PlayerComponent from "./components/PlayerComponent"; */
+/* import Video from "./components/images/Video.mp4";
+ */ /* import PlayerComponent from "./components/PlayerComponent"; */
 
+/* import TripOnClick from "./pages/TripOnClick"; */
 import TripParametersComponent from "./components/TripParametersComponent";
 import Contact from "./pages/Contact";
 import MyTrips from "./pages/MyTrips";
@@ -14,6 +15,7 @@ import NorwayPage from "./pages/NorwayPage";
 /* import UserContext from "./UserContext"; */
 
 function App() {
+  // setting the states of the trip parameters centrally in the app.js
   const EMPTY_FORM = {
     checkIn: "",
     checkOut: "",
@@ -23,6 +25,7 @@ function App() {
   const [roomCount, setRoomCount] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
 
+  // some common props to be passed (optional)
   const commonProps = {
     hotelParameters,
     setHotelParameters,
@@ -34,8 +37,10 @@ function App() {
     setShowAlert,
   };
 
+  // for testing, just to see when it renders
   const [rendering, setRendering] = useState(0);
 
+  // in the log the app.jsx appears rendered twice, that is cause I have sth inside the [], even if it has no value or anything it will render twice
   useEffect(() => {
     setRendering(rendering + 1);
   }, [adultCount]);
@@ -58,13 +63,18 @@ function App() {
     setShowAlert,
   }; */
 
+  // Client-side routing (frameworks and libraries like React Router) means handling page navigation within a web application using JavaScript in the browser, without reloading the entire page from the server for each new view or page
   return (
     <>
+      {/* <video autoPlay loop muted id="video">
+        <source src={Video} type="video/mp4" />
+      </video> */}
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/TripOnClick">
+          {/* When you click on a <NavLink>, React Router intercepts the navigation and handles it internally without reloading the entire page. */}
+          <NavLink className="navbar-brand" to="/">
             Τrιp onClick
-          </a>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -78,16 +88,16 @@ function App() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
-              {/* <li className="nav-item"> */}
-              {/* this leads to TripsComponent */}
-              {/*  <a
-                    className="nav-link active nav-link-ltr"
-                    aria-current="page"
-                    href="/trips"
-                  >
-                    Trips
-                  </a>
-                </li> */}
+              <li className="nav-item">
+                {/* this leads to TripsComponent */}
+                <NavLink
+                  className="nav-link active nav-link-ltr"
+                  aria-current="page"
+                  to="/trips"
+                >
+                  Trips
+                </NavLink>
+              </li>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle nav-link-ltr"
@@ -118,17 +128,17 @@ function App() {
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link nav-link-ltr" href="/MyTrips">
+                <NavLink className="nav-link nav-link-ltr" to="/MyTrips">
                   My trips
-                </a>
+                </NavLink>
               </li>
             </ul>
             {/* <div className="d-flex align-items-center topnav-right"> */}
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/contact">
+                <NavLink className="nav-link" to="/contact">
                   Contact
-                </a>
+                </NavLink>
               </li>
               {/* <form className="d-flex ms-auto align-items-center">
                     <input
@@ -146,24 +156,37 @@ function App() {
           </div>
         </div>
       </nav>
-
-      {/* <video autoPlay loop muted id="video">
-        <source src={Video} type="video/mp4" />
-      </video> */}
-      <div className="full-page">
-        <h1 className="h1">
-          No plan, no trip? {/* <span className="click-word">...clicK</span> */}
-        </h1>
-
-        {/* <div className="videoplayer">
+      {/* <div className="videoplayer">
             <PlayerComponent />
           </div> */}
-
-        {/* </div> */}
-        {/*  <div className=" h-screen flex items-center justify-center"> */}
-        <div className="size-40 relative w-full max-w-screen-xl">
-          {/* <div className="absolute inset-0 flex items-center justify-center"> */}
-          <div className="wrapper w-3/4">
+      {/* </div> */}
+      {/*  <div className=" h-screen flex items-center justify-center"> */}
+      {/*         <div className="size-40 relative w-full max-w-screen-xl">
+       */}{" "}
+      {/* <div className="absolute inset-0 flex items-center justify-center"> */}
+      {/* <div className="wrapper w-3/4">
+          <TripParametersComponent
+            hotelParameters={hotelParameters}
+            setHotelParameters={setHotelParameters}
+            adultCount={adultCount}
+            setAdultCount={setAdultCount}
+            roomCount={roomCount}
+            setRoomCount={setRoomCount}
+            showAlert={showAlert}
+            setShowAlert={setShowAlert}
+          />
+        </div> */}
+      {/*   </div> */}
+      {/* </div>
+        </div> */}
+      {/*  </div> */}
+      <div>Rendered {rendering} times</div>
+      {/* </div> */}
+      {/*  <UserContext.Provider value={contextValue}> */}
+      <Routes>
+        <Route
+          path="/"
+          element={
             <TripParametersComponent
               hotelParameters={hotelParameters}
               setHotelParameters={setHotelParameters}
@@ -174,24 +197,15 @@ function App() {
               showAlert={showAlert}
               setShowAlert={setShowAlert}
             />
-          </div>
-        </div>
-        {/* </div>
-        </div> */}
-        {/*  </div> */}
-        <div>Rendered {rendering} times</div>
-        {/* </div> */}
-      </div>
-
-      {/*  <UserContext.Provider value={contextValue}> */}
-      <Routes>
+          }
+        />
         <Route
           path="/trips/"
           element={
             <TripsComponent
-              hotelParameters={hotelParameters}
+            /*  hotelParameters={hotelParameters}
               adultCount={adultCount}
-              roomCount={roomCount}
+              roomCount={roomCount} */
             />
           }
         />

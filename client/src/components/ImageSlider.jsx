@@ -15,11 +15,11 @@ const ImageSlider = ({ images }) => {
   }, [images]);
 
   return (
-    <figure class="figure">
+    <figure className="figure">
       <img
         src={images[currentIndex]}
         alt={`Image ${currentIndex + 1}`}
-        class="figure-img img-fluid rounded"
+        className="figure-img img-fluid rounded"
       />
     </figure>
   );

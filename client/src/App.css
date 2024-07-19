@@ -45,21 +45,11 @@
   font-size: 40px;
 }
 
-.h1 {
+.title-h1 {
   padding: 7px;
-  font-style: oblique;
   font-family: "GFS Didot", serif;
-  font-weight: 500;
-  font-size: 40px;
+  font-weight: 1000;
+  font-size: 2.5rem;
   color: black;
-  position: relative;
-  margin-right: 30px;
-}
-
-.wrapper {
-  position: relative;
-  top: 10%;
-  background-color: #b9d9eb;
-  /*  background-color: #eefbee; */
-  padding: 27px;
+  text-align: center;
 }

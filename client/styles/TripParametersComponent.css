@@ -15,17 +15,17 @@
     top:30%;
 }
  */
-.submit-wrapper {
+/* .submit-wrapper {
   position: relative;
   transition-property: background-color, color;
   transition-duration: 0.4s;
   top: 30%;
-}
+} */
 
-.submit-wrapper:hover {
+/* .submit-wrapper:hover {
   background-color: orange !important;
   color: white !important;
-}
+} */
 
 .clicks {
   background-color: orange;
@@ -34,18 +34,22 @@
 }
 
 .road-trip-button {
-  /*  background-color: lightblue;  
-    border-radius: 10px; */
-  background-color: lightblue;
-  font-family: "GFS Neohellenic", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 40px;
+  font-family: "GFS Didot", serif;
+  font-weight: 200;
+  font-size: 30px;
   background-color: orange;
   color: black;
-  border-radius: 40px;
-  /* -webkit-text-stroke-width: 2px; */ /* Width of the border */
-  /* -webkit-text-stroke-color: black; */
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+.wrapper {
+  position: relative;
+  top: 10%;
+  background-color: #b9d9eb;
+  /*  background-color: #eefbee; */
+  padding: 27px;
+  border-radius: 5px;
 }
 
 .parameter_inputs {

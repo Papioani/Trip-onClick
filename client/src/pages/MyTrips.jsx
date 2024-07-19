@@ -1,5 +1,5 @@
 import React from "react";
-import RoadTrip from "../components/images/RoadTrip.png"; /* import the image from the folder */
+import RoadTrip from "../assets/images/RoadTrip.png"; /* import the image from the folder */
 import "../../styles/MyTrips.css";
 
 export default function MyTrips({ favourites }) {
