@@ -36,7 +36,7 @@ export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
               roomCount={roomCount}
               country={country}
             />
-            <MapComponent />
+            {/*  <MapComponent /> */}
           </div>
         </div>
       </div>

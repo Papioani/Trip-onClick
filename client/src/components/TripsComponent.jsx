@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Mani4Image from "./images/Mani4.png";
 import Spain from "./images/Spain.png";
 import Norway from "./images/Norway.png";
-import { Link } from "react-router-dom";
 import "../../styles/TripsComponent.css";
 
 export default function TripsComponent() {
@@ -36,31 +35,37 @@ export default function TripsComponent() {
   const getImageLink = (selectedImage) => {
     if (selectedImage === "Spain") {
       setActive(true);
-      navigate("/Spain", {
+      navigate(
+        "/Spain" /* , {
         state: {
           hotelParameters: hotelParameters,
           adultCount: adultCount,
           roomCount: roomCount,
         },
-      });
+      } */
+      );
     } else if (selectedImage === "Mani") {
       setActive(true);
-      navigate("/Mani", {
+      navigate(
+        "/Mani" /* , {
         state: {
           hotelParameters: hotelParameters,
           adultCount: adultCount,
           roomCount: roomCount,
         },
-      });
+      } */
+      );
     } else if (selectedImage === "Norway") {
       setActive(true);
-      navigate("/Norway", {
+      navigate(
+        "/Norway" /* , {
         state: {
           hotelParameters: hotelParameters,
           adultCount: adultCount,
           roomCount: roomCount,
         },
-      });
+      } */
+      );
     }
   };
 
