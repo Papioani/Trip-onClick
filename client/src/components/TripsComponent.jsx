@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, Link, useNavigate } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Mani4Image from "./images/Mani4.png";
-import Spain from "./images/Spain.png";
-import Norway from "./images/Norway.png";
+import Mani4Image from "../assets/images/Mani4.png";
+import Spain from "../assets/images/Spain.png";
+import Norway from "../assets/images/Norway.png";
+/* import Video from "../components/images/Video.mp4"; */
+import DefaultImage from "../assets/images/MapScreenshot.png";
 import "../../styles/TripsComponent.css";
 
 export default function TripsComponent() {
@@ -18,7 +20,7 @@ export default function TripsComponent() {
     roomCount
   ); */
   const [trip, setTrip] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(DefaultImage);
 
   const [active, setActive] = useState(false);
 
@@ -32,6 +34,7 @@ export default function TripsComponent() {
   };
   /*  console.log("console.log the:", hotelParameters, adultCount, roomCount); */
 
+  // getImageLink eventually not use, replaced by wrapping the img element within the Link
   const getImageLink = (selectedImage) => {
     if (selectedImage === "Spain") {
       setActive(true);
@@ -85,7 +88,7 @@ export default function TripsComponent() {
       <div className="container-fluid">
         <header className="header">
           <h2>
-            Your best road trip, a <span className="clickit">click</span> away
+            Your best road trip, <span className="clickit">click</span> away
           </h2>
           <div>Rendered {rendering} times</div>
         </header>
@@ -141,7 +144,7 @@ export default function TripsComponent() {
                 ? Mani4Image
                 : selectedImage === "Norway"
                 ? Norway
-                : null
+                : DefaultImage
             }
             className="figure-img img-fluid rounded"
             alt={selectedImage}

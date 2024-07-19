@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Norway from "../components/images/Norway.png";
+import Norway from "../assets/images/Norway.png";
 
 export default function NorwayPage() {
   const { hotelParameters, adultCount, roomCount } = useParams();
