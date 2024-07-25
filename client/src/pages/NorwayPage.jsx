@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Norway from "../assets/images/Norway.png";
+import MapComponent from "../components/MapComponent";
 
 export default function NorwayPage() {
   const { hotelParameters, adultCount, roomCount } = useParams();
@@ -11,9 +12,10 @@ export default function NorwayPage() {
     roomCount
   );
   return (
-    <div>
+    <div className="container-fluid">
       Welcome to Norway
-      <img src={Norway} class="figure-img img-fluid rounded" />
+      <img src={Norway} className="figure-img img-fluid rounded" />
+      <MapComponent />
     </div>
   );
 }

@@ -9,11 +9,12 @@ export default function MapComponent() {
   );
   console.log(filteredHotels);
   return (
-    <figure class="figure">
+    <figure className="figure">
       <MapContainer
         center={[36.8872991185396, 22.233783884471435]}
         zoom={5}
         scrollWheelZoom={true}
+        style={{ height: "100vh", width: "100%" }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
