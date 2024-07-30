@@ -12,7 +12,7 @@ export default function NorwayPage() {
     roomCount
   );
   return (
-    <div className="container-fluid">
+    <div className="container">
       Welcome to Norway
       <img src={Norway} className="figure-img img-fluid rounded" />
       <MapComponent />

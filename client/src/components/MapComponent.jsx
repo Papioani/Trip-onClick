@@ -14,7 +14,7 @@ export default function MapComponent() {
         center={[36.8872991185396, 22.233783884471435]}
         zoom={5}
         scrollWheelZoom={true}
-        style={{ height: "100vh", width: "100%" }}
+        style={{ height: "90vh", width: "90%" }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

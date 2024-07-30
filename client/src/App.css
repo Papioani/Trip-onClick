@@ -37,19 +37,22 @@
 
 .navbar-brand {
   background-color: #ffa323;
-  color: black;
+  color: #2c3e50;
+  border: 3px solid #2c3e50;
   border-radius: 10px;
-  font-family: "GFS Didot", serif;
-  font-weight: 400;
+  font-family: "Bebas Neue", serif;
+  font-weight: 700;
   font-style: normal;
-  font-size: 40px;
+  font-size: 50px;
 }
-
+.accent {
+  color: #b9d9eb; /* light blue accent */
+}
 .title-h1 {
   padding: 7px;
-  font-family: "GFS Didot", serif;
-  font-weight: 1000;
+  font-family: "Bebas Neue", serif;
+  font-weight: 500;
   font-size: 2.5rem;
-  color: black;
+  color: #2c3e50;
   text-align: center;
 }
