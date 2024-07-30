@@ -35,7 +35,7 @@
 
 .road-trip-button {
   font-family: "Bebas Neue", serif;
-  font-weight: 200;
+  font-weight: 600;
   font-size: 30px;
   background-color: orange;
   color: #2c3e50;
@@ -47,6 +47,7 @@
   position: relative;
   top: 10%;
   background-color: #b9d9eb;
+  background-color: #eefbee;
   /*  background-color: #eefbee; */
   /* background-color: #2c3e50; */
 

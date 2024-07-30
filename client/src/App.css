@@ -41,9 +41,9 @@
   border: 3px solid #2c3e50;
   border-radius: 10px;
   font-family: "Bebas Neue", serif;
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
-  font-size: 50px;
+  font-size: 3rem;
 }
 .accent {
   color: #b9d9eb; /* light blue accent */
