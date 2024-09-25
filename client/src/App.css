@@ -2,6 +2,7 @@
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
+  /*  background-color: lightblue; */
 }
 
 .nav-link {
@@ -21,7 +22,9 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: black;
+  /* background: #a8dadc; */
+  /*  background: #6a8e3a; */
+  background: #42abae;
   transition: width 1s ease;
 }
 
@@ -36,14 +39,25 @@
 }
 
 .navbar-brand {
-  background-color: #ffa323;
-  color: #2c3e50;
-  border: 3px solid #2c3e50;
+  background-color: white;
+  /*  background-color: #ffa323; */
+  /*  background-color: #6a8e3a; */
+  /*   background-color: #42abae;
+ */
+  /* color: #2c3e50; */
+  /*   color: #fe8b10;
+ */
+  /*  color: #f9cbbe; */ /* sunrise peach */
+  /* color: #f4e1c1; */ /* sand beige */
+  color: #6a8e3a; /* cloud white */
+
+  /*  border: 3px solid #2c3e50; */
   border-radius: 10px;
-  font-family: "Bebas Neue", serif;
-  font-weight: 700;
-  font-size: 50px;
-  letter-spacing: 0.02857em;
+  /* font-family: "Bebas Neue", serif; */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  /* letter-spacing: 0.02857em; */
 }
 .accent {
   color: #b9d9eb; /* light blue accent */

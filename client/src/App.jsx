@@ -73,8 +73,8 @@ function App() {
         <div className="container-fluid">
           {/* When you click on a <NavLink>, React Router intercepts the navigation and handles it internally without reloading the entire page. */}
           <NavLink className="navbar-brand" to="/">
-            Trip <span style={{ fontFamily: '"GFS Didot", serif' }}>on</span>
-            Click
+            trip <span style={{ fontFamily: '"GFS Didot", serif' }}>on</span>
+            click
           </NavLink>
           <button
             className="navbar-toggler"
