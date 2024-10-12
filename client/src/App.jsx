@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
-import { TripProvider } from "./context/TripContext";
+import { TripProvider, TripContext } from "./context/TripContext";
 import "./App.css";
 /* import Video from "./components/images/Video.mp4";
  */ /* import PlayerComponent from "./components/PlayerComponent"; */
@@ -38,12 +38,12 @@ function App() {
     setShowAlert,
   }; */
 
-  // for testing, just to see when it renders
-  const [rendering, setRendering] = useState(0);
+  const { adultCount, hotelParameters } = useContext(TripContext); // Access context values
+  const [renderCount, setRenderCount] = useState(0);
 
-  // in the log the app.jsx appears rendered twice, that is cause I have sth inside the [], even if it has no value or anything it will render twice
   useEffect(() => {
-    setRendering(rendering + 1);
+    setRenderCount((prevCount) => prevCount + 1);
+    console.log(`Rendered ${renderCount + 1} times`);
   }, [adultCount]);
 
   console.log(
