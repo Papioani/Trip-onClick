@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
+import { TripProvider, TripContext } from "./context/TripContext";
 import "./App.css";
 /* import Video from "./components/images/Video.mp4";
  */ /* import PlayerComponent from "./components/PlayerComponent"; */
@@ -16,17 +17,17 @@ import NorwayPage from "./pages/NorwayPage";
 
 function App() {
   // setting the states of the trip parameters centrally in the app.js
-  const EMPTY_FORM = {
+  /* const EMPTY_FORM = {
     checkIn: "",
     checkOut: "",
   };
   const [hotelParameters, setHotelParameters] = useState(EMPTY_FORM);
   const [adultCount, setAdultCount] = useState(0);
   const [roomCount, setRoomCount] = useState(0);
-  const [showAlert, setShowAlert] = useState(false);
+  const [showAlert, setShowAlert] = useState(false); */
 
   // some common props to be passed (optional)
-  const commonProps = {
+  /* const commonProps = {
     hotelParameters,
     setHotelParameters,
     adultCount,
@@ -35,14 +36,14 @@ function App() {
     setRoomCount,
     showAlert,
     setShowAlert,
-  };
+  }; */
 
-  // for testing, just to see when it renders
-  const [rendering, setRendering] = useState(0);
+  const { adultCount, hotelParameters } = useContext(TripContext); // Access context values
+  const [renderCount, setRenderCount] = useState(0);
 
-  // in the log the app.jsx appears rendered twice, that is cause I have sth inside the [], even if it has no value or anything it will render twice
   useEffect(() => {
-    setRendering(rendering + 1);
+    setRenderCount((prevCount) => prevCount + 1);
+    console.log(`Rendered ${renderCount + 1} times`);
   }, [adultCount]);
 
   console.log(
@@ -183,67 +184,19 @@ function App() {
       {/*  </div> */}
       <div>Rendered {rendering} times</div>
       {/* </div> */}
-      {/*  <UserContext.Provider value={contextValue}> */}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <TripParametersComponent
-              hotelParameters={hotelParameters}
-              setHotelParameters={setHotelParameters}
-              adultCount={adultCount}
-              setAdultCount={setAdultCount}
-              roomCount={roomCount}
-              setRoomCount={setRoomCount}
-              showAlert={showAlert}
-              setShowAlert={setShowAlert}
-            />
-          }
-        />
-        <Route
-          path="/trips/"
-          element={
-            <TripsComponent
-            /*  hotelParameters={hotelParameters}
-              adultCount={adultCount}
-              roomCount={roomCount} */
-            />
-          }
-        />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/MyTrips" element={<MyTrips />} />
-        <Route
-          path="/Mani/*"
-          element={
-            <ManiPage
-              hotelParameters={hotelParameters}
-              adultCount={adultCount}
-              roomCount={roomCount}
-            />
-          }
-        />
-        <Route
-          path="/Spain/*"
-          element={
-            <SpainPage
-              hotelParameters={hotelParameters}
-              adultCount={adultCount}
-              roomCount={roomCount}
-            />
-          }
-        />
-        <Route
-          path="/Norway/"
-          element={
-            <NorwayPage
-              hotelParameters={hotelParameters}
-              adultCount={adultCount}
-              roomCount={roomCount}
-            />
-          }
-        />
-      </Routes>
-      {/* </UserContext.Provider> */}
+      <TripProvider>
+        {" "}
+        {/* Wrap your entire app in the TripProvider */}
+        <Routes>
+          <Route path="/" element={<TripParametersComponent />} />
+          <Route path="/trips" element={<TripsComponent />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/MyTrips" element={<MyTrips />} />
+          <Route path="/Mani/*" element={<ManiPage />} />
+          <Route path="/Spain/*" element={<SpainPage />} />
+          <Route path="/Norway/*" element={<NorwayPage />} />
+        </Routes>
+      </TripProvider>
     </>
   );
 }
