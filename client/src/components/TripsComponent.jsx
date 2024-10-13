@@ -13,12 +13,7 @@ export default function TripsComponent() {
   /* const { hotelParameters, adultCount, roomCount } = location.state; */
 
   const [rendering, setRendering] = useState(0);
-  /* console.log(
-    "i am the hotelParameters, the adultCount and the roomCount:",
-    hotelParameters,
-    adultCount,
-    roomCount
-  ); */
+
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(DefaultImage);
 
@@ -32,43 +27,18 @@ export default function TripsComponent() {
     setActive(true);
     setTrip(location);
   };
-  /*  console.log("console.log the:", hotelParameters, adultCount, roomCount); */
 
   // getImageLink eventually not use, replaced by wrapping the img element within the Link
   const getImageLink = (selectedImage) => {
     if (selectedImage === "Spain") {
       setActive(true);
-      navigate(
-        "/Spain" /* , {
-        state: {
-          hotelParameters: hotelParameters,
-          adultCount: adultCount,
-          roomCount: roomCount,
-        },
-      } */
-      );
+      navigate("/Spain");
     } else if (selectedImage === "Mani") {
       setActive(true);
-      navigate(
-        "/Mani" /* , {
-        state: {
-          hotelParameters: hotelParameters,
-          adultCount: adultCount,
-          roomCount: roomCount,
-        },
-      } */
-      );
+      navigate("/Mani");
     } else if (selectedImage === "Norway") {
       setActive(true);
-      navigate(
-        "/Norway" /* , {
-        state: {
-          hotelParameters: hotelParameters,
-          adultCount: adultCount,
-          roomCount: roomCount,
-        },
-      } */
-      );
+      navigate("/Norway");
     }
   };
 
