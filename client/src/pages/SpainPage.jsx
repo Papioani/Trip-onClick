@@ -1,16 +1,13 @@
-import React, { useState, useContext } from "react";
-import { TripContext } from "../context/TripContext";
+import React, { useContext, useState } from "react";
+
 import SpainImagesComponent from "../components/SpainImagesComponent";
 import MapComponent from "../components/MapComponent";
 import HotelsFetchComponent from "../components/HotelsFetchComponent";
 import TripParametersComponent from "../components/TripParametersComponent";
+import { TripContext } from "../App";
 
 // passed to SpainPage directly from its parent component or via route configuration.
 export default function SpainPage() {
-  console.log("hotelParameters DIRECTLY:", hotelParameters);
-  console.log("adultCount DIRECTLY:", adultCount);
-  console.log("roomCount DIRECTLY:", roomCount);
-
   const { hotelParameters, adultCount, roomCount } = useContext(TripContext);
   const [country, setCountry] = useState("Spain");
   const [conditionalParameters, setConditionalParameters] = useState(false);
@@ -21,7 +18,7 @@ export default function SpainPage() {
     adultCount === 0 &&
     roomCount === 0;
 
-  /*  console.log(country);
+  console.log(country);
   let hotelThings = JSON.stringify(hotelParameters);
   console.log(
     "This is finally the hotelParameters in the SpainPage, line 9:",
@@ -30,7 +27,7 @@ export default function SpainPage() {
   console.log(
     "This is finally the hotelParameters in the SpainPage, line 9:",
     hotelParameters
-  ); */
+  );
   // if you're passing props through the route definition in React Router v6, you should use the useParams hook to access those props within the component
   /*  const location = useLocation;
   const { state } = location;

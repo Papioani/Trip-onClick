@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/TripParametersComponent.css";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 import Alert from "@mui/material/Alert";
+import { TripContext } from "../App";
 
-export default function TripParametersComponent(props) {
+export default function TripParametersComponent() {
   /* With useNavigate, you can programmatically navigate to different URLs, go back and forward in the browser history, replace the current URL, and access other properties related to navigation. */
 
   const {
@@ -18,7 +19,7 @@ export default function TripParametersComponent(props) {
     setRoomCount,
     showAlert,
     setShowAlert,
-  } = props;
+  } = useContext(TripContext);
 
   const navigate = useNavigate(); // Initialize the navigate function
   const handleChange = (event) => {

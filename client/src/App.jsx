@@ -1,6 +1,5 @@
-import React, { useEffect, useContext } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
-import { TripProvider, TripContext } from "./context/TripContext";
 import "./App.css";
 /* import Video from "./components/images/Video.mp4";
  */ /* import PlayerComponent from "./components/PlayerComponent"; */
@@ -13,18 +12,21 @@ import TripsComponent from "./components/TripsComponent";
 import ManiPage from "./pages/ManiPage";
 import SpainPage from "./pages/SpainPage";
 import NorwayPage from "./pages/NorwayPage";
-/* import UserContext from "./UserContext"; */
+import "./App.css";
+
+// Create Context directly in App.js
+export const TripContext = createContext();
 
 function App() {
   // setting the states of the trip parameters centrally in the app.js
-  /* const EMPTY_FORM = {
+  const EMPTY_FORM = {
     checkIn: "",
     checkOut: "",
   };
   const [hotelParameters, setHotelParameters] = useState(EMPTY_FORM);
   const [adultCount, setAdultCount] = useState(0);
   const [roomCount, setRoomCount] = useState(0);
-  const [showAlert, setShowAlert] = useState(false); */
+  const [showAlert, setShowAlert] = useState(false);
 
   // some common props to be passed (optional)
   /* const commonProps = {
@@ -38,22 +40,15 @@ function App() {
     setShowAlert,
   }; */
 
-  const { adultCount, hotelParameters } = useContext(TripContext); // Access context values
-  const [renderCount, setRenderCount] = useState(0);
+  /*   const [renderCount, setRenderCount] = useState(0); */
 
-  useEffect(() => {
+  /*  useEffect(() => {
     setRenderCount((prevCount) => prevCount + 1);
     console.log(`Rendered ${renderCount + 1} times`);
-  }, [adultCount]);
+  }, [adultCount]); */
 
-  console.log(
-    "I am the App.jsx component and these are my states now:",
-    hotelParameters,
-    adultCount,
-    roomCount
-  );
   // Create an object to hold all the states
-  /* const contextValue = {
+  const contextValue = {
     hotelParameters,
     setHotelParameters,
     adultCount,
@@ -62,7 +57,7 @@ function App() {
     setRoomCount,
     showAlert,
     setShowAlert,
-  }; */
+  };
 
   // Client-side routing (frameworks and libraries like React Router) means handling page navigation within a web application using JavaScript in the browser, without reloading the entire page from the server for each new view or page
   return (
@@ -101,7 +96,7 @@ function App() {
                 </NavLink>
               </li>
               <li className="nav-item dropdown">
-                <a
+                <NavLink
                   className="nav-link dropdown-toggle nav-link-ltr"
                   href="#"
                   id="navbarDropdown"
@@ -110,22 +105,22 @@ function App() {
                   aria-expanded="false"
                 >
                   Road trips
-                </a>
+                </NavLink>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="/Mani/*">
+                    <NavLink className="dropdown-item" href="/Mani/*">
                       Mani
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/Spain/*">
+                    <NavLink className="dropdown-item" href="/Spain/*">
                       Spain
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/Norway/">
+                    <NavLink className="dropdown-item" href="/Norway/">
                       Norway
-                    </a>
+                    </NavLink>
                   </li>
                 </ul>
               </li>
@@ -182,11 +177,9 @@ function App() {
       {/* </div>
         </div> */}
       {/*  </div> */}
-      <div>Rendered {rendering} times</div>
+      {/*  <div>Rendered {rendering} times</div> */}
       {/* </div> */}
-      <TripProvider>
-        {" "}
-        {/* Wrap your entire app in the TripProvider */}
+      <TripContext.Provider value={contextValue}>
         <Routes>
           <Route path="/" element={<TripParametersComponent />} />
           <Route path="/trips" element={<TripsComponent />} />
@@ -196,7 +189,7 @@ function App() {
           <Route path="/Spain/*" element={<SpainPage />} />
           <Route path="/Norway/*" element={<NorwayPage />} />
         </Routes>
-      </TripProvider>
+      </TripContext.Provider>
     </>
   );
 }
