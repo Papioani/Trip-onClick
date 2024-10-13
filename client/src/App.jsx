@@ -28,18 +28,6 @@ function App() {
   const [roomCount, setRoomCount] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
 
-  // some common props to be passed (optional)
-  /* const commonProps = {
-    hotelParameters,
-    setHotelParameters,
-    adultCount,
-    setAdultCount,
-    roomCount,
-    setRoomCount,
-    showAlert,
-    setShowAlert,
-  }; */
-
   /*   const [renderCount, setRenderCount] = useState(0); */
 
   /*  useEffect(() => {

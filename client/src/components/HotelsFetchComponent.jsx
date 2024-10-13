@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ManiHotelFavourites from "./ManiHotelFavourites";
 import RandomHotelFetching from "./RandomHotelFetching";
+import { TripContext } from "../App";
 
-function HotelsFetchComponent({
-  hotelParameters,
-  adultCount,
-  roomCount,
-  country,
-}) {
+function HotelsFetchComponent() {
+  const { hotelParameters, adultCount, roomCount, country } =
+    useContext(TripContext);
   // extracting the api key from the.env file
   const apiKey = "d85fe120cdmsh6cffb70251d5d1cp16f3d1jsn7328646e0be7";
   console.log(apiKey);
