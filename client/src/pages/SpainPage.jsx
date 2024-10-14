@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import SpainImagesComponent from "../components/SpainImagesComponent";
 import MapComponent from "../components/MapComponent";
 import HotelsFetchComponent from "../components/HotelsFetchComponent";
 import TripParametersComponent from "../components/TripParametersComponent";
+import { TripContext } from "../App";
 
-// passed to SpainPage directly from its parent component or via route configuration.
-export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
+export default function SpainPage() {
+  const { hotelParameters, adultCount, roomCount } = useContext(TripContext);
   console.log("hotelParameters DIRECTLY:", hotelParameters);
   console.log("adultCount DIRECTLY:", adultCount);
   console.log("roomCount DIRECTLY:", roomCount);
@@ -13,6 +14,7 @@ export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
   const [country, setCountry] = useState("Spain");
   const [conditionalParameters, setConditionalParameters] = useState(false);
 
+  console.log("SPAIN PAGE :,", country);
   const showTripParameters =
     !hotelParameters.checkIn &&
     !hotelParameters.checkOut &&
@@ -33,13 +35,7 @@ export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
   /*  const location = useLocation;
   const { state } = location;
   const { hotelParameters, adultCount, roomCount } = state;*/
-  /* console.log("i am the hotelParameters of the SpainPage:", hotelParameters);
-  console.log(
-    "we are the hotelParameters:",
-    hotelParameters,
-    adultCount,
-    roomCount
-  ); */
+
   return (
     <div className="row">
       <div className="col">

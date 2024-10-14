@@ -21,6 +21,13 @@ export default function TripParametersComponent() {
     setShowAlert,
   } = useContext(TripContext);
 
+  console.log(
+    "TRIPPARAMETERSCOMPONENT:",
+    hotelParameters,
+    adultCount,
+    roomCount
+  );
+
   const navigate = useNavigate(); // Initialize the navigate function
   const handleChange = (event) => {
     const { id, value } = event.target; // event.target refers to the DOM element that triggered the event, in this case, the input field
@@ -60,15 +67,7 @@ export default function TripParametersComponent() {
       setShowAlert(true);
     } else {
       setShowAlert(false);
-      // Navigate to the TripsComponent page and pass props
-      /*  navigate("/trips/", {
-        state: {
-          hotelParameters: hotelParameters,
-          adultCount: adultCount,
-          roomCount: roomCount, */ //When passing PROPS to the NAVIGATE FUNCTION, you should use the OBJECT SYNTAX, where each prop is specified as a key-value pair within curly braces {}
-      // When you use the navigate function provided by React Router, it updates the URL and passes state to the new location. This state is then available in the component rendered at the new location.
-      /*  },
-      }); */
+
       navigate("/trips/");
     }
   }

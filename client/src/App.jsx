@@ -149,18 +149,6 @@ function App() {
       {/*         <div className="size-40 relative w-full max-w-screen-xl">
        */}{" "}
       {/* <div className="absolute inset-0 flex items-center justify-center"> */}
-      {/* <div className="wrapper w-3/4">
-          <TripParametersComponent
-            hotelParameters={hotelParameters}
-            setHotelParameters={setHotelParameters}
-            adultCount={adultCount}
-            setAdultCount={setAdultCount}
-            roomCount={roomCount}
-            setRoomCount={setRoomCount}
-            showAlert={showAlert}
-            setShowAlert={setShowAlert}
-          />
-        </div> */}
       {/*   </div> */}
       {/* </div>
         </div> */}

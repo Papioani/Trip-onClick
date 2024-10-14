@@ -121,17 +121,6 @@ export default function TripsComponent() {
           />
         </Link>
       </div>
-      {/* <div className="right-panel">
-            {" "}
-            Going 🤩: {hotelParameters.checkIn}
-            <br></br>
-            Leaving: 😩{hotelParameters.checkOut}
-            <br></br>
-            How many 🤔: {adultCount} people
-            <br></br>Rooms 😴: {roomCount}
-          </div> */}
-      {/* </div>
-      </div>{" "} */}
     </>
   );
 }
