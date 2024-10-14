@@ -1,17 +1,12 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, createContext } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
-import "./App.css";
 /* import Video from "./components/images/Video.mp4";
  */ /* import PlayerComponent from "./components/PlayerComponent"; */
-
-/* import TripOnClick from "./pages/TripOnClick"; */
 import TripParametersComponent from "./components/TripParametersComponent";
 import Contact from "./pages/Contact";
 import MyTrips from "./pages/MyTrips";
 import TripsComponent from "./components/TripsComponent";
-import ManiPage from "./pages/ManiPage";
-import SpainPage from "./pages/SpainPage";
-import NorwayPage from "./pages/NorwayPage";
+import PredefinedRoutePage from "./pages/PredefinedRoutePage";
 import "./App.css";
 
 // Create Context directly in App.js
@@ -50,9 +45,6 @@ function App() {
   // Client-side routing (frameworks and libraries like React Router) means handling page navigation within a web application using JavaScript in the browser, without reloading the entire page from the server for each new view or page
   return (
     <>
-      {/* <video autoPlay loop muted id="video">
-        <source src={Video} type="video/mp4" />
-      </video> */}
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           {/* When you click on a <NavLink>, React Router intercepts the navigation and handles it internally without reloading the entire page. */}
@@ -74,7 +66,6 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item">
-                {/* this leads to TripsComponent */}
                 <NavLink
                   className="nav-link active nav-link-ltr"
                   aria-current="page"
@@ -86,7 +77,6 @@ function App() {
               <li className="nav-item dropdown">
                 <NavLink
                   className="nav-link dropdown-toggle nav-link-ltr"
-                  href="#"
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -96,17 +86,17 @@ function App() {
                 </NavLink>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <NavLink className="dropdown-item" href="/Mani/*">
+                    <NavLink className="dropdown-item" to="/Mani/">
                       Mani
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" href="/Spain/*">
+                    <NavLink className="dropdown-item" to="/Spain/">
                       Spain
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" href="/Norway/">
+                    <NavLink className="dropdown-item" to="/Norway/">
                       Norway
                     </NavLink>
                   </li>
@@ -118,7 +108,6 @@ function App() {
                 </NavLink>
               </li>
             </ul>
-            {/* <div className="d-flex align-items-center topnav-right"> */}
             <ul className="navbar-nav">
               <li className="nav-item">
                 <NavLink className="nav-link" to="/contact">
@@ -147,20 +136,8 @@ function App() {
       {/* </div> */}
       {/*  <div className=" h-screen flex items-center justify-center"> */}
       {/*         <div className="size-40 relative w-full max-w-screen-xl">
-       */}{" "}
+       */}
       {/* <div className="absolute inset-0 flex items-center justify-center"> */}
-      {/* <div className="wrapper w-3/4">
-          <TripParametersComponent
-            hotelParameters={hotelParameters}
-            setHotelParameters={setHotelParameters}
-            adultCount={adultCount}
-            setAdultCount={setAdultCount}
-            roomCount={roomCount}
-            setRoomCount={setRoomCount}
-            showAlert={showAlert}
-            setShowAlert={setShowAlert}
-          />
-        </div> */}
       {/*   </div> */}
       {/* </div>
         </div> */}
@@ -171,11 +148,9 @@ function App() {
         <Routes>
           <Route path="/" element={<TripParametersComponent />} />
           <Route path="/trips" element={<TripsComponent />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/MyTrips" element={<MyTrips />} />
-          <Route path="/Mani/*" element={<ManiPage />} />
-          <Route path="/Spain/*" element={<SpainPage />} />
-          <Route path="/Norway/*" element={<NorwayPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/myTrips" element={<MyTrips />} />
+          <Route path="/:predefinedRoute" element={<PredefinedRoutePage />} />
         </Routes>
       </TripContext.Provider>
     </>

@@ -4,7 +4,7 @@ import RandomHotelFetching from "./RandomHotelFetching";
 import { TripContext } from "../App";
 
 function HotelsFetchComponent() {
-  const { hotelParameters, adultCount, roomCount, country } =
+  const { hotelParameters, adultCount, roomCount, predefinedRoute } =
     useContext(TripContext);
   // extracting the api key from the.env file
   const apiKey = "d85fe120cdmsh6cffb70251d5d1cp16f3d1jsn7328646e0be7";
@@ -24,7 +24,7 @@ function HotelsFetchComponent() {
   const [isLoading, setIsLoading] = useState(false);
 
   console.log("I am the DESTINATION of the HotelsFetchComponent:", destination);
-  console.log("I am the COUNTRY:", country);
+  console.log("I am the PREDEFINEDROUTE:", predefinedRoute);
   console.log("I am the hotelParameters: ", hotelParameters);
   console.log("we are the RESULTS in the HotelsFetchComponent:", results);
 
@@ -141,7 +141,7 @@ function HotelsFetchComponent() {
 
   return (
     <>
-      {country === "Spain" && (
+      {predefinedRoute === "Spain" && (
         <div className="buttons">
           <button onClick={() => handleClick("Kardamyli")}>
             Sleep in Kardamyli

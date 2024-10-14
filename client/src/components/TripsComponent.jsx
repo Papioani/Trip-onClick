@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Card from "@mui/material/Card";
 import Mani4Image from "../assets/images/Mani4.png";
 import Spain from "../assets/images/Spain.png";
 import Norway from "../assets/images/Norway.png";
@@ -9,49 +10,32 @@ import DefaultImage from "../assets/images/MapScreenshot.png";
 import "../../styles/TripsComponent.css";
 
 export default function TripsComponent() {
-  const location = useLocation();
-  /* const { hotelParameters, adultCount, roomCount } = location.state; */
-
   const [rendering, setRendering] = useState(0);
-
   const [trip, setTrip] = useState(null);
   const [selectedImage, setSelectedImage] = useState(DefaultImage);
 
   const [active, setActive] = useState(false);
 
+  const predefinedRoutes = [
+    { name: "Mani", image: Mani4Image },
+    { name: "Spain", image: Spain },
+    { name: "Norway", image: Norway },
+  ];
+
   useEffect(() => {
     setRendering(rendering + 1);
+    const currentPredefinedRoute = predefinedRoutes.find(
+      (pr) => pr.name === trip
+    );
+    setSelectedImage(
+      currentPredefinedRoute ? currentPredefinedRoute.image : DefaultImage
+    );
   }, [trip]);
 
-  const handleClick = (location) => {
-    setActive(true);
-    setTrip(location);
+  // When a button is clicked, change the trip and the corresponding image
+  const handleClick = (predefinedRouteName) => {
+    setTrip(predefinedRouteName);
   };
-
-  // getImageLink eventually not use, replaced by wrapping the img element within the Link
-  const getImageLink = (selectedImage) => {
-    if (selectedImage === "Spain") {
-      setActive(true);
-      navigate("/Spain");
-    } else if (selectedImage === "Mani") {
-      setActive(true);
-      navigate("/Mani");
-    } else if (selectedImage === "Norway") {
-      setActive(true);
-      navigate("/Norway");
-    }
-  };
-
-  useEffect(() => {
-    /* By using useEffect, the state update for selectedImage based on trip will only trigger when trip changes, preventing an infinite loop caused by continuous state updates. */
-    if (trip === "Norway") {
-      setSelectedImage("Norway");
-    } else if (trip === "Spain") {
-      setSelectedImage("Spain");
-    } else if (trip === "Mani") {
-      setSelectedImage("Mani");
-    }
-  }, [trip]);
 
   return (
     <>
@@ -65,73 +49,34 @@ export default function TripsComponent() {
         {/*  <div className="split-screen"> */}
         {/* <div className="left-panel"> */}
         <div className="row row-cols-auto">
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
-            <button
-              className="btn btn-outline-success btn-lg"
-              type="button"
-              onClick={() => handleClick("Mani")}
+          {predefinedRoutes.map((predefinedRoute, index) => (
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 1.1 }}
+              key={index}
             >
-              Mani
-            </button>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
-            <button
-              className="btn btn-outline-success btn-lg"
-              type="button"
-              onClick={() => handleClick("Spain")}
-            >
-              Spain
-            </button>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.1 }}>
-            <button
-              className="btn btn-outline-success btn-lg"
-              type="button"
-              onClick={() => handleClick("Norway")}
-            >
-              Norway
-            </button>
-          </motion.div>
+              <button
+                className="btn btn-outline-success btn-lg"
+                type="button"
+                onClick={() => handleClick(predefinedRoute.name)}
+              >
+                {predefinedRoute.name}
+              </button>
+            </motion.div>
+          ))}
         </div>
         {/*  <p>this is the : {hotelParameters.checkIn}</p> */}
+        {/* Image of the selected predefinedRoute, wrapped in a Link */}
         <Link
-          to={{
-            pathname:
-              selectedImage === "Spain"
-                ? "/Spain/*"
-                : selectedImage === "Mani"
-                ? "/Mani/*"
-                : selectedImage === "Norway"
-                ? "/Norway/"
-                : null,
-          }}
+          to={`/${trip}`} // Navigates to the selected predefinedRoute page when the image is clicked
         >
           <img
-            src={
-              selectedImage === "Spain"
-                ? Spain
-                : selectedImage === "Mani"
-                ? Mani4Image
-                : selectedImage === "Norway"
-                ? Norway
-                : DefaultImage
-            }
+            src={selectedImage} // Display the selected predefinedRoute's image
             className="figure-img img-fluid rounded"
-            alt={selectedImage}
+            alt={trip}
           />
         </Link>
       </div>
-      {/* <div className="right-panel">
-            {" "}
-            Going 🤩: {hotelParameters.checkIn}
-            <br></br>
-            Leaving: 😩{hotelParameters.checkOut}
-            <br></br>
-            How many 🤔: {adultCount} people
-            <br></br>Rooms 😴: {roomCount}
-          </div> */}
-      {/* </div>
-      </div>{" "} */}
     </>
   );
 }

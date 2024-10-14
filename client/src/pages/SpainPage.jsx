@@ -1,25 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import SpainImagesComponent from "../components/SpainImagesComponent";
 import MapComponent from "../components/MapComponent";
 import HotelsFetchComponent from "../components/HotelsFetchComponent";
 import TripParametersComponent from "../components/TripParametersComponent";
+import { TripContext } from "../App";
 
-// passed to SpainPage directly from its parent component or via route configuration.
-export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
+export default function SpainPage() {
+  const { hotelParameters, adultCount, roomCount } = useContext(TripContext);
   console.log("hotelParameters DIRECTLY:", hotelParameters);
   console.log("adultCount DIRECTLY:", adultCount);
   console.log("roomCount DIRECTLY:", roomCount);
 
-  const [country, setCountry] = useState("Spain");
+  const [predefinedRoute, setpredefinedRoute] = useState("Spain");
   const [conditionalParameters, setConditionalParameters] = useState(false);
 
+  console.log("SPAIN PAGE :,", predefinedRoute);
   const showTripParameters =
     !hotelParameters.checkIn &&
     !hotelParameters.checkOut &&
     adultCount === 0 &&
     roomCount === 0;
 
-  /*  console.log(country);
+  /*  console.log(predefinedRoute);
   let hotelThings = JSON.stringify(hotelParameters);
   console.log(
     "This is finally the hotelParameters in the SpainPage, line 9:",
@@ -33,13 +35,7 @@ export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
   /*  const location = useLocation;
   const { state } = location;
   const { hotelParameters, adultCount, roomCount } = state;*/
-  /* console.log("i am the hotelParameters of the SpainPage:", hotelParameters);
-  console.log(
-    "we are the hotelParameters:",
-    hotelParameters,
-    adultCount,
-    roomCount
-  ); */
+
   return (
     <div className="row">
       <div className="col">
@@ -52,7 +48,7 @@ export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
               hotelParameters={hotelParameters}
               adultCount={adultCount}
               roomCount={roomCount}
-              country={country}
+              predefinedRoute={predefinedRoute}
             />
             {/*  <MapComponent /> */}
           </div>
