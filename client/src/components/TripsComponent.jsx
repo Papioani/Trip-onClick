@@ -98,9 +98,9 @@ export default function TripsComponent() {
           to={{
             pathname:
               selectedImage === "Spain"
-                ? "/Spain/*"
+                ? "/Spain/"
                 : selectedImage === "Mani"
-                ? "/Mani/*"
+                ? "/Mani/"
                 : selectedImage === "Norway"
                 ? "/Norway/"
                 : null,

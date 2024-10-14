@@ -56,7 +56,13 @@ export default function TripParametersComponent() {
     }
   };
 
-  function handleClick() {
+  function handleClick(event) {
+    event.preventDefault();
+    // Debugging values
+    console.log("CheckIn:", hotelParameters.checkIn);
+    console.log("CheckOut:", hotelParameters.checkOut);
+    console.log("Adults:", adultCount);
+    console.log("Rooms:", roomCount);
     if (
       !hotelParameters.checkIn ||
       !hotelParameters.checkOut ||

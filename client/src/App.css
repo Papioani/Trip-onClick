@@ -34,8 +34,12 @@
 
 .dropdown-item {
   font-weight: lighter;
-  font-family: "GFS Didot", serif;
   font-size: large;
+  color: #6a8e3a;
+  transition: background 0.3s;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 10px;
+  font-weight: 600;
 }
 
 .navbar-brand {
