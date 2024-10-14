@@ -1,17 +1,15 @@
-import React, { useState, useContext } from "react";
-import { TripContext } from "../context/TripContext";
+import React, { useState, useEffect } from "react";
 import SpainImagesComponent from "../components/SpainImagesComponent";
 import MapComponent from "../components/MapComponent";
 import HotelsFetchComponent from "../components/HotelsFetchComponent";
 import TripParametersComponent from "../components/TripParametersComponent";
 
 // passed to SpainPage directly from its parent component or via route configuration.
-export default function SpainPage() {
+export default function SpainPage({ hotelParameters, adultCount, roomCount }) {
   console.log("hotelParameters DIRECTLY:", hotelParameters);
   console.log("adultCount DIRECTLY:", adultCount);
   console.log("roomCount DIRECTLY:", roomCount);
 
-  const { hotelParameters, adultCount, roomCount } = useContext(TripContext);
   const [country, setCountry] = useState("Spain");
   const [conditionalParameters, setConditionalParameters] = useState(false);
 
