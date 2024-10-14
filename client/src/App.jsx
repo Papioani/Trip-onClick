@@ -6,9 +6,7 @@ import TripParametersComponent from "./components/TripParametersComponent";
 import Contact from "./pages/Contact";
 import MyTrips from "./pages/MyTrips";
 import TripsComponent from "./components/TripsComponent";
-import ManiPage from "./pages/ManiPage";
-import SpainPage from "./pages/SpainPage";
-import NorwayPage from "./pages/NorwayPage";
+import PredefinedRoutePage from "./pages/PredefinedRoutePage";
 import "./App.css";
 
 // Create Context directly in App.js
@@ -152,9 +150,7 @@ function App() {
           <Route path="/trips" element={<TripsComponent />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/myTrips" element={<MyTrips />} />
-          <Route path="/mani/" element={<ManiPage />} />
-          <Route path="/spain/" element={<SpainPage />} />
-          <Route path="/norway/" element={<NorwayPage />} />
+          <Route path="/:predefinedRoute" element={<PredefinedRoutePage />} />
         </Routes>
       </TripContext.Provider>
     </>

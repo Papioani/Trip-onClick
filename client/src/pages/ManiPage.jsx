@@ -18,10 +18,10 @@ export default function ManiPage() {
   console.log("adultCount DIRECTLY:", adultCount);
   console.log("roomCount DIRECTLY:", roomCount);
 
-  const [country, setCountry] = useState("Mani");
+  const [predefinedRoute, setPredefinedRoute] = useState("Mani");
   const [conditionalParameters, setConditionalParameters] = useState(false);
 
-  console.log("MANI PAGE :,", country);
+  console.log("MANI PAGE :,", predefinedRoute);
   const showTripParameters =
     !hotelParameters.checkIn &&
     !hotelParameters.checkOut &&

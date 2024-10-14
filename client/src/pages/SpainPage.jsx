@@ -11,17 +11,17 @@ export default function SpainPage() {
   console.log("adultCount DIRECTLY:", adultCount);
   console.log("roomCount DIRECTLY:", roomCount);
 
-  const [country, setCountry] = useState("Spain");
+  const [predefinedRoute, setpredefinedRoute] = useState("Spain");
   const [conditionalParameters, setConditionalParameters] = useState(false);
 
-  console.log("SPAIN PAGE :,", country);
+  console.log("SPAIN PAGE :,", predefinedRoute);
   const showTripParameters =
     !hotelParameters.checkIn &&
     !hotelParameters.checkOut &&
     adultCount === 0 &&
     roomCount === 0;
 
-  /*  console.log(country);
+  /*  console.log(predefinedRoute);
   let hotelThings = JSON.stringify(hotelParameters);
   console.log(
     "This is finally the hotelParameters in the SpainPage, line 9:",
@@ -48,7 +48,7 @@ export default function SpainPage() {
               hotelParameters={hotelParameters}
               adultCount={adultCount}
               roomCount={roomCount}
-              country={country}
+              predefinedRoute={predefinedRoute}
             />
             {/*  <MapComponent /> */}
           </div>

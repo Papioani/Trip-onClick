@@ -33,8 +33,8 @@ export default function TripsComponent() {
   }, [trip]);
 
   // When a button is clicked, change the trip and the corresponding image
-  const handleClick = (countryName) => {
-    setTrip(countryName);
+  const handleClick = (predefinedRouteName) => {
+    setTrip(predefinedRouteName);
   };
 
   return (

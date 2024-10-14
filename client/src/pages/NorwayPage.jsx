@@ -13,9 +13,9 @@ export default function NorwayPage() {
     adultCount,
     roomCount
   );
-  const [country, setCountry] = useState("Norway");
+  const [predefinedRoute, setpredefinedRoute] = useState("Norway");
   const [conditionalParameters, setConditionalParameters] = useState(false);
-  console.log("NORWAY PAGE :,", country);
+  console.log("NORWAY PAGE :,", predefinedRoute);
 
   const showTripParameters =
     !hotelParameters.checkIn &&
@@ -33,7 +33,7 @@ export default function NorwayPage() {
               hotelParameters={hotelParameters}
               adultCount={adultCount}
               roomCount={roomCount}
-              country={country}
+              predefinedRoute={predefinedRoute}
             />
             {/*  <MapComponent /> */}
           </div>
