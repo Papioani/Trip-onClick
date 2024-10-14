@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Card from "@mui/material/Card";
 import Mani4Image from "../assets/images/Mani4.png";
 import Spain from "../assets/images/Spain.png";
 import Norway from "../assets/images/Norway.png";

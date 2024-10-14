@@ -22,8 +22,6 @@
   left: 0;
   width: 0;
   height: 2px;
-  /* background: #a8dadc; */
-  /*  background: #6a8e3a; */
   background: #42abae;
   transition: width 1s ease;
 }
@@ -47,7 +45,8 @@
   /*  background-color: #ffa323; */
   /*  background-color: #6a8e3a; */
   /*   background-color: #42abae;
- */
+   /* background: #a8dadc; */
+
   /* color: #2c3e50; */
   /*   color: #fe8b10;
  */
