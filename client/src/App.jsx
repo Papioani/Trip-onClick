@@ -86,17 +86,17 @@ function App() {
                 </NavLink>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <NavLink className="dropdown-item" to="/Mani/">
+                    <NavLink className="dropdown-item" to="/mani/">
                       Mani
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/Spain/">
+                    <NavLink className="dropdown-item" to="/spain/">
                       Spain
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/Norway/">
+                    <NavLink className="dropdown-item" to="/norway/">
                       Norway
                     </NavLink>
                   </li>
